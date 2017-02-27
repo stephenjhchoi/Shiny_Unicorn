@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'favorites/index'
+
+  get 'favorites/show'
+
+  get 'favorites/new'
+
+  get 'favorites/create'
+
+  get 'favorites/edit'
+
+  get 'favorites/update'
+
+  get 'favorites/destroy'
+
   devise_for :users
   root to: 'pages#home'
   # get "/dashboard", to: 'dashboards#show'
