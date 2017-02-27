@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'venues/index'
 
   get 'venues/show'
@@ -25,7 +26,24 @@ Rails.application.routes.draw do
 
   get 'index/destroy'
 
-  devise_for :users
+  devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  get 'favorites/index'
+
+  get 'favorites/show'
+
+  get 'favorites/new'
+
+  get 'favorites/create'
+
+  get 'favorites/edit'
+
+  get 'favorites/update'
+
+  get 'favorites/destroy'
+  
+
   root to: 'pages#home'
   # get "/dashboard", to: 'dashboards#show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
