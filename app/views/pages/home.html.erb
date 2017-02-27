@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= image_path "background-cropped.png" %>');">
+</div>
+
+<div class="banner-content">
+  <h1 class="title">Find Magical Date Spots</h1>
+  <br>
+  <form action="<%= venues_path %>" class="form-inline">
+    <select name='area' class="custom-select box_size_cat">
+      <option value="" selected>Choose Neighborhood</option>
+      <% Venue::NEIGHBORHOOD.each do |neighborhood| %>
+        <option value="<%= neighborhood %>"><%= neighborhood %></option>
+      <% end %>
+      <input type="submit" class="btn btn-primary" value="Search">
+    </select>
+
+
+
+  </form>
+
+
+</div>
