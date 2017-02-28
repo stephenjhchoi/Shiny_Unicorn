@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-position: top;
+  background-position: center;
 }
 
 .banner-content {
@@ -16,8 +16,8 @@ text-align: center;
 }
 
 .banner h1 {
-  font-size: 50px;
-  font-weight: bold;
+  font-size: 70px;
+  // font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 .banner p {
@@ -29,6 +29,6 @@ text-align: center;
 .title{
   font-family: Josefin Sans;
   font-size: 60px;
-  color: #AF9F69;
+  color: $champagne-gold;
 }
 
