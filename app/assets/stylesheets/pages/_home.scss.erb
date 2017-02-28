@@ -1,0 +1,168 @@
+.site-title {
+  position: fixed;
+  transform: rotate(-90deg);
+  transform-origin: 0;
+  top: 250px;
+  left: 20px;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: $champagne-gold;
+  z-index: 1001;
+
+}
+
+.social-btns {
+  position: fixed;
+  transform-origin: 0;
+  top: 500px;
+  left: 13px;
+  width: 20px;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: $champagne-gold;
+  z-index: 999;
+}
+
+
+.banner-home {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('<%= image_path "background.png" %>');
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 40px;
+}
+
+.banner-content {
+  align-items: center;
+  text-align: center;
+  margin-top: -150px;
+}
+
+.banner-home h1 {
+  font-size: 60px;
+  // font-weight: bold;
+  text-shadow: 1px 1px 13px rgba(0, 0, 0, 0.9);
+}
+.banner-home p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+.title{
+  font-family: Josefin Sans;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  margin-top: 200px;
+}
+
+.venue-type {
+  margin-top: 55px;
+}
+.venu-type-list {
+  color: $champagne-gold;
+}
+
+// .done {
+//   margin-top: 60px;
+//   margin-bottom: -180px;
+
+//   img {
+//     height: 55px;
+//   }
+
+// }
+
+.custom-check-box {
+   display: none;
+   vertical-align: middle;
+
+   & + label:after {
+     content: url('<%= image_path "cutlery.svg" %>');
+     padding: 16px;
+     display: inline-block;
+     background: image-url('check_box_off.png');
+     background-repeat: no-repeat;
+     vertical-align: middle;
+     background-size: 50%;
+     cursor: pointer;
+   }
+
+   &:checked + label:after {
+     background: image-url('check_box_on.png');
+   }
+ }
+
+ .custom-check-box1 {
+   display: none;
+   vertical-align: middle;
+
+   & + label:after {
+     content: url('<%= image_path "cocktail.svg" %>');
+     padding: 16px;
+     display: inline-block;
+     background: image-url('check_box_off.png');
+     background-repeat: no-repeat;
+     vertical-align: middle;
+     background-size: 50%;
+     cursor: pointer;
+   }
+
+   &:checked + label:after {
+     background: image-url('check_box_on.png');
+   }
+ }
+
+ .custom-check-box2 {
+   display: none;
+   vertical-align: middle;
+
+   & + label:after {
+     content: url('<%= image_path "cup.svg" %>');
+     padding: 16px;
+     display: inline-block;
+     background: image-url('check_box_off.png');
+     background-repeat: no-repeat;
+     vertical-align: middle;
+     background-size: 50%;
+     cursor: pointer;
+   }
+
+   &:checked + label:after {
+     background: image-url('check_box_on.png');
+   }
+ }
+
+.row-venue {
+  margin-top: 40px;
+  color: $champagne-gold;
+}
+
+
+.btn-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.next-btn {
+  margin-top: 20px;
+  margin-bottom: -180px;
+  height: 50px;
+  width: 50px;
+  background-image: url('<%= image_path "right-arrow.svg" %>');
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  &:focus{
+    border: none;
+    outline: none;
+  }
+}
