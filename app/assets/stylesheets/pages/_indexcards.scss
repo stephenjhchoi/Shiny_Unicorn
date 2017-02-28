@@ -1,0 +1,45 @@
+.wrapper{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.stream-entry-inner {
+    background-color: #fff;
+    border-radius: 5px;
+    // overflow: hidden;
+    position: relative;
+    vertical-align: top;
+    height: 500px;
+    margin-top: 20px;
+}
+
+.stream-image {
+  background-position: 50%;
+  background-size: cover;
+  height: 300px;
+}
+
+.stream-body{
+  border: 1px solid #D3D3D3;
+  border-top: none;
+  display: flex;
+  height: 50px;
+  justify-content: flex-start;
+  align-items: center;
+
+  & > span {
+    flex: 1 0 auto;
+  }
+
+  & > a {
+    flex: 0 0 50px;
+    padding: 0 20px;
+  }
+
+  & > #heart {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #D3D3D3;
+  }
+}

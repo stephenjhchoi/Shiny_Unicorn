@@ -3,18 +3,20 @@ class VenuesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index,:show]
 
   def index
-    @venues = Venue.all?
+    @venues = Venue.all
     @venues = @venues.where(area: params[:area]) if !params[:area].blank?
     @venues = @venues.where(category: params[:category]) if !params[:category].blank?
-    @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
-      marker.lat lesson.latitude
-      marker.lng lesson.longitude
+    # @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
+    #   marker.lat lesson.latitude
+    #   marker.lng lesson.longitude
+    # end
   end
 
   def show
-    @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
-      marker.lat lesson.latitude
-      marker.lng lesson.longitude
+    # @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
+    #   marker.lat lesson.latitude
+    #   marker.lng lesson.longitude
+    # end
   end
 
   def new
@@ -37,6 +39,7 @@ class VenuesController < ApplicationController
       redirect_to venues_path
     else
       render :edit
+    end
   end
 
   def destroy
