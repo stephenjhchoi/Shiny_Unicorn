@@ -41,7 +41,7 @@
 .banner-content {
   align-items: center;
   text-align: center;
-  margin-top: -150px;
+  margin-top: -250px;
 }
 
 .banner-home h1 {
@@ -85,8 +85,10 @@
    vertical-align: middle;
 
    & + label:after {
-     content: url('<%= image_path "cutlery.svg" %>');
-     padding: 16px;
+     content: "\f0f5";
+     font-size: 40px;
+     font-family: FontAwesome;
+     // padding: 16px;
      display: inline-block;
      background: image-url('check_box_off.png');
      background-repeat: no-repeat;
@@ -105,8 +107,11 @@
    vertical-align: middle;
 
    & + label:after {
-     content: url('<%= image_path "cocktail.svg" %>');
-     padding: 16px;
+     content: "\f000";
+     font-size: 40px;
+     font-family: FontAwesome;
+     // content: url('<%#= image_path "bar2.svg" %>');
+     // padding: 16px;
      display: inline-block;
      background: image-url('check_box_off.png');
      background-repeat: no-repeat;
@@ -125,8 +130,11 @@
    vertical-align: middle;
 
    & + label:after {
-     content: url('<%= image_path "cup.svg" %>');
-     padding: 16px;
+     content: "\f0f4";
+     font-size: 40px;
+     font-family: FontAwesome;
+     // content: url('<%#= image_path "cafe2.svg" %>');
+     // padding: 16px;
      display: inline-block;
      background: image-url('check_box_off.png');
      background-repeat: no-repeat;
@@ -151,12 +159,20 @@
   display: flex;
   justify-content: center;
 }
+
+
+
 .next-btn {
   margin-top: 20px;
   margin-bottom: -180px;
   height: 50px;
   width: 50px;
-  background-image: url('<%= image_path "right-arrow.svg" %>');
+
+
+  font-family: FontAwesome;
+  font-size: 40px;
+  color: $champagne-gold;
+  // background-image: url('<%#= image_path "right-arrow.svg" %>');
   background-size: cover;
   background-color: transparent;
   border: none;
