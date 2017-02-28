@@ -4,9 +4,10 @@
   <% moods = ['fun', 'chill', 'seductive', 'adventurous', 'classy', 'pick_for_you'] %>
   <div class="row">
   <% moods.each do |mood| %>
-  <div class="col-xs-12 col-md-4 not-padded"><%= link_to venues_path(mood: mood , category: params[:category], location:
-    params[:location]) do %>
-    <div class="mood" style="background-image: url(<%= image_path mood %>) ">
+  <div class="col-xs-12 col-md-4 not-padded">
+    <%= link_to venues_path(mood: mood , category: params[:category], location: params[:location]) do %>
+    <div class="<%= mood %>-filter">
+      <%= image_tag mood, class: 'mood' %>
     </div>
     <% end %>
   </div>
