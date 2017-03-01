@@ -7,14 +7,19 @@ class VenuesController < ApplicationController
     @venues = Venue.all
     @venues = @venues.where(area: params[:area]) if !params[:area].blank?
     # @venues = @venue.near('Shoreditch', 10)
-    @venues = @venues.where(category: params[:category]) if !params[:category].blank?
 
-    cat_array =[]
+    # @venues = @venues.where(category: params[:category]) if !params[:category].blank?
+
+    cat_array = []
     cat_array << 'restaurant' if params['restaurant'] == 'on'
     cat_array << 'bar' if params['bar'] == 'on'
     cat_array << 'cafe' if params['cafe'] == 'on'
 
-    @venues = @venues.where(category: cat_array) if cat_array.any?
+    # @venues = @venues.where(category: cat_array) if cat_array.any?
+
+    @venues = @venues.joins(:categories).where(categories: {title: cat_array}) if cat_array.any?
+
+    @venues = @venues.uniq
 
     @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
       marker.lat venue.latitude
