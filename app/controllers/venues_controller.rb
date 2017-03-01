@@ -3,6 +3,7 @@ class VenuesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index,:show]
 
   def index
+    @venues = policy_scope(Venue)
     @venues = Venue.all
     @venues = @venues.where(area: params[:area]) if !params[:area].blank?
     @venues = @venues.where(category: params[:category]) if !params[:category].blank?
@@ -29,10 +30,12 @@ class VenuesController < ApplicationController
 
   def new
     @venue = Venue.new
+    authorize @venue
   end
 
   def create
     @venue = admin.venues.build(venue_params)
+    authorize @venue
     if @venue.staff_level
       redirect_to venues_path
     else
@@ -60,6 +63,7 @@ class VenuesController < ApplicationController
 
   def set_venue
     @venue = Venue.find(params[:id])
+    authorize @venue
   end
 
   def venue_params
