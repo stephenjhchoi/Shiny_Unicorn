@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227163208) do
+ActiveRecord::Schema.define(version: 20170301110651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(version: 20170227163208) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
     t.index ["venue_id"], name: "index_favorites_on_venue_id", using: :btree
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "hotness_level"
+    t.date     "date"
+    t.string   "time"
+    t.text     "description"
+    t.integer  "staff_level"
+    t.integer  "noise_level"
+    t.integer  "couch_comfort"
+    t.integer  "user_id"
+    t.integer  "venue_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
+    t.index ["venue_id"], name: "index_reviews_on_venue_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,8 +79,12 @@ ActiveRecord::Schema.define(version: 20170227163208) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.string   "area"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_foreign_key "favorites", "users"
   add_foreign_key "favorites", "venues"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "venues"
 end

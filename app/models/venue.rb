@@ -1,5 +1,6 @@
 class Venue < ApplicationRecord
   has_many :favorites
+  has_many :reviews
 
   CATEGORIES = ["Bar", ""]
   NEIGHBORHOOD = ["Chelsea", "Shoreditch", "Knightsbridge", "Mayfair", "Marylebone", "Hampstead"]
