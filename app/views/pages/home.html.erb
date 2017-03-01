@@ -4,8 +4,8 @@
     <br>
     Magical date spots for you</h1>
     <br>
-    <form action="<%= venues_path %>" class="form-inline">
-    <select name='area' class="form-control custom-select box_size_cat">
+    <form action="<%= mood_path %>" class="form-inline">
+      <select name='area' class="form-control custom-select box_size_cat">
         <option value="" selected>Choose Neighborhood</option>
         <% Venue::NEIGHBORHOOD.each do |neighborhood| %>
         <option value="<%= neighborhood %>"><%= neighborhood %></option>
@@ -38,32 +38,6 @@
       </div>
     </form>
     </div>
-
-<!--
-    <div class="venue-type">
-      <ul class="list-inline venu-type-list">
-        <li>
-          <%#= image_tag "cutlery.svg" %>
-          <br>
-          Restaurant
-        </li>
-        <li>
-          <%#= image_tag "cocktail.svg" %>
-          <br>
-          Bar
-        </li>
-        <li>
-          <%#= image_tag "cup.svg" %>
-          <br>
-          Cafe
-        </li>
-      </ul>
-    </div> -->
-
-    <!-- <div class="done">
-      <%#= image_tag "right-arrow.svg" %>
-    </div> -->
-
   </div>
 </div>
 
