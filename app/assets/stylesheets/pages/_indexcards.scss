@@ -15,16 +15,14 @@
   height: 100vh;
 }
 
-
 .stream-entry-inner {
-    background-color: #fff;
-    // overflow: hidden;
-    position: relative;
-    vertical-align: top;
-    height: 500px;
-    width: 300px;
-    margin-top: 20px;
-
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+  vertical-align: top;
+  height: 480px;
+  width: 300px;
+  margin-top: 20px;
 }
 
 .stream-image {
@@ -41,14 +39,13 @@
   bottom: -4px;
   left: 10px;
 
-& > h3 {
-  color:white;
-
+  & > h3 {
+    color:white;
   }
 }
 
-
 .stream-body{
+  height: 160px;
   border: 1px solid #D3D3D3;
   font-family: Open Sans;
   color: #A9A9A9;
@@ -64,31 +61,25 @@
   text-align: justify;
   padding: 10px 20px;
 
-
-
-
-  & > p {
-    // flex: 1 0 auto;
-    // margin-left: 20px;
-    // margin-right: 20px;
-    display: inline-block;
-
-    word-wrap: break-word;
-    // position: absolute;
+  .stream-body-description {
     text-decoration: none;
     z-index: 10;
   }
 
-  & > a {
-    flex: 0 0 50px;
-    padding: 0 20px;
-  }
+  // & a {
+  //   flex: 0 0 50px;
+  //   padding: 0 20px;
+  // }
 
-  & > #heart {
+  #heart {
     height: 50px;
     display: flex;
     align-items: center;
     border-left: 1px solid #D3D3D3;
+  }
+
+  .stream-body-bars {
+    width: 100%;
   }
 }
 
@@ -104,18 +95,17 @@
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 
-
-  & > span {
+  & span {
     flex: 1 0 auto;
   }
 
-  & > a {
+  & a {
     flex: 0 0 50px;
     padding: 0 20px;
     text-decoration: none;
   }
 
-  & > #heart {
+  & #heart {
     height: 50px;
     display: flex;
     align-items: center;
@@ -151,6 +141,16 @@
 .img_format{
   width: 20px;
 
+}
+
+.venue-card-link{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
 }
 
 

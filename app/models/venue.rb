@@ -3,7 +3,8 @@ class Venue < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  CATEGORIES = ["Bar", ""]
+  CATEGORIES = ["Bar", "Restaurant", "Coffee Shop"]
+  MOOD = ['fun', 'chill', 'seductive', 'adventurous', 'classy',]
   NEIGHBORHOOD = ["Chelsea", "Shoreditch", "Knightsbridge", "Mayfair", "Marylebone", "Hampstead"]
   validates :area, presence: true
 
