@@ -20,3 +20,9 @@ $( document ).ready(function() {
   });
 });
 
+
+$('.venue-glow-btn').on('click', function() {
+  $(this).toggleClass("active");
+});
+
+
