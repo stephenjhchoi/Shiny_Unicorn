@@ -25,10 +25,11 @@ class VenuesController < ApplicationController
   end
 
   def create
-    @venue = admin.venues.build(venue_params)
-    if @venue.staff_level
+    @venue = Venue.new(venue_params)
+    if @venue.save
       redirect_to venues_path
     else
+      render :new
     end
   end
 
