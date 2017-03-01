@@ -35,7 +35,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 40px;
 }
 
 .banner-content {
@@ -150,7 +149,7 @@
 
 .row-venue {
   margin-top: 40px;
-  color: $champagne-gold;
+  color: $peach-orange;
 }
 
 
@@ -158,11 +157,33 @@
   width: 100%;
   display: flex;
   justify-content: center;
+
 }
 
 
+.venue-btn {
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  p {
+    margin: 0;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+.venue-glow-btn:hover, .venue-glow-btn.active {
+  text-shadow: 0px 0px 5px #a20bd0;
+  color: #a20bd0;
+}
+
 
 .next-btn {
+  color: $peach-orange;
   margin-top: 20px;
   margin-bottom: -180px;
   height: 50px;
@@ -170,7 +191,7 @@
 
   font-family: FontAwesome;
   font-size: 40px;
-  color: $champagne-gold;
+
   // background-image: url('<%#= image_path "right-arrow.svg" %>');
   background-size: cover;
   background-color: transparent;
