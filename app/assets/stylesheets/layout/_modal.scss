@@ -1,0 +1,46 @@
+.modal-body{
+
+}
+
+.login-btn.facebook {
+  background: #39579a;
+}
+
+.login-btn {
+  max-width: 300px;
+  margin: 30px auto 8px;
+}
+
+.login {
+  width: 100%;
+  padding: 12px;
+  margin: 10px auto;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+  height: 40px;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+
+}
+
+.fa-facebook {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 30px;
+  height: 17px;
+  margin-left: 8px;
+  color: #f2f2f2;
+}
+
+.login-btn-txt {
+  display: inline-block;
+  // margin-left: 40px;
+  color: #f2f2f2;
+}
+
+.login-btn-txt:hover {
+  text-decoration: none;
+}

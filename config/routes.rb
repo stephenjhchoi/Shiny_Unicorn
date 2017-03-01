@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'dashboards/show'
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   mount Attachinary::Engine => "/attachinary"
