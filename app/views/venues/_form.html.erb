@@ -1,0 +1,46 @@
+<div class="wrapper-login">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 ">
+      <h1>Create New Venue</h1><br>
+
+
+        <%= simple_form_for(@venue) do |f| %>
+        <%= f.error_notification %>
+
+        <%= f.input :name, as: :string %>
+
+        <%= f.input :address, as: :string %>
+
+        <%= f.input :area, collection: Venue::AREAS %>
+
+        <%= f.input :category, collection: Venue::CATEGORIES %>
+
+        <%= f.input :mood, collection: Venue::MOODS %>
+
+        <%= f.input :description, label:'Description', %>
+
+        <%= f.input :price %>
+
+        <%= f.input :light_level, label:'0 being dark - 10 being bright', as: :integer %>
+
+        <%= f.input :noise_level, label:'0 being quiet - 10 being loud', as: :integer %>
+
+        <%= f.input :couch_comfort, label:'0 being stiff - 10 being very comfy', as: :integer %>
+
+        <%= f.input :staff_level, label:'0 being bad service - 10 being extremely good service', as: :integer %>
+
+        <%= f.input :unicorn_score, as: :string %>
+
+        <%= f.button :submit, class:"submit-btn" %>
+        <br>
+        <br>
+
+        <button class="back-btn"><%= link_to 'Back', root_path %></button>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
