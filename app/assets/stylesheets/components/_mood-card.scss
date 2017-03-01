@@ -1,0 +1,14 @@
+.mood {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity .3s ;
+}
+
+.seductive-filter {
+}
+
+.mood:hover {
+  opacity: .7;
+}
