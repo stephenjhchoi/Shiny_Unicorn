@@ -10,6 +10,7 @@ gem 'devise'
 gem 'redis'
 gem 'omniauth-facebook'
 gem "geocoder"
+gem "pundit"
 
 gem "coffee-rails"
 gem "gmaps4rails"
