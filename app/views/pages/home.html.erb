@@ -8,8 +8,8 @@
 
     <select name='area' class="form-control custom-select box_size_cat">
         <option value="" selected>Choose Neighborhood</option>
-        <% Venue::NEIGHBORHOOD.each do |neighborhood| %>
-        <option value="<%= neighborhood %>"><%= neighborhood %></option>
+        <% Venue::AREAS.each do |area| %>
+        <option value="<%= area %>"><%= area %></option>
         <% end %>
       </select>
 

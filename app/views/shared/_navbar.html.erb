@@ -9,6 +9,10 @@
 
   <% if user_signed_in? %>
     <div>
+      <% if current_user.admin %>
+        <%= link_to 'create venue', new_venue_path %>
+      <% end %>
+
       <% avatar_url = current_user.facebook_picture_url || current_user.photo %>
 
       <%= link_to root_path do %>
