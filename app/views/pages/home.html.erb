@@ -1,24 +1,11 @@
-<h2 class="site-title">Shiny Unicorn // London, UK</h2>
-
-<div class="social-btns">
-  <a href="https://www.facebook.com" target="_blank">
-    <i class="fa fa-facebook" aria-hidden="true"></i>
-  </a>
-  <a href="https://www.instagram.com" target="_blank">
-    <i class="fa fa-instagram" aria-hidden="true"></i>
-  </a>
-  <a href="mailto:info@shinyunicorn.co" target="_blank">
-    <i class="fa fa-envelope" aria-hidden="true"></i></i>
-  </a>
-</div>
-
 <div class="banner-home">
   <div class="banner-content">
     <h1 class="title">Hi, let me find
     <br>
     Magical date spots for you</h1>
     <br>
-    <form action="<%= venues_path %>" class="form-inline">
+    <form action="<%= mood_path %>" class="form-inline">
+
     <select name='area' class="form-control custom-select box_size_cat">
         <option value="" selected>Choose Neighborhood</option>
         <% Venue::NEIGHBORHOOD.each do |neighborhood| %>
@@ -28,58 +15,30 @@
 
       <div class="row-venue">
           <div class="col-xs-4">
-            <input id="custom-checkbox" class="custom-check-box" type="checkbox" />
-            <label for="custom-checkbox"></label>
-            <br>Restaurant
+            <input name='restaurant' id="custom-checkbox" class="custom-check-box" type="checkbox" />
+            <label for="custom-checkbox" class="venue-btn venue-glow-btn"><p>Restaurant</p></label>
+
           </div>
 
 
           <div class="col-xs-4">
-            <input id="custom-checkbox1" class="custom-check-box1" type="checkbox" />
-            <label for="custom-checkbox"></label>
-            <br>Bar
+            <input name='bar' id="custom-checkbox1" class="custom-check-box1 venue-btn venue-glow-btn" type="checkbox" checked="checked"/>
+            <label for="custom-checkbox1" class="venue-btn venue-glow-btn active"><p>Bar</p></label>
           </div>
 
 
           <div class="col-xs-4">
-            <input id="custom-checkbox2" class="custom-check-box2" type="checkbox" />
-            <label for="custom-checkbox"></label>
-            <br>Cafe
+            <input name='cafe' id="custom-checkbox2" class="custom-check-box2 venue-btn venue-glow-btn" type="checkbox" />
+            <label for="custom-checkbox2" class="venue-btn venue-glow-btn"><p>Cafe</p></label>
           </div>
         </div>
 
       </select>
       <div class="btn-center">
-          <input type="submit" class="next-btn text-center" value='&#xf138'>
+          <input type="submit" class="next-btn text-center venue-btn venue-glow-btn" value='&#xf138'>
       </div>
     </form>
     </div>
-
-<!--
-    <div class="venue-type">
-      <ul class="list-inline venu-type-list">
-        <li>
-          <%#= image_tag "cutlery.svg" %>
-          <br>
-          Restaurant
-        </li>
-        <li>
-          <%#= image_tag "cocktail.svg" %>
-          <br>
-          Bar
-        </li>
-        <li>
-          <%#= image_tag "cup.svg" %>
-          <br>
-          Cafe
-        </li>
-      </ul>
-    </div> -->
-
-    <!-- <div class="done">
-      <%#= image_tag "right-arrow.svg" %>
-    </div> -->
-
   </div>
 </div>
 
