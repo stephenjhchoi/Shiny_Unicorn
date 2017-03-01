@@ -10,6 +10,7 @@ gem 'devise'
 gem 'redis'
 gem 'omniauth-facebook'
 gem "geocoder"
+gem "pundit"
 
 
 gem 'cloudinary', '1.1.7'

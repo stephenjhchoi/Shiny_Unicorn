@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170301151051) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,6 +40,22 @@ ActiveRecord::Schema.define(version: 20170301151051) do
     t.index ["venue_id"], name: "index_favorites_on_venue_id", using: :btree
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "hotness_level"
+    t.date     "date"
+    t.string   "time"
+    t.text     "description"
+    t.integer  "staff_level"
+    t.integer  "noise_level"
+    t.integer  "couch_comfort"
+    t.integer  "user_id"
+    t.integer  "venue_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
+    t.index ["venue_id"], name: "index_reviews_on_venue_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -59,6 +76,7 @@ ActiveRecord::Schema.define(version: 20170301151051) do
     t.string   "last_name"
     t.string   "token"
     t.datetime "token_expiry"
+    t.boolean  "admin"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
@@ -85,4 +103,6 @@ ActiveRecord::Schema.define(version: 20170301151051) do
 
   add_foreign_key "favorites", "users"
   add_foreign_key "favorites", "venues"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "venues"
 end
