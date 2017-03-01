@@ -13,7 +13,7 @@
         <%= link_to 'create venue', new_venue_path %>
       <% end %>
 
-      <% avatar_url = current_user.facebook_picture_url || current_user.photo %>
+      <% avatar_url = current_user.facebook_picture_url || "TODO" %>
 
       <%= link_to root_path do %>
         <%= image_tag avatar_url, class: 'avatar', style: 'margin-right: 15px;' %>
