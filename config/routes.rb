@@ -17,6 +17,5 @@ Rails.application.routes.draw do
   resources :bookings, only: :index
   resources :favorites, except: [:new, :create]
 
-
   mount Attachinary::Engine => "/attachinary"
 end

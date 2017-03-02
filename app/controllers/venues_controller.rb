@@ -6,6 +6,7 @@ class VenuesController < ApplicationController
     @venues = policy_scope(Venue)
     @venues = Venue.all
     @venues = @venues.where(area: params[:area]) if !params[:area].blank?
+    @venues = @venues.where(mood: params[:mood]) if !params[:mood].blank?
     # @venues = @venue.near('Shoreditch', 10)
 
     # @venues = @venues.where(category: params[:category]) if !params[:category].blank?
@@ -21,6 +22,9 @@ class VenuesController < ApplicationController
 
     @venues = @venues.uniq
 
+    session[:area] = params[:area]
+    session[:categories] = cat_array
+
     @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
       marker.lat venue.latitude
       marker.lng venue.longitude
@@ -28,11 +32,14 @@ class VenuesController < ApplicationController
   end
 
   def show
-    @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
+    @hash = Gmaps4rails.build_markers(@venue) do |venue, marker|
       marker.lat venue.latitude
       marker.lng venue.longitude
     end
+
     @spot = Spot.new
+
+    @favorite = Favorite.new
   end
 
   def new
