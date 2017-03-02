@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resources :venues, only: [:index, :new, :create, :show] do
     resources :favorites, only: :create
   end
-  resources :favorites, except: [:new, :create]
 
   mount Attachinary::Engine => "/attachinary"
 end
