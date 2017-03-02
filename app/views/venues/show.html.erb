@@ -14,9 +14,10 @@
     <!-- </div> -->
     <!-- <div class="col-xs-12 col-md-8"> -->
     <div class="fixed-right ">
-       <a href="#"><i class="fa fa-heart"></i></a>
-       <a href="#"><span>Add to Favorites</span></a>
-       <%= render 'favorites/form' %>
+      <%= link_to venue_favorites_path(venue_id: @venue), method: :post do %>
+        <i class="fa fa-heart"></i> <span>Add to Favorites</span>
+      <% end %>
+
        <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         Add to Favorites
       </button> -->
@@ -111,6 +112,11 @@
     </div>
   </div>
 </div>
+
+<br>
+
+<button class="back-btn"><%= link_to "Back", :back %></button>
+<br>
 
 
 
