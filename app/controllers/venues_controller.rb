@@ -32,6 +32,7 @@ class VenuesController < ApplicationController
       marker.lat venue.latitude
       marker.lng venue.longitude
     end
+    @spot = Spot.new
   end
 
   def new

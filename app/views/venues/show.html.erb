@@ -93,7 +93,8 @@
   </div>
 </div>
 
-
+<%= render 'spots/spot-form' if current_user.admin %>
+<%= render 'booking/booking-form' %>
 <!--   <div class="stream-body3">
     <div class="slider-wrapper">
       <div class="sliders first">

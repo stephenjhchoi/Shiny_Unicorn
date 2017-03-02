@@ -6,6 +6,7 @@ class SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
     @spot.venue = @venue
     @spot.save
+    authorize @spot
     redirect_to venue_path(@venue)
   end
 
