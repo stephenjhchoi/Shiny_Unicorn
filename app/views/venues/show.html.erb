@@ -1,27 +1,77 @@
-<h1>Venues#show</h1>
-<p>Find me in app/views/venues/show.html.erb</p>
 
-<br>
-<br>
 
-  <div class="stream-body3">
-    <div class="slider-wrapper">
-      <div class="sliders first">
-        <input id="ex9" type="text" />
-      </div>
-      <div class="sliders second">
-        <input id="ex11" type="text" data-slider-handle="custom" data-slider-value="0"/>
-      </div>
+<div class="banner" style="background-image: url('<%= cl_image_path @venue.photo.path %>');">
+</div>
+
+
+
+<div class="top-title-show">
+  <div class="row test">
+    <!-- <div class="col-xs-12 col-md-8 "> -->
+    <div class='venue-name'>
+      <h2><%= @venue.name.upcase %></h2>
     </div>
+    <!-- </div> -->
+    <!-- <div class="col-xs-12 col-md-8"> -->
+    <div class="fixed-right ">
+       <a href="#"><i class="fa fa-heart"></i></a>
+       <a href="#"><span>Add to Favorites</span></a>
+       <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Add to Favorites
+      </button> -->
+      <!-- <a href="#"><i class="fa fa-heart"></i></a> -->
+    </div>
+   <!-- </div> -->
+ </div>
+</div>
+
+<div class="bottom-title-show">
+  <div>
+    <h3><%= @venue.mood.capitalize %></h3>
+  </div>
+  <div class='socialrow'>
+    <%= link_to '#' do %>
+    <div class='socialbutton instagram'>
+      <i class="fa fa-instagram"></i>
+    </div>
+    <% end %>
+    <%= link_to '#' do %>
+    <div class='socialbutton facebook'>
+      <i class="fa fa-facebook"></i>
+    </div>
+    <% end %>
+    <%= link_to '#' do %>
+    <div class='socialbutton twitter'>
+      <i class="fa fa-twitter"></i>
+    </div>
+    <% end %>
   </div>
 
+  <div class="divider">
+    <hr/>
+  </div>
+
+  <div class="text-center">
+    <div class="align-items">
+      <i class="fa fa-map-marker logo-loca"></i>
+      <h4 class="ven-add"><%= @venue.address %></h4>
+    </div>
+  </div>
+  <div class="text-center">
+    <p><%= @venue.description %></p>
+  </div>
+</div>
+
+
+<br>
+<br>
+<br>
 
 
 
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add to Favorites
-  <a href="#"><i class="fa fa-heart"></i></a>
-</button>
+
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -42,6 +92,18 @@
     </div>
   </div>
 </div>
+
+
+<!--   <div class="stream-body3">
+    <div class="slider-wrapper">
+      <div class="sliders first">
+        <input id="ex9" type="text" />
+      </div>
+      <div class="sliders second">
+        <input id="ex11" type="text" data-slider-handle="custom" data-slider-value="0"/>
+      </div>
+    </div>
+  </div> -->
 
 
 
