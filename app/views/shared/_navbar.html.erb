@@ -13,14 +13,21 @@
         <%= link_to 'create venue', new_venue_path %>
       <% end %>
 
-      <% avatar_url = current_user.facebook_picture_url || "TODO" %>
-
-      <%= link_to root_path do %>
-        <%= image_tag avatar_url, class: 'avatar', style: 'margin-right: 15px;' %>
-      <% end %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        <i class="fa fa-sign-out" aria-hidden="true" style="font-size: 28px;"></i>
-      <% end %>
+      <div class="dropdown">
+        <%= image_tag 'unicorn-icon.svg', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <%= link_to dashboard_path do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out" aria-hidden="true" style="font-size: 28px;"></i>
+            <% end %>
+          </li>
+        </ul>
+      </div>
     </div>
 
   <% else %>
