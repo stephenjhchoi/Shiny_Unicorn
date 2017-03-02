@@ -1,0 +1,34 @@
+.profile-space {
+ border: 1px solid #dce0e0;
+ background-color: #fff;
+ margin-bottom: 25px;
+ border-radius: 3px;
+
+  h2 {
+    font-size: 25px;
+  }
+}
+
+.edit-profile-btn {
+  display: inline-block;
+  background-color: $champagne-gold;
+  border: 2px solid $champagne-gold;
+  transition: all 0.5s ease;
+  padding: 14px 30px 12px;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
+.edit-profile-btn:hover {
+  background-color: #fff;
+  border-color: $champagne-gold;
+  a{
+    color: $champagne-gold;
+  }
+}
+
+.profile-details {
+  max-height: 333px;
+  background-color: #fff;
+}
