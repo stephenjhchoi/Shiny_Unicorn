@@ -67,6 +67,50 @@
 <br>
 <br>
 
+<div class="container">
+  <div class="show-card">
+    <div class="row">
+      <div class="col-xs-12 col-md-5">
+        <div id="map">
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-5 col-md-offset-2">
+        <p><strong>Venue Details</strong></p>
+        <br>
+        <p><strong>Price</strong></p>
+        <%= @venue.price %>
+        <p><strong>Area</strong></p>
+        <%= @venue.area %>
+        <br>
+        <br>
+        <div class="stream-body-bars">
+          <div class="img_progress">
+            <%= image_tag 'chili.svg', class:"img_format" %>
+            <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" style="width: 90%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              </div>
+            </div>
+          </div>
+          <div class="img_progress">
+            <%= image_tag 'sofa.svg', class:"img_format" %>
+            <div class="progress">
+              <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 55%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              </div>
+            </div>
+          </div>
+          <div class="img_progress">
+            <%= image_tag 'noise.svg', class:"img_format" %>
+            <div class="progress">
+              <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
@@ -93,6 +137,9 @@
   </div>
 </div>
 
+<br>
+<br>
+
 
 <!--   <div class="stream-body3">
     <div class="slider-wrapper">
@@ -104,6 +151,25 @@
       </div>
     </div>
   </div> -->
+
+  <% content_for(:after_js) do %>
+<script>
+ $(document).ready(function() {
+   var handler = Gmaps.build('Google');
+   handler.buildMap({ internal: { id: 'map' } }, function() {
+     markers = handler.addMarkers(<%= raw @hash.to_json %>);
+     handler.bounds.extendWith(markers);
+     handler.fitMapToBounds();
+     if (markers.length == 0) {
+       handler.getMap().setZoom(2);
+     } else if (markers.length == 1) {
+       handler.getMap().setZoom(14);
+     }
+   });
+ });
+</script>
+<% end %>
+
 
 
 
