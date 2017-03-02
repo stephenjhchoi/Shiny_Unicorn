@@ -1,6 +1,7 @@
 class FavoritesController < ApplicationController
   before_action :set_favorite, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index,:show]
+  skip_after_action :verify_policy_scoped
 
   def index
     @favorites = Favorite.all

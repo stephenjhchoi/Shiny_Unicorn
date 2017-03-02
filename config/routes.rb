@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'dashboards/show'
+  # get 'dashboards/show'
+  get "/dashboard", to: 'dashboards#show'
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
