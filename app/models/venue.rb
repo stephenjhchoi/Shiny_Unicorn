@@ -6,6 +6,7 @@ class Venue < ApplicationRecord
   after_validation :geocode, if: :address_changed?
   has_many :venue_categories
   has_many :categories, through: :venue_categories
+  has_many :spots
 
   CATEGORIES = ["Bar", "Restaurant", "Cafe"]
   MOODS = ['fun', 'chill', 'seductive', 'adventurous', 'classy',]
