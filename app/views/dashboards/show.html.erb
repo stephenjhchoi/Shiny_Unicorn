@@ -30,7 +30,7 @@
         <p>Shiny Unicorn's recommendations</p>
         <div class="row">
 
-          <% current_user.venues.first(3).each do |venue| %>
+          <% @recommended_venues.first(3).each do |venue| %>
             <%= render 'venues/venuecard', venue: venue %>
           <% end %>
 
