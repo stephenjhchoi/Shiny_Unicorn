@@ -2,47 +2,74 @@
   <div class="row">
     <div class="col-md-3 dashboard-left">
       <div class=" profile-box text-center profile-space">
-        <%= image_tag "unicorn-icon.svg", style: 'width: 80px; margin-top: 80px;', class: "user-img" %>
-        <h2>Toddler Unicorn</h2>
-        <div class="edit-profile-btn"><%= link_to 'Edit profile',edit_user_registration_path %></div>
+        <%= image_tag "unicorn-icon.svg", style: 'width: 80px; margin-top: 41px;', class: "user-img" %>
+        <h3>Toddler Unicorn</h3>
+        <span>Preferred Location: </span><select name='area' class="form-control1 custom-select box_size_cat">
+        <option value="" selected>Choose Area</option>
+        <% Venue::AREAS.each do |area| %>
+        <option value="<%= area %>"><%= area %></option>
+      <% end %>
+    </select>
+        <!-- <p class="pref-loc">My preferred location: Shoreditch</p> -->
+        <div class="edit-profile-btn"><%= link_to 'Edit User Profile',edit_user_registration_path %></div>
       </div>
       <div class="wait">
-        <p>hello</p>
+
       </div>
     </div>
 
     <div class="col-md-9 dashboard-box">
       <div class="row">
           <p class="unicorn-details">My Shiny Unicorn Profile</p>
-          <p class="pref-loc">My preferred location: Shoreditch</p>
       </div>
-      <div class="row">
-          <div class="my-favorites">
-            <p>My favorites <i class="fa fa-heart" aria-hidden="true"></i></p>
+      <div>
+    <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#favorites" aria-controls="favorites" role="tab" data-toggle="tab">My Favorites <i class="fa fa-heart" aria-hidden="true"></i></a></li>
+          <li role="presentation"><a href="#bookings" aria-controls="bookings" role="tab" data-toggle="tab">My Bookings</a></li>
+        </ul>
+
+    <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="favorites">
+            <div class="row">
+                  <!-- <div class="my-favorites">
+                    <p>My favorites <i class="fa fa-heart" aria-hidden="true"></i></p>
+                  </div> -->
+                  <div class="col-md-12 dashboard-scroll">
+                    <% current_user.venues.first(3).each do |venue| %>
+                      <%= render 'venues/venuecard', venue: venue %>
+                    <% end %>
+                  </div>
+              </div>
           </div>
-          <div class="col-md-12 dashboard-scroll">
-            <% current_user.venues.first(3).each do |venue| %>
-              <%= render 'venues/venuecard', venue: venue %>
-            <% end %>
+
+          <div role="tabpanel" class="tab-pane" id="bookings">
+            <div>
+              <%= render 'dashboards/bookingcard' %>
+            </div>
           </div>
+        </div>
       </div>
     </div>
   </div>
 
-    <!-- Shiny Unicorn's recommendations -->
+      <!-- Shiny Unicorn's recommendations -->
   <div class="row">
     <div class="col-md-12 recommendations-box">
       <div class="row">
-        <div class="recommendations">
-          <p>Shiny Unicorn's recommendations</p>
+        <div class="recommendations unicorn-details">
+          <p>Shiny Unicorn's Recommendations</p>
         </div>
       </div>
-      <div class="row">
-        <% @recommended_venues.first(3).each do |venue| %>
-          <%= render 'venues/venuecard', venue: venue %>
-        <% end %>
-      </div>
+    <div class="row">
+      <% @recommended_venues.first(3).each do |venue| %>
+        <%= render 'venues/venuecard', venue: venue %>
+      <% end %>
+    </div>
     </div>
   </div>
-    <!-- My bookings -->
 </div>
+
+<br>
+<br>
