@@ -14,9 +14,8 @@ class Venue < ApplicationRecord
 
   def favorite?(user)
     user.venues.include? self
+    #user.venues.include? @venue <- you're trying to access @venue so using self.
   end
-
-
 
 
   private
