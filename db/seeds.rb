@@ -38,10 +38,6 @@ VenueCategory.create(venue: venue4, category: category3)
 VenueCategory.create(venue: venue5, category: category3)
 
 
-
-
-
-
 # # user = User.create!(id: "1", first_name: 'Allison', last_name: 'Grekin', email: 'allison_grekin@hotmail.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/allison.jpg')))
 # # user2 = User.create!(id: "2", first_name: 'Stephen', last_name: 'Choi', email: 'stephen.choi@msn.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/stephen.jpeg')))
 # # user3 = User.create!(id: "3", first_name: 'Archie', last_name: 'San', email: 'archie.hero@msn.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/archie.jpg')))
@@ -54,7 +50,6 @@ VenueCategory.create(venue: venue5, category: category3)
 # # lesson3 = Lesson.create!(user_id: "3", category: "Weights", price: "35", start_date_time: d.strftime, duration: "50min", neighborhood:"Shoreditch", description: "The sport or activity of lifting barbells or other heavy weights.")
 # # lesson4 = Lesson.create!(user_id: "4", category: "Pilates", price: "25", start_date_time: d.strftime, duration: "30min", neighborhood:"Mayfair", description: "A system of exercises using special apparatus, designed to improve physical strength, flexibility, and posture, and enhance mental awareness.")
 # # lesson5 = Lesson.create!(user_id: "5", category: "Boxing", price: "20", start_date_time: d.strftime, duration: "30min", neighborhood:"Chelsea", description: "The sport or practice of fighting with the fists, especially with padded gloves in a roped square ring according to prescribed rules.")
-
 
 # #     t.string   "address"
 # #     t.string   "name"
