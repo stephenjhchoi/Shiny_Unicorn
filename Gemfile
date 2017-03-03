@@ -12,8 +12,6 @@ gem 'omniauth-facebook'
 gem "geocoder"
 gem "pundit"
 
-gem 'momentjs-rails'
-gem 'bootstrap3-datetimepicker-rails'
 
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'

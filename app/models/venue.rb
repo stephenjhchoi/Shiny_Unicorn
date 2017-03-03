@@ -6,8 +6,6 @@ class Venue < ApplicationRecord
   after_validation :geocode, if: :address_changed?
   has_many :venue_categories, dependent: :destroy
   has_many :categories, through: :venue_categories
-  has_many :spots
-  has_many :bookings, through: :spots
 
   CATEGORIES = ["Bar", "Restaurant", "Cafe"]
   MOODS = ['fun', 'chill', 'seductive', 'adventurous', 'classy',]
@@ -16,8 +14,9 @@ class Venue < ApplicationRecord
 
   def favorite?(user)
     user.venues.include? self
-    #user.venues.include? @venue <- you're trying to access @venue so using self.
   end
+
+
 
 
   private

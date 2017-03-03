@@ -1,13 +1,12 @@
 .banner {
   color: white;
   text-align: center;
-  height: 89vh;
+  height: 45vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10vh;
 }
 .banner h1 {
   font-size: 50px;
@@ -91,11 +90,6 @@
   float: right;
 }
 
-
-.attachinary-input{
-  margin: auto;
-}
-
 #map {
     width: 100%;
     height: 300px;
@@ -113,26 +107,9 @@
   background-color: $champagne-gold;
   a {
     color: white;
+
   }
 }
-
-.spot-card {
-  width: 500px;
-  height: 400px;
-  position: relative;
-  background-size: cover;
-  margin-top: 30px;
-}
-
-.spot-name {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: rgba(0,0,0,.3);
-  width: 100%;
-  color: rgba(255,255,255,.8);
-  font-weight: 600;
-  font-size: 40px;}
 
 // .socialbuttonicon {
 //   max-height: 50%;

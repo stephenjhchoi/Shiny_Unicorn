@@ -50,8 +50,7 @@
                 </div>
                 <div class="stream-body2">
                   <a href="#"><i class="fa fa-instagram"></i></a>
-
-                  <span><%= venue.area %> <%= '£ ' * venue.price %></span>
+                  <span><%= venue.area %> <%= venue.price %></span>
 
                   <% if venue.favorite?(current_user) %>
                     <%= link_to favorite_path(venue.favorites.find_by_user_id(current_user.id)), method: :delete do %>
@@ -62,6 +61,7 @@
                     <i class="fa fa-heart-o"></i>
                     <% end %>
                   <% end %>
+
                 </div>
               </div>
             </div>

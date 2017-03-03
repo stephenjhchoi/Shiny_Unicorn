@@ -42,12 +42,7 @@ class VenuesController < ApplicationController
       marker.lng venue.longitude
     end
 
-    @spot = Spot.new
-
     @favorite = Favorite.new
-
-    @booking = Booking.new
-
 
     if user_signed_in?
     @is_favorite = @venue.favorite?(current_user)
