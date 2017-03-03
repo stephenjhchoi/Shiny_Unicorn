@@ -37,6 +37,12 @@ class VenuesController < ApplicationController
       marker.lng venue.longitude
     end
     @favorite = Favorite.new
+
+
+    @is_favorite = current_user.venues.include? @venue
+    #checking if current user's favorite venues array includes the venue he's visiting now(@venue)
+
+
   end
 
   def new
@@ -68,6 +74,7 @@ class VenuesController < ApplicationController
     @venue.destroy
     redirect_to venues_path
   end
+
 
   private
 

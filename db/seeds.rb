@@ -15,6 +15,7 @@ Category.destroy_all
 # url = 'app/assets/images/bodega.png'
 # venue.photo_url = url
 # venue.save
+venue1 = Venue.create!(name: 'Bodega Negra', address: '16 Moor St, Soho, London W1D 5NH', area: 'Soho', mood: 'fun', description: 'Mexican food in light upstairs cafe and hacienda-style cellar restaurant with lengthy tequila menu', price: '£££', light_level: '3', noise_level: '7', couch_comfort: '4', staff_level: '6', unicorn_score: '8', distance_from_bed: '')
 venue2 = Venue.create!(name: 'Barts', address: 'Chelsea Cloisters, 87 Sloane Ave, Chelsea, London SW3 3DW', area: 'Chelsea', mood: 'seductive', description: 'Speakeasy cocktail bar with quirky wall ornaments and dressing-up boxes, plus vintage afternoon tea.', price: '££', light_level: '3', noise_level: '8', couch_comfort: '7', staff_level: '9', unicorn_score: '9', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/barts.png')))
 venue3 = Venue.create!(name: 'Evans & Peel Detective Agency', address: '310c Earls Ct Rd, Kensington, London SW5 9BA', area: 'Kensington', mood: 'adventurous', description: 'Evans and Peel Detective Agency in London is a speakeasy bar and restaurant in Earls Court that serves up a 1920s prohibition drinking and eating experience', price: '££', light_level: '5', noise_level: '3', couch_comfort: '5', staff_level: '8', unicorn_score: '10', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/detective.png')))
 venue4 = Venue.create!(name: 'Bar 212', address: '212 Brick Ln, London E1 6SA', area: 'Shoreditch', mood: 'chill', description: 'The 212 Café & Bar is a hangout for music, food and art lovers', price: '££', light_level: '3', noise_level: '7', couch_comfort: '8', staff_level: '6', unicorn_score: '8', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/bar212.png')))
@@ -25,7 +26,16 @@ category2 = Category.create!(title: "bar")
 category3 = Category.create!(title: "cafe")
 
 
-20.times { VenueCategory.create(venue: Venue.all.sample, category: Category.all.sample) }
+# 20.times { VenueCategory.create(venue: Venue.all.sample, category: Category.all.sample) }
+
+VenueCategory.create(venue: venue1, category: category1)
+VenueCategory.create(venue: venue1, category: category3)
+VenueCategory.create(venue: venue2, category: category2)
+VenueCategory.create(venue: venue3, category: category1)
+VenueCategory.create(venue: venue3, category: category2)
+VenueCategory.create(venue: venue4, category: category2)
+VenueCategory.create(venue: venue4, category: category3)
+VenueCategory.create(venue: venue5, category: category3)
 
 
 

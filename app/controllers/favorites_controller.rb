@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :set_favorite, only: [:show, :edit, :update, :destroy]
+  before_action :set_favorite, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:index,:show]
   skip_after_action :verify_policy_scoped
   skip_after_action :verify_authorized
@@ -37,8 +37,10 @@ class FavoritesController < ApplicationController
 
   def destroy
     @venue = Venue.find(params[:venue_id])
-    @favorite.destroy
-    redirect_to dashboard_path
+    @favorite = current_user.favorites.where(venue_id: params[:venue_id])
+    Favorite.destroy(@favorite.ids.first)
+    redirect_to venue_path(@venue)
+
   end
 
   private
