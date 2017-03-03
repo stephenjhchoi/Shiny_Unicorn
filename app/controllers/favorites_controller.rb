@@ -40,6 +40,7 @@ class FavoritesController < ApplicationController
     @favorite = current_user.favorites.where(venue_id: params[:venue_id])
     Favorite.destroy(@favorite.ids.first)
     redirect_to venue_path(@venue)
+
   end
 
   private
