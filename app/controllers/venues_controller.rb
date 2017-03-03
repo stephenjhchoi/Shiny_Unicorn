@@ -41,6 +41,7 @@ class VenuesController < ApplicationController
 
     @favorite = Favorite.new
 
+    @booking = Booking.new
 
     @is_favorite = current_user.venues.include? @venue
 

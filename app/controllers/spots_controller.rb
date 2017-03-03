@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :create
+  skip_before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
     @venue = Venue.find(params[:venue_id])
@@ -13,6 +13,6 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:photo)
+    params.require(:spot).permit(:photo, :name)
   end
 end

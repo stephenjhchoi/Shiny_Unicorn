@@ -1,10 +1,11 @@
-class BookingController < ApplicationController
-  def index
-    @bookings = Booking.where(user_id: current_user.id)
-  end
+class BookingsController < ApplicationController
+   skip_before_action :authenticate_user!, only: :create
 
   def create
     @booking = Booking.new(booking_params)
+
+    authorize @booking
+
     @booking.user = current_user
     #@booking.spot =
     if @booking.save
@@ -17,6 +18,6 @@ class BookingController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date)
+    params.require(:booking).permit(:date, :spot_id)
   end
 end

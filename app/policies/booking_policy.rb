@@ -1,4 +1,4 @@
-class SpotPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope
@@ -6,10 +6,6 @@ class SpotPolicy < ApplicationPolicy
   end
 
   def create?
-    true
-  end
-
-  def destroy?
     true
   end
 end
