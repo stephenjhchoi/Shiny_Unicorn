@@ -41,7 +41,12 @@
       <div class="stream-body2">
         <a href="#"><i class="fa fa-instagram"></i></a>
         <span><%= venue.area %> <%= venue.price %></span>
-        <a id="heart" href="#"><i class="fa fa-heart-o"></i></a>
+        <% if current_user.venues.include?(venue) %>
+          <a id="heart" href="#"><i class="fa fa-trash"></i></a>
+        <% else %>
+          <a id="heart" href="#"><i class="fa fa-heart-o"></i></a>
+
+        <% end %>
       </div>
     </div>
   </div>

@@ -35,10 +35,11 @@ class FavoritesController < ApplicationController
   #   end
   # end
 
-  # def destroy
-  #   @favorite.destroy
-  #   redirect_to favorites_path
-  # end
+  def destroy
+    @venue = Venue.find(params[:venue_id])
+    @favorite.destroy
+    redirect_to dashboard_path
+  end
 
   private
 

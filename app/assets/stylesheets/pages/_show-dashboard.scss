@@ -1,7 +1,24 @@
+// Boxes dashboard
+.profile-box {
+  border: 1px solid #dce0e0;
+  background-color: #fff;
+  border-radius: 3px;
+  width: 100%;
+}
+
 .dashboard-box {
   border: 1px solid #dce0e0;
   background-color: #fff;
   border-radius: 3px;
+  height: 650px;
+}
+
+.recommendations-box {
+  border: 1px solid #dce0e0;
+  background-color: #fff;
+  border-radius: 3px;
+  min-height: 200px;
+  margin-top: 30px;
 }
 
 
@@ -34,7 +51,7 @@
 
 .profile-details {
   padding: 20px;
-  height: 313px;
+  height: 645px;
 
   p{
     font-size: 15px;
@@ -53,9 +70,34 @@
 }
 
 
-
 .recommendations {
   margin-top: 10px;
   padding: 20px;
 
+}
+
+.my-favorites{
+  color: $champagne-gold;
+}
+
+.dashboard-scroll{
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.dashboard-left {
+  height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.wait {
+  border: 1px solid #dce0e0;
+  background-color: #fff;
+  border-radius: 3px;
+  height: 300px;
+  width: 100%;
+  background-color: white;
 }
