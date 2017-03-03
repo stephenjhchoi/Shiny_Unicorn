@@ -29,19 +29,26 @@ class VenuesController < ApplicationController
       marker.lat venue.latitude
       marker.lng venue.longitude
     end
+
+    # @favorite = Favorite.new
+    # @is_favorite = current_user.venues.include? @venue
+
   end
+
 
   def show
     @hash = Gmaps4rails.build_markers(@venue) do |venue, marker|
       marker.lat venue.latitude
       marker.lng venue.longitude
     end
+
     @favorite = Favorite.new
 
+    if user_signed_in?
+    @is_favorite = @venue.favorite?(current_user)
 
-    @is_favorite = current_user.venues.include? @venue
+    end
     #checking if current user's favorite venues array includes the venue he's visiting now(@venue)
-
 
   end
 
