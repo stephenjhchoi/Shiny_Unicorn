@@ -38,7 +38,6 @@ class FavoritesController < ApplicationController
   def destroy
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
-
     # @venue = Venue.find(params[:venue_id])
     # @favorite = current_user.favorites.where(venue_id: params[:venue_id])
     # Favorite.destroy(@favorite.ids.first)
