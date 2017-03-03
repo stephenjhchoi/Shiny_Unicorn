@@ -40,6 +40,7 @@ class VenuesController < ApplicationController
 
 
     @is_favorite = current_user.venues.include? @venue
+    #checking if current user's favorite venues array includes the venue he's visiting now(@venue)
 
 
   end
