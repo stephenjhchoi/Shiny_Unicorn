@@ -12,6 +12,13 @@ class Venue < ApplicationRecord
   AREAS = ["Chelsea", "Shoreditch", "Soho", "Knightsbridge", "Mayfair", "Marylebone", "Hampstead", "Kensington"]
   validates :area, presence: true
 
+  def favorite?(user)
+    user.venues.include? self
+  end
+
+
+
+
   private
   def area_in_london
     self.areas + ', London, UK'

@@ -21,7 +21,7 @@ class FavoritesController < ApplicationController
     @favorite.venue = @venue
     @favorite.user = current_user
     @favorite.save
-    redirect_to venue_path(@venue)
+    redirect_to :back
   end
 
   # def edit
@@ -36,11 +36,13 @@ class FavoritesController < ApplicationController
   # end
 
   def destroy
-    @venue = Venue.find(params[:venue_id])
-    @favorite = current_user.favorites.where(venue_id: params[:venue_id])
-    Favorite.destroy(@favorite.ids.first)
-    redirect_to venue_path(@venue)
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
 
+    # @venue = Venue.find(params[:venue_id])
+    # @favorite = current_user.favorites.where(venue_id: params[:venue_id])
+    # Favorite.destroy(@favorite.ids.first)
+    redirect_to :back
   end
 
   private
