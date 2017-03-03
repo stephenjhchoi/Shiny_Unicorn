@@ -11,21 +11,12 @@
     </div>
     <!-- </div> -->
     <!-- <div class="col-xs-12 col-md-8"> -->
-    <div class="fixed-right ">
-      <% if @is_favorite %>
-        <%= "delete"  %>
-      <% else %>
-        <%= link_to venue_favorites_path(venue_id: @venue), method: :post do %>
-          <i class="fa fa-heart"></i> <span>Add to Favorites</span>
-        <% end %>
-      <% end %>
-
 
        <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         Add to Favorites
       </button> -->
       <!-- <a href="#"><i class="fa fa-heart"></i></a> -->
-    </div>
+
    <!-- </div> -->
  </div>
 </div>
@@ -49,6 +40,18 @@
     <div class='socialbutton twitter'>
       <i class="fa fa-twitter"></i>
     </div>
+    <% end %>
+  </div>
+
+  <div class="favoriterow">
+    <% if @is_favorite %>
+        <%= link_to favorite_path(@venue.favorites.find_by_user_id(current_user.id)), method: :delete do %>
+          <i class="fa fa-heart-o"></i> <span>Remove from Favorites</span>
+        <% end  %>
+      <% else %>
+        <%= link_to venue_favorites_path(@venue), method: :post do %>
+          <i class="fa fa-heart"></i> <span>Add to Favorites</span>
+      <% end %>
     <% end %>
   </div>
 

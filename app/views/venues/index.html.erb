@@ -11,7 +11,7 @@
           <div class="col-xs-12 col-md-6">
             <div class="stream-entry-inner" >
               <%=  link_to venue_path(venue) do %>
-              <div class="stream-image" style="background-image: url(<%= cl_image_path venue.photo.path%>)">
+              <div class="stream-image" style="background-image: url(<%= cl_image_path venue.photo.path %>)">
                 <div class="card_description">
                   <h4><%= venue.name %></h4>
                 </div>
@@ -50,8 +50,18 @@
                 </div>
                 <div class="stream-body2">
                   <a href="#"><i class="fa fa-instagram"></i></a>
+
                   <span><%= venue.area %> <%= '£ ' * venue.price %></span>
-                  <a id="heart" href="#"><i class="fa fa-heart-o"></i></a>
+
+                  <% if venue.favorite?(current_user) %>
+                    <%= link_to favorite_path(venue.favorites.find_by_user_id(current_user.id)), method: :delete do %>
+                    <i class="fa fa-heart"></i>
+                    <% end %>
+                  <% else %>
+                    <%= link_to venue_favorites_path(venue), method: :post do %>
+                    <i class="fa fa-heart-o"></i>
+                    <% end %>
+                  <% end %>
                 </div>
               </div>
             </div>
