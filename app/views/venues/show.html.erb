@@ -16,7 +16,7 @@
     <div class="fixed-right ">
       <% if @is_favorite %>
         <%= link_to venue_favorite_path(venue_id: @venue), method: :delete do %>
-        <p>delete</p>
+          <i class="fa fa-heart-o"></i> <span>Remove from Favorites</span>
         <% end  %>
       <% else %>
         <%= link_to venue_favorites_path(venue_id: @venue), method: :post do %>
