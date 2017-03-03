@@ -1,7 +1,7 @@
-<h1 class="text-center">Mood Selector</h1>
+<h1 class="text-center">What kind of magical mood do you want?</h1>
 
 <div class="moods">
-  <% moods = ['fun', 'chill', 'seductive', 'adventurous', 'classy', 'pick_for_you'] %>
+  <% moods = ['fun', 'chill', 'seductive', 'adventurous', 'classy', 'random'] %>
   <div class="row">
   <% moods.each do |mood| %>
   <div class="col-xs-12 col-md-4 not-padded">
@@ -10,6 +10,7 @@
       <%= image_tag "#{mood}.jpeg", class: 'mood' %>
     </div>
     <% end %>
+    <h3 class="mood-name"><%= mood.capitalize %></h3>
   </div>
   <% end %>
   </div>

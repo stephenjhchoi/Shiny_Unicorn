@@ -4,6 +4,7 @@
   background-size: cover;
   background-position: center;
   transition: opacity .3s ;
+  position: relative;
 }
 
 .seductive-filter {
@@ -11,4 +12,17 @@
 
 .mood:hover {
   opacity: .7;
+  .mood-name {
+    opacity: .7;
+  }
+}
+
+.mood-name {
+  position: absolute;
+  top: -22px;
+  left: 0px;
+  font-weight: bold;
+  background-color: #AF9F69;
+  color: white;
+  padding: 10px 26px;
 }
