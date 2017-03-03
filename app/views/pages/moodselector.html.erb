@@ -1,15 +1,16 @@
-<h1 class="text-center">Mood Selector</h1>
+<h1 class="text-center">What kind of magical mood do you want?</h1>
 
 <div class="moods">
-  <% moods = ['fun', 'chill', 'seductive', 'adventurous', 'classy', 'pick_for_you'] %>
+  <% moods = ['fun', 'chill', 'seductive', 'adventurous', 'classy', 'random'] %>
   <div class="row">
   <% moods.each do |mood| %>
   <div class="col-xs-12 col-md-4 not-padded">
     <%= link_to venues_path(mood: mood, bar: params[:bar], restaurant: params[:restaurant], cafe: params[:cafe], area: params[:area]) do %>
     <div class="<%= mood %>-filter">
-      <%= image_tag "#{mood}.jpeg", class: 'mood' %>
+      <%= image_tag "#{mood}.jpg", class: 'mood' %>
     </div>
     <% end %>
+    <h3 class="mood-name"><%= mood.capitalize %></h3>
   </div>
   <% end %>
   </div>
