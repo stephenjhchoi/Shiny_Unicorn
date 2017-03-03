@@ -1,0 +1,27 @@
+<div class="text-center">
+<div class="col-xs-12 col-sm-6 col-sm-offset-3" style="background-color: white; padding-bottom: 20px; border-radius: 5px; margin-top: 40px;" >
+
+<h2>Make a booking</h2>
+
+<%= simple_form_for [@venue, @booking] do |f| %>
+
+          <%= f.association :spot, collection: @venue.spots, :label_method => lambda { |spot|  spot.name }, prompt: "Select your spot" %>
+
+        <%= f.input :date, as: :string, placeholder: "Select your date" %>
+
+<%= f.submit "Book", class: "shiny-btn" %>
+<% end %>
+</div>
+</div>
+
+
+<% content_for(:after_js) do %>
+  <script type="text/javascript">
+    $(function () {
+        $('input#booking_date').datetimepicker({
+          sideBySide: true,
+          format: "DD/MM/YYYY hh:mm"
+        });
+    });
+  </script>
+<% end %>
