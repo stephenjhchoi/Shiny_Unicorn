@@ -11,7 +11,7 @@
       <% end %>
     </select>
         <!-- <p class="pref-loc">My preferred location: Shoreditch</p> -->
-        <div class="edit-profile-btn"><%= link_to 'Edit User Profile',edit_user_registration_path %></div>
+        <div class="shiny-btn"><%= link_to 'Edit User Profile',edit_user_registration_path %></div>
       </div>
       <div class="wait">
         <div id="map">
@@ -46,9 +46,11 @@
           </div>
 
           <div role="tabpanel" class="tab-pane" id="bookings">
-            <div>
-              <%= render 'dashboards/bookingcard' %>
-            </div>
+  <div class="row">
+              <% current_user.bookings.each do |booking| %>
+              <%= render 'dashboards/bookingcard', booking: booking %>
+              <% end %>
+              </div>
           </div>
         </div>
       </div>
