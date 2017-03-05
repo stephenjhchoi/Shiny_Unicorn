@@ -34,7 +34,7 @@ html * {
 
 
 .banner-home {
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('<%= image_path "nyc-background.jpg" %>');
+  background-image: linear-gradient(rgba(0,0,0,2.7), rgba(0,0,0,-0.3)), url('<%= image_path "nyc-background.jpg" %>');
   background-size: cover;
   background-position: center;
 
@@ -54,7 +54,7 @@ html * {
 
 .banner-home h1 {
   // font-weight: bold;
-  text-shadow: 1px 1px 13px rgba(0, 0, 0, 0.9);
+  // text-shadow: 1px 1px 13px rgba(0, 0, 0, 0.9);
 }
 
 .banner-home p {
@@ -68,92 +68,85 @@ html * {
   font-family: 'Quicksand', sans-serif;
   font-size: 38px;
   font-weight: bold;
-  color: white;
-  margin-top: -100px;
+  margin-top: 109px;
   margin-bottom: 45px;
   line-height: 1.8;
   letter-spacing: 0.01em;
+  color: #FFFFFF;
 }
+
+.shiny-unicorn{
+  color: #FFFFFF;
+  text-shadow: 0 0 30px rgba(255,255,255,0.50);
+}
+
 
 .magical {
   color: $mint;
 }
 
-.venue-type {
 
 
+#search-input {
+  background-color: transparent;
+  border: 0;
+  font-size: 27px;
+  width: 400px;
+  color: #fff;
+  border-bottom: 1px solid $mint;
+  &:focus {
+    outline:0;
+  }
 }
 
 
-
-
-.custom-check-box {
-   display: none;
-   vertical-align: middle;
-
-   & + label:after {
-     content: "\f0f5";
-     font-size: 40px;
-     font-family: FontAwesome;
-     // padding: 16px;
-     display: inline-block;
-     background: image-url('check_box_off.png');
-     background-repeat: no-repeat;
+.venues {
+  .venue-element{
+    background: rgba(255,255,255,0.05);
+    display: inline-block;
+    width: 110px;
+    padding: 18px 0;
+    &:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    .venue-checkbox {
+     display: none;
      vertical-align: middle;
-     background-size: 50%;
-     cursor: pointer;
-   }
 
-   &:checked + label:after {
-     background: image-url('check_box_on.png');
-   }
- }
+     & + label:before {
 
- .custom-check-box1 {
-   display: none;
-   vertical-align: middle;
-
-   & + label:after {
-     content: "\f000";
-     font-size: 40px;
+     font-size: 30px;
      font-family: FontAwesome;
      // content: url('<%#= image_path "bar2.svg" %>');
      // padding: 16px;
      display: inline-block;
-     background: image-url('check_box_off.png');
      background-repeat: no-repeat;
      vertical-align: middle;
      background-size: 50%;
      cursor: pointer;
+     }
    }
+   #checkbox-restaurant + label:before {
+       content: "\f0f5";
+     }
+     #checkbox-bar + label:before {
+       content: "\f000";
+     }
+     #checkbox-cafe + label:before {
+       content: "\f0f4";
+     }
+   &:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  &:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 
-   &:checked + label:after {
-     background: image-url('check_box_on.png');
-   }
- }
+}
+}
 
- .custom-check-box2 {
-   display: none;
-   vertical-align: middle;
-
-   & + label:after {
-     content: "\f0f4";
-     font-size: 40px;
-     font-family: FontAwesome;
-     // content: url('<%#= image_path "cafe2.svg" %>');
-     // padding: 16px;
-     display: inline-block;
-     background: image-url('check_box_off.png');
-     background-repeat: no-repeat;
-     vertical-align: middle;
-     background-size: 50%;
-     cursor: pointer;
-   }
-
-   &:checked + label:after {
-     background: image-url('check_box_on.png');
-   }
- }
 
 .row-venue {
   margin-top: 50px;
@@ -162,25 +155,21 @@ html * {
 
 
 
-.venue-element {
-  background: rgba(255,255,255,0.2);
-  display: inline-block;
-  margin: 0 0 0 1px;
-
-}
-
-
-
-
-
 .btn-center {
   width: 100%;
   display: flex;
   justify-content: center;
-
+  margin-top: 60px;
 
 }
 
+.next-page-button {
+  display: block;
+  background-color: transparent;
+  border: transparent;
+  color: white;
+  font-size: 30px;
+}
 
 .venue-btn {
   text-decoration: none;
@@ -193,20 +182,21 @@ html * {
     font-size: 18px;
     align-items: center;
     justify-content: center;
+    // -webkit-text-stroke: 0.3px white;
   }
 
 }
 
 .venue-glow-btn:hover, .venue-glow-btn.active {
-  text-shadow: 0px 0px 5px $mint;
-  color: $mint;
+  text-shadow: 0px 0px 5px white;
+  // color: $mint;
 }
 
 
 .next-btn {
   color: #ECEBEC;
-  margin-top: 40px;
-  margin-bottom: -180px;
+  // margin-top: 40px;
+  // margin-bottom: -180px;
   height: 50px;
   width: 50px;
 
@@ -227,4 +217,19 @@ html * {
 
 .next-page {
 
+}
+
+.fa-chevron-circle-right {
+  font-size: 40px;
+}
+
+
+.next-page-button:hover, .next-page-button.active {
+  text-shadow: 0px 0px 1px $mint;
+  color: $mint;
+}
+
+
+.search-area{
+  margin-bottom: -120px;
 }
