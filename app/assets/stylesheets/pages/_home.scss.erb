@@ -26,11 +26,15 @@ html * {
   text-transform: uppercase;
   color: $champagne-gold;
   z-index: 999;
+
+  .fa {
+    color: $champagne-gold;
+  }
 }
 
 
 .banner-home {
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('<%= image_path "background.png" %>');
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('<%= image_path "nyc-background.jpg" %>');
   background-size: cover;
   background-position: center;
 
@@ -45,44 +49,43 @@ html * {
 .banner-content {
   align-items: center;
   text-align: center;
-  margin-top: -250px;
+  // margin-top: -250px;
 }
 
 .banner-home h1 {
-  font-size: 60px;
   // font-weight: bold;
   text-shadow: 1px 1px 13px rgba(0, 0, 0, 0.9);
 }
+
 .banner-home p {
   font-size: 20px;
   font-weight: lighter;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
 }
+
 .title{
   font-family: 'Quicksand', sans-serif;
-  font-size: 60px;
+  font-size: 38px;
   font-weight: bold;
   color: white;
-  // margin-top: 200px;
+  margin-top: -100px;
+  margin-bottom: 45px;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+.magical {
+  color: $mint;
 }
 
 .venue-type {
-  margin-top: 55px;
-}
-.venu-type-list {
-  color: $champagne-gold;
+
+
 }
 
-// .done {
-//   margin-top: 60px;
-//   margin-bottom: -180px;
 
-//   img {
-//     height: 55px;
-//   }
 
-// }
 
 .custom-check-box {
    display: none;
@@ -153,15 +156,28 @@ html * {
  }
 
 .row-venue {
-  margin-top: 40px;
+  margin-top: 50px;
   color: #ECEBEC;
 }
+
+
+
+.venue-element {
+  background: rgba(255,255,255,0.2);
+  display: inline-block;
+  margin: 0 0 0 1px;
+
+}
+
+
+
 
 
 .btn-center {
   width: 100%;
   display: flex;
   justify-content: center;
+
 
 }
 
@@ -182,14 +198,14 @@ html * {
 }
 
 .venue-glow-btn:hover, .venue-glow-btn.active {
-  text-shadow: 0px 0px 5px $peach-orange;
-  color: $peach-orange;
+  text-shadow: 0px 0px 5px $mint;
+  color: $mint;
 }
 
 
 .next-btn {
   color: #ECEBEC;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: -180px;
   height: 50px;
   width: 50px;
@@ -206,4 +222,9 @@ html * {
     border: none;
     outline: none;
   }
+}
+
+
+.next-page {
+
 }

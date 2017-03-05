@@ -1,12 +1,13 @@
 <div class="banner-home">
   <div class="banner-content">
-    <h1 class="title">Hi, let me find
-    <br>
-    Magical date spots for you</h1>
+    <h1 class="title">Hi, I'm Shiny Unicorn.
+    <br>Let me find
+        <span class="magical">Magical date spots</span>
+        for you!</h1>
     <br>
     <form action="<%= mood_path %>" class="form-inline">
 
-    <select name='area' class="form-control custom-select box_size_cat">
+      <select name='area' class="form-control custom-select box_size_cat">
         <option value="" selected>Choose Area</option>
         <% Venue::AREAS.each do |area| %>
         <option value="<%= area %>"><%= area %></option>
@@ -14,30 +15,38 @@
       </select>
 
       <div class="row-venue">
-          <div class="col-xs-4">
-            <input name='restaurant' id="custom-checkbox" class="custom-check-box" type="checkbox" />
-            <label for="custom-checkbox" class="venue-btn venue-glow-btn"><p>Restaurant</p></label>
+        <ul class="list-inline venues">
 
-          </div>
+          <li class="venue-element">
+            <div class="col-xs-4 venue-type">
+              <input name='restaurant' id="custom-checkbox" class="custom-check-box" type="checkbox" />
+              <label for="custom-checkbox" class="venue-btn venue-glow-btn"><p>Restaurant</p></label>
+            </div>
+          </li>
 
+          <li class="venue-element">
+            <div class="col-xs-4 venue-type">
+              <input name='bar' id="custom-checkbox1" class="custom-check-box1 venue-btn venue-glow-btn" type="checkbox" checked="checked"/>
+              <label for="custom-checkbox1" class="venue-btn venue-glow-btn active"><p>Bar</p></label>
+            </div>
+          </li>
 
-          <div class="col-xs-4">
-            <input name='bar' id="custom-checkbox1" class="custom-check-box1 venue-btn venue-glow-btn" type="checkbox" checked="checked"/>
-            <label for="custom-checkbox1" class="venue-btn venue-glow-btn active"><p>Bar</p></label>
-          </div>
+          <li class="venue-element">
+            <div class="col-xs-4 venue-type">
+              <input name='cafe' id="custom-checkbox2" class="custom-check-box2 venue-btn venue-glow-btn" type="checkbox" />
+              <label for="custom-checkbox2" class="venue-btn venue-glow-btn"><p>Cafe</p></label>
+            </div>
+          </li>
 
+        </ul>
+      </div>
 
-          <div class="col-xs-4">
-            <input name='cafe' id="custom-checkbox2" class="custom-check-box2 venue-btn venue-glow-btn" type="checkbox" />
-            <label for="custom-checkbox2" class="venue-btn venue-glow-btn"><p>Cafe</p></label>
-          </div>
-        </div>
-
-      </select>
       <div class="btn-center">
           <input type="submit" class="next-btn text-center venue-btn venue-glow-btn" value='&#xf138'>
       </div>
+
+      <p class="next-page">Next Page</p>
     </form>
-    </div>
   </div>
 </div>
+
