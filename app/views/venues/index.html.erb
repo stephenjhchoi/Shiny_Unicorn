@@ -6,9 +6,8 @@
     <div class="col-xs-12 col-md-8 ">
       <div class="fixed-cards">
         <div class="row">
-
-          <% @venues.each do |venue| %>
-          <div class="col-xs-12 col-md-6">
+          <% @venues.each_with_index do |venue, index| %>
+          <div class="col-xs-12 col-md-6" id="venue-<%= %>">
             <div class="stream-entry-inner" >
               <%=  link_to venue_path(venue) do %>
               <div class="stream-image" style="background-image: url(<%= cl_image_path venue.photo.path %>)">
@@ -85,6 +84,23 @@
       markers = handler.addMarkers(<%= raw @hash.to_json %>);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
+
+      // markers.each do |marker|
+      // google.maps.event.addListener(marker.getServiceObject(), 'click', function(){alert();});
+      // document.querySelector('.id').scrollIntoView({ behavior: 'smooth' });
+      // end
+
+      for(i = 0; i < markers.length; i++) {
+        google.maps.event.addListener(markers[i].getServiceObject(), 'click', function(m, a){
+          console.log(a);
+          // console.log(markers[i].getServiceObject());
+          // var venue_id =  "" + m.getServiceObject().getPosition().lat() + m.getServiceObject().getPosition().lng();
+            // .replace(/-|\./g, '')
+          // console.log(venue_id);
+          // document.querySelector('#venue-' + i).scrollIntoView({behavior: 'smooth'});
+        });
+      }
+
       if (markers.length == 0) {
         handler.getMap().setZoom(2);
       } else if (markers.length == 1) {

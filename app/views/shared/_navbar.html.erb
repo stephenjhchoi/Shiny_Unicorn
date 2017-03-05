@@ -18,12 +18,13 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to dashboard_path do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
+              <%= image_tag 'user.svg', class:"img_format" %>  <%= t(".profile", default: "Dashboard") %>
             <% end %>
           </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-sign-out" aria-hidden="true" style="font-size: 28px;"></i>
+              <%= image_tag 'log-in.svg', class:"img_format" %>
+              <span>Log out</span>
             <% end %>
           </li>
         </ul>

@@ -31,6 +31,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+gem 'rails-assets-smoothscroll', source: 'https://rails-assets.org'
+
 source 'https://rails-assets.org' do # bower
   gem "rails-assets-underscore"
   gem "rails-assets-seiyria-bootstrap-slider"

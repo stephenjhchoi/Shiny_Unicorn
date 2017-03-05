@@ -9,6 +9,7 @@
 //= require bootstrap-datetimepicker
 //= require underscore
 //= require gmaps/google
+//= require smoothscroll
 //= require_tree .
 
 
