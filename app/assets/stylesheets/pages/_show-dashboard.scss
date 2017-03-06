@@ -36,7 +36,7 @@
   margin-bottom: 21px;
 }
 
-.edit-profile-btn {
+.shiny-btn {
   display: inline-block;
   background-color: $champagne-gold;
   border: 2px solid $champagne-gold;
@@ -55,6 +55,7 @@
   color: $champagne-gold;
   a{
     color: $champagne-gold;
+    text-decoration: none;
   }
 }
 
