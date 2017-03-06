@@ -39,6 +39,14 @@
   background: black;
   opacity: 0;
 }
-.card-link:hover{
+.card-link:hover {
   opacity: 0.1;
+}
+
+.slider-selection {
+  background: #AF9F69 !important;
+}
+
+.slider-handle.custom::before{
+  color: #998a58 !important;
 }
