@@ -48,6 +48,7 @@ class VenuesController < ApplicationController
 
     @booking = Booking.new
 
+    @review = Review.new
 
     if user_signed_in?
     @is_favorite = @venue.favorite?(current_user)

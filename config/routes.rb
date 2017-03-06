@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :favorites, only: :create
     resources :spots, only: :create
     resources :bookings, only: :create
+    resources :reviews, only: :create
   end
   resources :favorites, only: [:destroy]
   resources :favorites, except: [:new, :create]

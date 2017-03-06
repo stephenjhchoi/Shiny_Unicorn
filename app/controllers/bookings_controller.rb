@@ -7,7 +7,6 @@ class BookingsController < ApplicationController
     authorize @booking
 
     @booking.user = current_user
-    #@booking.spot =
     if @booking.save
       redirect_to dashboard_path
     else

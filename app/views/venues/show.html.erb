@@ -150,8 +150,10 @@
   </div>
 </div>
 
-
+<!-- spot-form for admin -->
 <%= render 'spots/spot-form' if current_user.admin %>
+
+<!-- showing spots -->
 <div class="container text-center" style="margin-top: 40px;">
 <h3>Shiny Unicorn Spots</h3>
 <% if @venue.spots %>
@@ -168,9 +170,9 @@
 <% end %>
 </div>
 
+<!-- booking-form -->
 <%= render 'booking/booking-form' %>
-<br>
-<br>
+<%= render 'reviews/review-form' %>
 
 
 <!--   <div class="stream-body3">
@@ -183,6 +185,8 @@
       </div>
     </div>
   </div> -->
+
+
 
   <% content_for(:after_js) do %>
 <script>
@@ -198,7 +202,18 @@
        handler.getMap().setZoom(14);
      }
    });
+
+  $("#ex8").slider({
+    tooltip: 'always'
+  });
+
+  $("#review_hotness_level").slider({
+    tooltip: 'always'
+  });
+
+
  });
+
 </script>
 <% end %>
 
