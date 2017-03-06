@@ -1,5 +1,16 @@
 .form-wrapper {
   padding: 20px;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: white;
+  // line-height: 30px;
+
+  h2 {
+    margin-top: 0;
+    color: $champagne-gold;
+    text-align: center;
+  }
+}
+
+.btn-gold{
+  background-color: $champagne-gold;
 }

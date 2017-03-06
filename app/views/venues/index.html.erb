@@ -82,7 +82,9 @@
                 <div class="stream-body2">
                   <a href="#"><i class="fa fa-instagram"></i></a>
 
+
                   <span><%= venue.area %> <%= '£' * venue.price %></span>
+
 
                   <% if venue.favorite?(current_user) %>
                     <%= link_to favorite_path(venue.favorites.find_by_user_id(current_user.id)), method: :delete do %>
