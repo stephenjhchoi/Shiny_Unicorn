@@ -150,7 +150,7 @@
     height:10px;
     width: 100%;
     margin-bottom: 0;
-    margin-left: 20px;
+    margin-left: 0 10px;
   }
 }
 
@@ -176,7 +176,11 @@
 
 }
 
-
+.venue-score {
+  margin-left: 10px;
+  color: $champagne-gold;
+  width: 60px;
+}
 
 
 
