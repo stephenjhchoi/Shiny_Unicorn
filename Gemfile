@@ -38,6 +38,8 @@ end
 
 gem 'bootstrap-slider-rails'
 
+gem 'rails-assets-jquery-ui', source: 'https://rails-assets.org'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
