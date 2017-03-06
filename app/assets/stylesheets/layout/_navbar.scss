@@ -1,10 +1,15 @@
 /* Main class */
 .unicorn-navbar {
   height: 40px;
-  z-index: 1000;
+  z-index: 1500;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #ECEBEC;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
 }
 
 .logo{
