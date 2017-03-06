@@ -34,11 +34,12 @@
   <% else %>
     <div>
       <%= link_to new_user_session_path do %>
-        <i class="fa fa-user-plus" aria-hidden="true" style="font-size: 28px;"></i>
+        <%= image_tag 'log-in.svg', class:"img_format" %>
+        <!-- <i class="fa fa-user-plus" aria-hidden="true" style="font-size: 28px;"></i> -->
       <% end %>
-      <%= link_to user_session_path do %>
-        <i class="fa fa-sign-in" aria-hidden="true" style="font-size: 28px;"></i>
-      <% end %>
+      <%# link_to user_session_path do %>
+<!--         <i class="fa fa-sign-in" aria-hidden="true" style="font-size: 28px;"></i>
+ -->      <%# end %>
     </div>
   <% end %>
 </div>
