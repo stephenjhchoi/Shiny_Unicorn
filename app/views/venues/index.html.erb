@@ -1,5 +1,21 @@
 
 <!-- http://www.caever.com.au/ -->
+<p>What kind of magical mood do you want?</p>
+
+  <form action="">
+    <select name='mood' class="form-control1 custom-select box_size_cat">
+      <option value="" selected>Mood</option>
+      <% Venue::MOODS.each do |mood| %>
+        <option value="<%= mood %>"><%= mood %></option>
+      <% end %>
+    </select>
+
+    <input type="hidden" name="area" value="<%=params[:area]%>">
+
+    <button type="submit">Apply</button>
+  </form>
+
+
 
 <div class="container-fluid">
   <div class="row">
