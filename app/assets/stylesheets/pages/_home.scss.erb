@@ -68,8 +68,8 @@ html * {
   font-family: 'Quicksand', sans-serif;
   font-size: 38px;
   font-weight: bold;
-  margin-top: 109px;
-  margin-bottom: 45px;
+  margin-top: 54px;
+  margin-bottom: 62px;
   line-height: 1.8;
   letter-spacing: 0.01em;
   color: #FFFFFF;
@@ -88,64 +88,85 @@ html * {
 
 
 #search-input {
+  margin-bottom: 26px;
   background-color: transparent;
   border: 0;
-  font-size: 27px;
-  width: 420px;
+  font-size: 29px;
+  width: 450px;
   color: #fff;
-  border-bottom: 1px solid $mint;
+  border-bottom: 2px solid $mint;
+  // text-shadow: 0px 0px 3px white;
   &:focus {
     outline:0;
   }
 }
 
 
-.venues {
-  .venue-element{
-    background: rgba(255,255,255,0.05);
-    display: inline-block;
-    width: 110px;
-    padding: 18px 0;
-    &:hover {
-      background: rgba(255,255,255,0.1);
+.element-active{
+  border: 2px solid $mint;
+  text-shadow: 0px 0px 3px white;
+  background: rgba(255,255,255,0.3);
+  &:hover {
+    border: 2px solid rgba(3,208,182,0.5);
+    background: rgba(255,255,255,0.28);
+    text-shadow: 0px 0px 0px white;
+  }
+}
+
+.unselected-hoverable {
+  border: 2px solid rgba(255,255,255,0);
+  background: rgba(255,255,255,0.2);
+  &:hover {
+      border: 2px solid $mint;
+      text-shadow: 0px 0px 3px white;
+      background: rgba(255,255,255,0.3);
     }
-    .venue-checkbox {
-     display: none;
-     vertical-align: middle;
-
-     & + label:before {
-
-     font-size: 30px;
-     font-family: FontAwesome;
-     // content: url('<%#= image_path "bar2.svg" %>');
-     // padding: 16px;
-     display: inline-block;
-     background-repeat: no-repeat;
-     vertical-align: middle;
-     background-size: 50%;
-     cursor: pointer;
-     }
-   }
-   #checkbox-restaurant + label:before {
-       content: "\f0f5";
-     }
-     #checkbox-bar + label:before {
-       content: "\f000";
-     }
-     #checkbox-cafe + label:before {
-       content: "\f0f4";
-     }
-   &:first-child {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-  }
-  &:last-child {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-
 }
-}
+
+// .venues {
+//   .venue-element{
+//     // background: rgba(255,255,255,0.2);
+//     box-shadow: 5px 5px 5px -3px rgba(0,0,0,0.2);
+//     display: inline-block;
+//     width: 110px;
+//     padding: 18px 0;
+//     margin: 1px;
+
+//     .venue-checkbox {
+//      display: none;
+//      vertical-align: middle;
+
+//      & + label:before {
+
+//      font-size: 30px;
+//      font-family: FontAwesome;
+//      display: inline-block;
+//      background-repeat: no-repeat;
+//      vertical-align: middle;
+//      background-size: 50%;
+//      cursor: pointer;
+//      }
+//    }
+//    #checkbox-restaurant + label:before {
+//        content: "\f0f5";
+//      }
+//      #checkbox-bar + label:before {
+//        content: "\f000";
+//      }
+//      #checkbox-cafe + label:before {
+//        content: "\f0f4";
+//      }
+//    &:first-child {
+//     border-top-left-radius: 5px;
+//     border-bottom-left-radius: 5px;
+//   }
+//   &:last-child {
+//     border-top-right-radius: 5px;
+//     border-bottom-right-radius: 5px;
+//   }
+
+// }
+// }
 
 
 .row-venue {
@@ -188,7 +209,7 @@ html * {
 }
 
 .venue-glow-btn:hover, .venue-glow-btn.active {
-  text-shadow: 0px 0px 5px white;
+  // text-shadow: 0px 0px 3px white;
   // color: $mint;
 }
 
@@ -233,3 +254,102 @@ html * {
 .search-area{
   margin-bottom: -120px;
 }
+
+.row-venue{
+  display:flex;
+  justify-content: space-around;
+  width:334px;
+  margin: 0 auto;
+}
+
+.venue-button{
+  float:left;
+  width: 80px;
+  vertical-align: middle;
+  // padding-top: 10px;
+
+
+}
+
+.ticked{
+  width:110px;
+  border: 2px solid $mint;
+  text-shadow: 0px 0px 3px white;
+  background: rgba(255,255,255,0.3);
+  &:hover {
+    border: 2px solid rgba(3,208,182,0.5);
+    background: rgba(255,255,255,0.25);
+    text-shadow: 0px 0px 0px white;
+  }
+}
+
+.unticked{
+  width:110px;
+  border: 2px solid rgba(3,208,182,0.0);
+  background: rgba(255,255,255,0.25);
+  text-shadow: 0px 0px 0px white;
+  &:hover {
+    border: 2px solid $mint;
+    text-shadow: 0px 0px 3px white;
+    background: rgba(255,255,255,0.3);
+  }
+}
+
+.venue-checkbox {
+     display: none;
+     vertical-align: middle;
+     padding: 10px;
+     cursor: pointer;
+
+     & + label:before {
+
+     font-size: 30px;
+     font-family: FontAwesome;
+     display: inline-block;
+     background-repeat: no-repeat;
+     vertical-align: middle;
+     background-size: 50%;
+
+    }
+  }
+
+.fa-venue {
+  font-size: 40px;
+  margin-top: 5px;
+  position: relative;
+  left: 3px;
+}
+
+
+#venue-r {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+#venue-c {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+
+.ui-menu{
+  background: rgba(255,255,255,0.6);
+}
+
+
+
+
+
+  // .venue-button-r{
+  //   border-radius: 5px;
+  // }
+
+   // #checkbox-restaurant + label:before {
+   //     content: "\f0f5";
+   //   }
+   //   #checkbox-bar + label:before {
+   //     content: "\f000";
+   //   }
+   //   #checkbox-cafe + label:before {
+   //     content: "\f0f4";
+   //   }
