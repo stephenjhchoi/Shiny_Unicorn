@@ -1,5 +1,28 @@
 
 <!-- http://www.caever.com.au/ -->
+<p>What kind of magical mood do you want?</p>
+
+  <form action="">
+    <input type="hidden" name="area" value="<%=params[:area]%>">
+    <% if params[:restaurant] %>
+      <input type="hidden" name="restaurant" value="<%=params[:restaurant]%>">
+    <% end %>
+    <% if params[:bar] %>
+      <input type="hidden" name="bar" value="<%=params[:bar]%>">
+    <% end  %>
+    <% if params[:cafe] %>
+      <input type="hidden" name="cafe" value="<%=params[:cafe]%>">
+    <% end  %>
+    <select name='mood' class="form-control1 custom-select box_size_cat">
+      <option value="" selected>Mood</option>
+      <% Venue::MOODS.each do |mood| %>
+        <option value="<%= mood %>"><%= mood %></option>
+      <% end %>
+    </select>
+    <button type="submit">Apply</button>
+  </form>
+
+
 
 <div class="container-fluid">
   <div class="row">
@@ -29,34 +52,39 @@
                       <%= image_tag 'chili.svg', class:"img_format2" %>
                     </div>
                       <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" style="width: 90%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-success" role="progressbar" style="width: <%= venue.unicorn_score * 10 %>%" aria-valuenow="<%= venue.unicorn_score * 10 %>" aria-valuemin="0" aria-valuemax="100">
                         </div>
                       </div>
+                        <span class="venue-score"><%= venue.unicorn_score %>/10</span>
                     </div>
                     <div class="img_progress">
                     <div class="text-center" data-toggle="tooltip" data-placement="top" title="Couch Comfortness Level">
                       <%= image_tag 'sofa.svg', class:"img_format2" %>
                     </div>
                       <div class="progress">
-                        <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 55%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" style="width: <%= venue.couch_comfort * 10 %>%" aria-valuenow="<%= venue.couch_comfort * 10 %>" aria-valuemin="0" aria-valuemax="100">
                         </div>
                       </div>
+                        <span class="venue-score"><%= venue.couch_comfort %>/10</span>
                     </div>
                     <div class="img_progress">
                     <div class="text-center" data-toggle="tooltip" data-placement="top" title="Noise Level">
                       <%= image_tag 'noise.svg', class:"img_format2" %>
                     </div>
                       <div class="progress">
-                        <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-warning" role="progressbar" style="width: <%= venue.noise_level * 10 %>%" aria-valuenow="<%= venue.noise_level * 10 %>" aria-valuemin="0" aria-valuemax="100">
                         </div>
                       </div>
+                      <span class="venue-score"><%= venue.noise_level %>/10</span>
                     </div>
                   </div>
                 </div>
                 <div class="stream-body2">
                   <a href="#"><i class="fa fa-instagram"></i></a>
 
-                  <span><%= venue.area %>  |  <%= '£  ' * venue.price %></span>
+
+                  <span><%= venue.area %> <%= '£' * venue.price %></span>
+
 
                   <% if venue.favorite?(current_user) %>
                     <%= link_to favorite_path(venue.favorites.find_by_user_id(current_user.id)), method: :delete do %>
@@ -87,6 +115,32 @@
   $(document).ready(function() {
     var handler = Gmaps.build('Google');
     handler.buildMap({ internal: { id: 'map' }, provider: {styles: [{"featureType":"water","stylers":[{"visibility":"on"},{"color":"#b5cbe4"}]},{"featureType":"landscape","stylers":[{"color":"#efefef"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#83a5b0"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#bdcdd3"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#e3eed3"}]},{"featureType":"administrative","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"road"},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":20}]},{},{"featureType":"road","stylers":[{"lightness":20}]}]} }, function() {
+
+
+      // var markers = []
+      // <%# @events.each do |event| %>
+      //   <%# @hash = Gmaps4rails.build_markers(event) do |event, marker| %>
+      //     markers.push(handler.addMarkers([
+      //       {
+      //         lat: <%#= event.latitude %>,
+      //         lng: <%#= event.longitude %>,
+      //         picture: {
+      //           url: "<%#= image_path "unicorn-emoji.png" %>",
+      //           width:  50,
+      //           height: 50
+      //         }
+      //       }
+      //     ]));
+      //   <%# end %>
+      // <%# end %>
+      // markers.forEach(function(marker) {
+      //   handler.bounds.extendWith(marker);
+      // });
+      // handler.fitMapToBounds();
+
+
+
+
 
       markers_json = <%=raw @hash.to_json %>;
       markers = _.map(markers_json, function(marker_json){
