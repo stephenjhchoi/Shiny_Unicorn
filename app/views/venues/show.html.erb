@@ -1,24 +1,42 @@
+
+
 <div class="banner" style="background-image: url('<%= cl_image_path @venue.photo.path %>');">
+  <div class="banner-text">
+    <div class='venue-name'>
+      <h1><%= @venue.name.upcase %></h1>
+    </div>
+    <div class="venue-mood">
+      <h3><%= @venue.mood.capitalize %></h3>
+    </div>
+    <div class="venue-area">
+      <p><%= @venue.area %> | <%= '£ ' * @venue.price %></p>
+    </div>
+    <div class='socialrow'>
+    <%= link_to '#' do %>
+    <div class='socialbutton instagram'>
+      <i class="fa fa-instagram"></i>
+    </div>
+    <% end %>
+    <%= link_to '#' do %>
+    <div class='socialbutton facebook'>
+      <i class="fa fa-facebook"></i>
+    </div>
+    <% end %>
+    <%= link_to '#' do %>
+    <div class='socialbutton twitter'>
+      <i class="fa fa-twitter"></i>
+    </div>
+    <% end %>
+  </div>
+  </div>
 </div>
-
-
 
 <div class="top-title-show">
   <div class="row test">
-    <!-- <div class="col-xs-12 col-md-8 "> -->
     <div class='venue-name'>
       <h2><%= @venue.name.upcase %></h2>
     </div>
-    <!-- </div> -->
-    <!-- <div class="col-xs-12 col-md-8"> -->
-
-       <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Add to Favorites
-      </button> -->
-      <!-- <a href="#"><i class="fa fa-heart"></i></a> -->
-
-   <!-- </div> -->
- </div>
+  </div>
 </div>
 
 <div class="bottom-title-show">
@@ -83,7 +101,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-5 col-md-offset-2">
-        <p><strong>Venue Details</strong></p>
+        <h4><strong>Venue Details</strong></h4>
         <br>
         <p><strong>Price</strong></p>
         <%= @venue.price %>

@@ -1,13 +1,14 @@
 .banner {
   color: white;
   text-align: center;
-  height: 89vh;
+  height: 75vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 10vh;
+
 }
 .banner h1 {
   font-size: 50px;
@@ -21,6 +22,28 @@
   margin-bottom: 20px;
 }
 
+.banner-text{
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(0,0,0,.65);
+  width: 100%;
+  left: 50%;
+  top: 50%;
+
+  h1 {
+    color: $champagne-gold;
+    // color: rgba(255, 255, 255, 0.74);
+    font-weight: 100;
+    font-family: freight-big-pro;
+    letter-spacing: 4.3px;
+  }
+}
+
+.venue-mood h3{
+  letter-spacing: 4.3px;
+  color: white;
+  font-family: freight-big-pro;
+}
 
 .banner-content{
   margin: 0px;
@@ -38,6 +61,7 @@
 }
 
 .socialrow {
+  margin: auto;
   width: 130px;
   display: flex;
   align-items: center;
@@ -45,6 +69,7 @@
   margin-top: 16px;
   margin-bottom: 16px;
   // position: relative;
+
   a {
     text-decoration: none;
   }
@@ -133,6 +158,10 @@
   color: rgba(255,255,255,.8);
   font-weight: 600;
   font-size: 40px;}
+
+.venue-name{
+  color: $champagne-gold;
+}
 
 // .socialbuttonicon {
 //   max-height: 50%;

@@ -9,12 +9,20 @@
 //= require bootstrap-datetimepicker
 //= require underscore
 //= require gmaps/google
+//= require smoothscroll
 //= require_tree .
 
 
 $('.venue-glow-btn').on('click', function() {
   $(this).toggleClass("active");
 });
+
+
+$( document ).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
+
+// $('#example').tooltip(options)
 
 
 
