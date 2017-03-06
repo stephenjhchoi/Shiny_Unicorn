@@ -7,7 +7,7 @@
       <div class="fixed-cards">
         <div class="row">
           <% @venues.each_with_index do |venue, index| %>
-          <div class="col-xs-12 col-md-6" id="venue-<%= %>">
+          <div class="col-xs-12 col-md-6" id="venue-<%= venue.id %>">
             <div class="stream-entry-inner" >
               <%=  link_to venue_path(venue) do %>
               <div class="stream-image" style="background-image: url(<%= cl_image_path venue.photo.path %>)">
@@ -25,21 +25,27 @@
                   </div>
                   <div class="stream-body-bars">
                     <div class="img_progress">
-                      <%= image_tag 'chili.svg', class:"img_format" %>
+                    <div class="text-center" data-toggle="tooltip" data-placement="top" title="Hotness Level">
+                      <%= image_tag 'chili.svg', class:"img_format2" %>
+                    </div>
                       <div class="progress">
                         <div class="progress-bar progress-bar-success" role="progressbar" style="width: 90%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                         </div>
                       </div>
                     </div>
                     <div class="img_progress">
-                      <%= image_tag 'sofa.svg', class:"img_format" %>
+                    <div class="text-center" data-toggle="tooltip" data-placement="top" title="Couch Comfortness Level">
+                      <%= image_tag 'sofa.svg', class:"img_format2" %>
+                    </div>
                       <div class="progress">
                         <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 55%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                         </div>
                       </div>
                     </div>
                     <div class="img_progress">
-                      <%= image_tag 'noise.svg', class:"img_format" %>
+                    <div class="text-center" data-toggle="tooltip" data-placement="top" title="Noise Level">
+                      <%= image_tag 'noise.svg', class:"img_format2" %>
+                    </div>
                       <div class="progress">
                         <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                         </div>
@@ -80,25 +86,31 @@
 <script>
   $(document).ready(function() {
     var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function() {
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.buildMap({ internal: { id: 'map' }, provider: {styles: [{"featureType":"water","stylers":[{"visibility":"on"},{"color":"#b5cbe4"}]},{"featureType":"landscape","stylers":[{"color":"#efefef"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#83a5b0"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#bdcdd3"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#e3eed3"}]},{"featureType":"administrative","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"road"},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":20}]},{},{"featureType":"road","stylers":[{"lightness":20}]}]} }, function() {
+
+      markers_json = <%=raw @hash.to_json %>;
+      markers = _.map(markers_json, function(marker_json){
+        marker = handler.addMarker(marker_json);
+        _.extend(marker, marker_json);
+        return marker;
+      });
+
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
 
-      // markers.each do |marker|
-      // google.maps.event.addListener(marker.getServiceObject(), 'click', function(){alert();});
-      // document.querySelector('.id').scrollIntoView({ behavior: 'smooth' });
-      // end
+      for (var i = 0; i <  markers.length; ++i) {
+        var marker = markers[i];
+        google.maps.event.addListener(marker.serviceObject, 'click', scrollToVenue(marker, event));
+      }
 
-      for(i = 0; i < markers.length; i++) {
-        google.maps.event.addListener(markers[i].getServiceObject(), 'click', function(m, a){
-          console.log(a);
-          // console.log(markers[i].getServiceObject());
-          // var venue_id =  "" + m.getServiceObject().getPosition().lat() + m.getServiceObject().getPosition().lng();
-            // .replace(/-|\./g, '')
-          // console.log(venue_id);
-          // document.querySelector('#venue-' + i).scrollIntoView({behavior: 'smooth'});
-        });
+      function scrollToVenue(marker, event){
+        return function(event){
+          var venue = '#venue-' + marker.id;
+          document.querySelector(venue).scrollIntoView({ behavior: 'smooth' });
+          $('.stream-entry-inner').removeClass('border-gold');
+          $(venue + ' .stream-entry-inner').addClass('border-gold');
+
+        }
       }
 
       if (markers.length == 0) {

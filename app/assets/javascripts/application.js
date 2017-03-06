@@ -32,6 +32,13 @@ $('.venue-glow-btn').on('click', function() {
 });
 
 
+$( document ).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
+
+// $('#example').tooltip(options)
+
+
 
 // // Get the <datalist> and <input> elements.
 // var dataList = document.getElementById('json-datalist');

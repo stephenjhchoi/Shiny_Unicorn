@@ -40,6 +40,10 @@
   border-top-left-radius: 5px;
 }
 
+.stream-image:hover{
+  opacity: 0.5;
+}
+
 .card_description{
   position: absolute;
   bottom: -4px;
@@ -150,10 +154,11 @@
   }
 }
 
-// .img_format{
-//   width: 20px;
+.img_format2{
+  width: 26px;
+  margin: 0 15px
 
-// }
+}
 
 .venue-card-link{
   position: absolute;
@@ -164,6 +169,13 @@
   z-index: 2;
   opacity: 0;
 }
+
+.border-gold{
+  border: 2px solid $champagne-gold;
+  opacity: 0.6;
+
+}
+
 
 
 
