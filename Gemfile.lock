@@ -186,6 +186,7 @@ GEM
     rails-assets-jquery-ui (1.12.1)
       rails-assets-jquery (>= 1.6)
     rails-assets-seiyria-bootstrap-slider (9.7.2)
+    rails-assets-smoothscroll (0.3.4)
     rails-assets-underscore (1.8.3)
     rails-dom-testing (2.0.2)
       activesupport (>= 4.2.0, < 6.0)
@@ -280,6 +281,7 @@ DEPENDENCIES
   rails (= 5.0.1)
   rails-assets-jquery-ui!
   rails-assets-seiyria-bootstrap-slider!
+  rails-assets-smoothscroll!
   rails-assets-underscore!
   redis
   sass-rails

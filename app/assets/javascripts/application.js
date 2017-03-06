@@ -10,6 +10,7 @@
 //= require bootstrap-datetimepicker
 //= require underscore
 //= require gmaps/google
+//= require smoothscroll
 //= require_tree .
 
 $( document ).ready(function() {
@@ -33,25 +34,15 @@ $( function() {
 
 
 
-$( document ).ready(function() {
-$("#ex9").slider({
-  precision: 1,
-  value: 0 // Slider will instantiate showing 8.12 due to specified precision
-});
+$('.venue-glow-btn').on('click', function() {
+  $(this).toggleClass("active");
 });
 
 
-$( document ).ready(function() {
-  $("#ex11").slider({step: 1, min: 0, max: 10
-  });
+$( document ).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip()
 });
 
-
-// $('.venue-element').on('click', function() {
-//   // $(this).children().find('.venue-glow-btn').toggleClass("active");
-//   $(this).toggleClass("element-active");
-//   $(this).toggleClass("unselected-hoverable");
-// });
 
 $('.venue-button').click(function () {
   $(this).toggleClass("ticked");

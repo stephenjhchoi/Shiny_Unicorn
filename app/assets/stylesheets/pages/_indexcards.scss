@@ -40,6 +40,10 @@
   border-top-left-radius: 5px;
 }
 
+.stream-image:hover{
+  opacity: 0.5;
+}
+
 .card_description{
   position: absolute;
   bottom: -4px;
@@ -146,12 +150,13 @@
     height:10px;
     width: 100%;
     margin-bottom: 0;
-    margin-left: 20px;
+    margin-left: 0 10px;
   }
 }
 
-.img_format{
-  width: 20px;
+.img_format2{
+  width: 26px;
+  margin: 0 15px
 
 }
 
@@ -165,6 +170,17 @@
   opacity: 0;
 }
 
+.border-gold{
+  border: 2px solid $champagne-gold;
+  opacity: 0.6;
+
+}
+
+.venue-score {
+  margin-left: 10px;
+  color: $champagne-gold;
+  width: 60px;
+}
 
 
 

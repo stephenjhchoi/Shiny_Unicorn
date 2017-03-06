@@ -28,6 +28,8 @@ class VenuesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
       marker.lat venue.latitude
       marker.lng venue.longitude
+      marker.infowindow render_to_string(partial: "/venues/map_box", locals: { venue: venue })
+      marker.json({ id: venue.id })
     end
 
     # @favorite = Favorite.new
@@ -48,6 +50,7 @@ class VenuesController < ApplicationController
 
     @booking = Booking.new
 
+    @review = Review.new
 
     if user_signed_in?
     @is_favorite = @venue.favorite?(current_user)

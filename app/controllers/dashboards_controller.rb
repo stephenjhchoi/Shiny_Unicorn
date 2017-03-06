@@ -10,6 +10,8 @@ class DashboardsController < ApplicationController
     @hash = Gmaps4rails.build_markers(current_user.venues) do |venue, marker|
       marker.lat venue.latitude
       marker.lng venue.longitude
+      marker.infowindow render_to_string(partial: "/venues/map_box", locals: { venue: venue })
+
     end
   end
 end

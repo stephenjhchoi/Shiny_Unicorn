@@ -1,0 +1,23 @@
+<div class="map_box">
+  <div class="align-items">
+    <h4 class="venue-title"><%= venue.name %></h4>
+
+  </div>
+  <h5><%= venue.mood.capitalize %></h5>
+  <p><%= venue.address %></p>
+  <p><%= venue.area.upcase %></p>
+
+  <div class="stream-body-bars">
+    <div class="img_progress">
+      <div class="text-center" data-toggle="tooltip" data-placement="top" title="Hotness Level">
+        <%= image_tag 'chili.svg', class:"img_format2" %>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" style="width: 90%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+    <%= link_to "Details", venue_path(venue), target: :blank, class: "btn btn-primary details-center" %>
+</div>
