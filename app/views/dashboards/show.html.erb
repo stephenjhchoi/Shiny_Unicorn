@@ -1,103 +1,52 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-3 dashboard-left">
-      <div class=" profile-box text-center profile-space">
-        <%= image_tag "unicorn-icon.svg", style: 'width: 80px; margin-top: 41px;', class: "user-img" %>
-        <h3>Toddler Unicorn</h3>
-        <span>Preferred Location: </span>
-        <select name='area' class="form-control1 custom-select box_size_cat">
-        <option value="" selected>Choose Area</option>
-        <% Venue::AREAS.each do |area| %>
-          <option value="<%= area %>"><%= area %></option>
-        <% end %>
-        </select>
-        <!-- <p class="pref-loc">My preferred location: Shoreditch</p> -->
-        <div class="shiny-btn"><%= link_to 'Edit User Profile',edit_user_registration_path %></div>
-      </div>
-      <div class="wait">
-        <div id="map">
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-9 dashboard-box">
-      <div class="row">
-          <p class="unicorn-details">My Shiny Unicorn Profile</p>
-      </div>
-      <div>
-    <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#favorites" aria-controls="favorites" role="tab" data-toggle="tab">My Favorites <i class="fa fa-heart" aria-hidden="true"></i></a></li>
-          <li role="presentation"><a href="#bookings" aria-controls="bookings" role="tab" data-toggle="tab">My Bookings</a></li>
-        </ul>
-
-    <!-- Tab panes -->
-        <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="favorites">
-            <div class="row">
-                  <!-- <div class="my-favorites">
-                    <p>My favorites <i class="fa fa-heart" aria-hidden="true"></i></p>
-                  </div> -->
-                  <div class="col-md-12 dashboard-scroll">
-                    <% current_user.venues.first(3).each do |venue| %>
-                      <%= render 'venues/venuecard', venue: venue %>
-                    <% end %>
-                  </div>
-              </div>
-          </div>
-
-          <div role="tabpanel" class="tab-pane" id="bookings">
-          <div class="row">
-              <% current_user.bookings.each do |booking| %>
-              <%= render 'dashboards/bookingcard', booking: booking %>
-              <% end %>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-      <!-- Shiny Unicorn's recommendations -->
-  <div class="row">
-    <div class="col-md-12 recommendations-box">
-      <div class="row">
-        <div class="recommendations unicorn-details">
-          <p>Shiny Unicorn's Recommendations</p>
-        </div>
-      </div>
-    <div class="row">
-      <% @recommended_venues.first(3).each do |venue| %>
-        <%= render 'venues/venuecard', venue: venue %>
-      <% end %>
-    </div>
+ <div class="header-wrapper">
+  <div class="header-container">
+    <div class="profile-header">
+      <%= image_tag "unicorn-icon.svg", id: "user-img"%>
+      <p><%= current_user.first_name %></p>
+      <p>123 points</p>
     </div>
   </div>
 </div>
 
-<br>
-<br>
+<div class="dashboard-container">
+  <div class="row unlocked-badges">
+    <p>Unlocked Badges</p>
+
+    <ul class="list-inline badges-list">
+      <li>
+        <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
+        <p>50 points</p>
+      </li>
+      <li>
+        <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
+        <p>50 points</p>
+      </li>
+      <li>
+        <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
+        <p>50 points</p>
+      </li>
+    </ul>
+  </div>
 
 
+  <div class="row favorite-spots">
+    <p>Favorite Spots</p>
+    <div class="col-md-12">
+      <% current_user.venues.first(3).each do |venue| %>
+        <%= render 'venues/venuecard', venue: venue %>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class="row bookings">
+    <p>Bookings</p>
+    <div class="col-md-12">
+    <% current_user.bookings.each do |booking| %>
+      <%= render 'dashboards/bookingcard', booking: booking %>
+    <% end %>
+    </div>
+  </div>
 
 
-
-
-
- <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-   $(document).ready(function() {
-     var handler = Gmaps.build('Google');
-     handler.buildMap({ internal: { id: 'map' } }, function() {
-       markers = handler.addMarkers(<%= raw @hash.to_json %>);
-       handler.bounds.extendWith(markers);
-       handler.fitMapToBounds();
-       if (markers.length == 0) {
-         handler.getMap().setZoom(2);
-       } else if (markers.length == 1) {
-         handler.getMap().setZoom(14);
-       }
-     });
-   });
-  <% end %>
-<% end %>
+</div>
