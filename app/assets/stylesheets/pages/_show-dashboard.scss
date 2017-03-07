@@ -175,10 +175,30 @@
 
 
 
+.header-wrapper{
+  background-color: $brand-primary;
+}
 
 .profile-header{
   font-size: 30px;
   display: block;
   padding: 20px 0;
   text-align: center;
+}
+
+#user-img {
+  top: 10px;
+  right: 10px;
+  width: 100px;
+}
+
+.unlocked-badges {
+  top: 10px;
+  right: 10px;
+}
+
+.badges-list li {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
 }

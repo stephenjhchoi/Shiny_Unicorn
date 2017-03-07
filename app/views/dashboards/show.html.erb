@@ -1,8 +1,10 @@
-<div class="header-container">
-  <div class="profile-header">
-    <%= image_tag "unicorn-icon.svg", id="user-img"%>
-    <p><%= current_user.name %></p>
-    <p>123 points</p>
+ <div class="header-wrapper">
+  <div class="header-container">
+    <div class="profile-header">
+      <%= image_tag "unicorn-icon.svg", id: "user-img"%>
+      <p><%= current_user.first_name %></p>
+      <p>123 points</p>
+    </div>
   </div>
 </div>
 
@@ -10,28 +12,26 @@
   <div class="row unlocked-badges">
     <p>Unlocked Badges</p>
 
-    <div id="badge-1">
-    <%= image_tag "unicorn-icon.svg", class="unlocked-badges"%>
-    <p>50 points</p>
-    </div>
-
-    <div id="badge-2">
-    <%= image_tag "unicorn-icon.svg", class="unlocked-badges"%>
-    <p>100 points</p>
-    </div>
-
-    <div id="badge-3">
-    <%= image_tag "unicorn-icon.svg", class="unlocked-badges"%>
-    <p>150 points</p>
-    </div>
-
+    <ul class="list-inline badges-list">
+      <li>
+        <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
+        <p>50 points</p>
+      </li>
+      <li>
+        <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
+        <p>50 points</p>
+      </li>
+      <li>
+        <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
+        <p>50 points</p>
+      </li>
+    </ul>
   </div>
 
 
   <div class="row favorite-spots">
     <p>Favorite Spots</p>
-
-    <div class="col-md-12 dashboard-scroll">
+    <div class="col-md-12">
       <% current_user.venues.first(3).each do |venue| %>
         <%= render 'venues/venuecard', venue: venue %>
       <% end %>
@@ -40,10 +40,12 @@
   </div>
 
   <div class="row bookings">
-      <% current_user.bookings.each do |booking| %>
+    <p>Bookings</p>
+    <div class="col-md-12">
+    <% current_user.bookings.each do |booking| %>
       <%= render 'dashboards/bookingcard', booking: booking %>
-      <% end %>
-      </div>
+    <% end %>
+    </div>
   </div>
 
 
