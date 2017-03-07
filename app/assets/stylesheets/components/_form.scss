@@ -1,13 +1,18 @@
+.form-signin-wrapper {
+  border-radius: 4px;
+  background-color: white;
+  margin: 80px 50px;
+  padding: 30px;
+}
+
 .form-wrapper {
   padding: 20px;
   border-radius: 4px;
   background-color: white;
-  border: 1px solid $champagne-gold;
   // line-height: 30px;
 
   h2 {
     margin-top: 0;
-    color: $champagne-gold;
     text-align: center;
   }
 

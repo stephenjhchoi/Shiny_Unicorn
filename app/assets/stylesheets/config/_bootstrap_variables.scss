@@ -13,10 +13,10 @@ $headings-font-family:    $header-font;
 // Semantic color scheme
 // => http://getbootstrap.com/customize/#colors
 $gray-base:       $gray;
-$brand-primary:   #574B90;
-$brand-success:   #FC85AE;
+$brand-primary:   #03D0B6;
+$brand-success:   $green;
 $brand-info:      $yellow;
-$brand-danger:    #9E579D;
+$brand-danger:    $red;
 $brand-warning:   $orange;
 
 // Buttons / inputs radius

@@ -6,10 +6,6 @@
   align-items: center;
   justify-content: space-between;
   background: #ECEBEC;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  right: 0;
   padding: 10px 50px;
   img {
     height: 30px;
@@ -26,6 +22,10 @@
 }
 
 .unicorn-navbar-home {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
   background-color: transparent;
   a {
     color: white;
@@ -196,6 +196,8 @@
 .nav-corner-right{
   display: flex;
   align-items: center;
+  width: 300px;
+  justify-content: space-between;
 }
 
 .logo-nav{
