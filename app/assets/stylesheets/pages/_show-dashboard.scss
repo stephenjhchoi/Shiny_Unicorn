@@ -41,15 +41,20 @@
   background-color: $champagne-gold;
   border: 2px solid $champagne-gold;
   transition: all 0.5s ease;
-  // padding: 14px 30px 12px;
+  width: 100%;
   margin: 13px 0;
   padding: 7px 9px 7px;
-  font-size: 14px;
+  font-size: 16px;
+  color: white;
+  padding: 14px 30px 12px;
   a{
     color: white;
     text-decoration: none;
+    font-size: 16px;
   }
 }
+
+
 .shiny-btn:hover {
   background-color: #fff;
   border-color: $champagne-gold;
