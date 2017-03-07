@@ -1,18 +1,9 @@
-<div class="container">
-  <div class="show-card ">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3 title-spots" style="background-color: white; padding-bottom: 20px; border-radius: 5px; margin-top: 40px;" >
-        <h3>Make a booking</h3>
-        <%= simple_form_for [@venue, @booking] do |f| %>
-        <%= f.association :spot, collection: @venue.spots, :label_method => lambda { |spot|  spot.name }, prompt: "Select your spot" %>
-        <%= f.input :date, as: :string, placeholder: "Select your date" %>
-        <%= f.submit "Book", class: "shiny-btn" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
+<h3>Book a spot</h3>
+<%= simple_form_for [@venue, @booking] do |f| %>
+  <%= f.association :spot, collection: @venue.spots, :label_method => lambda { |spot|  spot.name }, prompt: "Select your spot" %>
+  <%= f.input :date, as: :string, placeholder: "Select your date" %>
+  <%= f.submit "Book", class: "shiny-btn" %>
+<% end %>
 
 <% content_for(:after_js) do %>
 <script type="text/javascript">

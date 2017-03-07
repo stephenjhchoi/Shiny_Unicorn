@@ -10,10 +10,7 @@ class DashboardsController < ApplicationController
     @hash = Gmaps4rails.build_markers(current_user.venues) do |venue, marker|
       marker.lat venue.latitude
       marker.lng venue.longitude
-      marker.infowindow = "<%= @venues.first.name %>"
-
-
-
+      # marker.infowindow = "<%= @venues.first.name %>"
     end
   end
 end

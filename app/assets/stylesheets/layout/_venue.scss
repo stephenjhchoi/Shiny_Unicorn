@@ -1,0 +1,26 @@
+.venue-wrapper {
+  display: flex;
+  padding: 50px 100px;
+}
+.venue-details {
+  flex: 1;
+  margin-right: 20px;
+}
+.venue-profile {
+  background: #efefef;
+  padding: 30px;
+  border-radius: 5px;
+}
+.venue-spots {
+  background: #efefef;
+  padding: 30px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.venue-booking {
+  width: 500px;
+  height: 350px;
+  background: #efefef;
+  padding: 30px;
+  border-radius: 5px;
+}
