@@ -117,40 +117,40 @@
     handler.buildMap({ internal: { id: 'map' }, provider: {styles: [{"featureType":"water","stylers":[{"visibility":"on"},{"color":"#b5cbe4"}]},{"featureType":"landscape","stylers":[{"color":"#efefef"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#83a5b0"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#bdcdd3"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#e3eed3"}]},{"featureType":"administrative","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"road"},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":20}]},{},{"featureType":"road","stylers":[{"lightness":20}]}]} }, function() {
 
 
-      // var markers = []
-      // <%# @events.each do |event| %>
-      //   <%# @hash = Gmaps4rails.build_markers(event) do |event, marker| %>
-      //     markers.push(handler.addMarkers([
-      //       {
-      //         lat: <%#= event.latitude %>,
-      //         lng: <%#= event.longitude %>,
-      //         picture: {
-      //           url: "<%#= image_path "unicorn-emoji.png" %>",
-      //           width:  50,
-      //           height: 50
-      //         }
-      //       }
-      //     ]));
-      //   <%# end %>
-      // <%# end %>
-      // markers.forEach(function(marker) {
-      //   handler.bounds.extendWith(marker);
-      // });
-      // handler.fitMapToBounds();
-
-
-
-
-
-      markers_json = <%=raw @hash.to_json %>;
-      markers = _.map(markers_json, function(marker_json){
-        marker = handler.addMarker(marker_json);
-        _.extend(marker, marker_json);
-        return marker;
+      var markers = []
+      <% @venues.each do |venue| %>
+        <% @hash = Gmaps4rails.build_markers(venue) do |venue, marker| %>
+          markers.push(handler.addMarkers([
+            {
+              lat: <%= venue.latitude %>,
+              lng: <%= venue.longitude %>,
+              picture: {
+                url: "<%= image_path "unicorn-emoji.png" %>",
+                width:  50,
+                height: 50
+              }
+            }
+          ]));
+        <% end %>
+      <% end %>
+      markers.forEach(function(marker) {
+        handler.bounds.extendWith(marker);
       });
-
-      handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
+
+
+
+
+
+      // markers_json = <%=raw @hash.to_json %>;
+      // markers = _.map(markers_json, function(marker_json){
+      //   marker = handler.addMarker(marker_json);
+      //   _.extend(marker, marker_json);
+      //   return marker;
+      // });
+
+      // handler.bounds.extendWith(markers);
+      // handler.fitMapToBounds();
 
       for (var i = 0; i <  markers.length; ++i) {
         var marker = markers[i];
