@@ -1,8 +1,10 @@
-<div class="wrapper-login">
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 ">
-      <h1>Create New Venue</h1><br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="form-wrapper">
+
+
+      <h1 class="text-center">Create New Venue</h1><br>
 
 
         <%= simple_form_for(@venue) do |f| %>
@@ -32,7 +34,7 @@
 
         <%= f.input :unicorn_score, collection: 1..10 %>
 
-       <%= f.submit "Create a venue", class: "shiny-btn" %>
+        <%= f.submit "Create a venue", class: "shiny-btn" %>
         <br>
         <br>
 

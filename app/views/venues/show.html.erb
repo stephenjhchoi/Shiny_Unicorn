@@ -1,5 +1,3 @@
-
-
 <div class="banner" style="background-image: url('<%= cl_image_path @venue.photo.path %>');">
   <div class="banner-text">
     <div class='venue-name'>
@@ -44,81 +42,16 @@
   </div>
 </div>
 
-
-
-
-  <!-- <div class="divider">
-    <hr/>
+<div class="venue-wrapper">
+  <div class="venue-details">
+    <%= render "venue_profile" %>
+      <%= render "venue_spots" %>
+    <%= render "spots/spot-form" %>
   </div>
-
-  <div class="text-center">
-    <div class="align-items">
-      <i class="fa fa-map-marker logo-loca"></i>
-      <h4 class="ven-add"><%# @venue.address %></h4>
-    </div>
-  </div>
-  <div class="text-center">
-    <p><%# @venue.description %></p>
+  <div class="venue-booking">
+    <%= render 'booking/booking-form' %>
   </div>
 </div>
-
-<br><br><br> -->
-
-<div class="container">
-  <div class="show-card">
-    <div class="row">
-      <div class="col-xs-12 col-md-5">
-        <div id="map">
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-5 col-md-offset-2 ">
-        <h4 class="gold-title"><strong>VENUE DETAILS</strong></h4>
-        <p><i class="fa fa-map-marker logo-loca"></i><span><strong>Address: </strong></span></p>
-        <p class="ven-add text-justify"><%= @venue.address %>, <%= @venue.area %>, London </p>
-        <p><strong>Price: </strong><%= '£  ' * @venue.price %></p>
-        <p><strong>Area: </strong><%= @venue.area %></p>
-        <div class="divider2">
-          <hr/>
-        </div>
-        <p class="text-justify"><strong>Description: </strong><%= @venue.description %></p>
-
-        <div class="stream-body-bars">
-          <div class="img_progress">
-          <div class="text-center" data-toggle="tooltip" data-placement="top" title="Hotness Level">
-            <%= image_tag 'chili.svg', class:"img_format2" %>
-          </div>
-            <div class="progress">
-              <div class="progress-bar progress-bar-success" role="progressbar" style="width: 90%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
-          <div class="img_progress">
-          <div class="text-center" data-toggle="tooltip" data-placement="top" title="Couch Comfortness Level">
-            <%= image_tag 'sofa.svg', class:"img_format2" %>
-          </div>
-            <div class="progress">
-              <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 55%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
-          <div class="img_progress">
-          <div class="text-center" data-toggle="tooltip" data-placement="top" title="Noise Level">
-            <%= image_tag 'noise.svg', class:"img_format2" %>
-          </div>
-            <div class="progress">
-              <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<br>
-<!-- <button class="back-btn"><%# link_to "Back", :back %></button> -->
-</div>
-
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -140,107 +73,15 @@
   </div>
 </div>
 
-<!-- form for admin -->
-<%= render 'spots/spot-form' if current_user.admin %>
-<br>
-<!-- showing spots -->
-<div class="container">
-  <div class="show-card">
-    <div class="row">
-      <div class="col-xs-12 col-md-5 title-spots">
-        <!-- <div class="container text-center" style="margin-top: 40px;"> -->
-        <h3>Shiny Unicorn Spots</h3>
-      </div>
-    </div>
+<% render 'reviews/review-form' %>
 
-  <% if @venue.spots %>
-  <div class="row">
-    <% @venue.spots.each do |spot| %>
-    <div class="col-md-6 dashboard">
-      <div class="spot-card" style="background-image: url(<%= cl_image_path spot.photo.path %>); margin: auto;" >
-        <span class="spot-name"><%= spot.name %></span>
-      </div>
-    </div>
-    <% end %>
-  </div>
-  <% end %>
-  </div>
-</div>
-
-<br>
-
-
-
-
-    <!-- <div class="row">
-      <div class="col-xs-12 col-md-5 title-spots">
-        <! <div class="container text-center" style="margin-top: 40px;"> -->
-<!--         <h3>Shiny Unicorn Spots</h3>
- -->        <%# if @venue.spots %>
-        <!-- <div class="row"> -->
-          <%# @venue.spots.each do |spot| %>
-          <!-- <div class="col-xs-12 col-md-6">
-            <div class="spot-card" style="background-image: url(<%# cl_image_path spot.photo.path %>); margin: auto;" >
-             <span class="spot-name"><%# spot.name %></span>
-           </div>
-         </div> -->
-         <%# end %>
-       <!-- </div> -->
-       <%# end %>
-     <!-- </div> -->
-   <!-- </div> -->
-
-
-<!-- booking-form -->
-<%= render 'booking/booking-form' %>
-<br>
-<%= render 'reviews/review-form' %>
-
-
-<!--   <div class="stream-body3">
-    <div class="slider-wrapper">
-      <div class="sliders first">
-        <input id="ex9" type="text" />
-      </div>
-      <div class="sliders second">
-        <input id="ex11" type="text" data-slider-handle="custom" data-slider-value="0"/>
-      </div>
-    </div>
-  </div> -->
-<br>
-<span><button class="back-btn"><%= link_to "Back", :back %></button></span>
-<br>
-
-  <% content_for(:after_js) do %>
+<% content_for :after_js do %>
 <script>
- $(document).ready(function() {
-   var handler = Gmaps.build('Google');
-   handler.buildMap({ internal: { id: 'map' } }, function() {
-     markers = handler.addMarkers(<%= raw @hash.to_json %>);
-     handler.bounds.extendWith(markers);
-     handler.fitMapToBounds();
-     if (markers.length == 0) {
-       handler.getMap().setZoom(2);
-     } else if (markers.length == 1) {
-       handler.getMap().setZoom(14);
-     }
-   });
-
-
-  $("#ex8").slider({
-    tooltip: 'always'
+  $('#create-spot').on('click', function(){
+    $('#create-spot-form').toggleClass('hidden');
   });
-
-  $("#review_hotness_level").slider({
-    tooltip: 'always'
-  });
-
-
- });
-
 </script>
 <% end %>
-
 
 
 

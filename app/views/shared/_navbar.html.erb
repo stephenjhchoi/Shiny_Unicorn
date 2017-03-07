@@ -1,47 +1,33 @@
-<div class="unicorn-navbar">
+<div class="unicorn-navbar <%= content_for?(:navbar_class) ? yield(:navbar_class) : '' %>">
   <%= link_to root_path do %>
-  <!-- Logo -->
-  <div class="logo">
-    <%= image_tag "unicorn-champagne.svg" %>
-    <span>Shiny Unicorn</span>
-  </div>
+    <% if content_for?(:navbar_class) %>
+      <%= image_tag "logo-white.png", id: "logo" %>
+    <% else %>
+      <%= image_tag "logo-dark.png", id: "logo" %>
+    <% end %>
   <% end %>
 
   <% if user_signed_in? %>
     <div class="nav-corner-right">
-      <div>
-       <%= image_tag 'plus.svg' , class: "plus" %>
-      </div>
-      <div class="logo-nav">
       <% if current_user.admin %>
         <%= link_to 'Create Venue', new_venue_path %>
       <% end %>
-      </div>
 
-      <div class="dropdown">
-        <%= image_tag 'unicorn-icon.svg', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <%= link_to dashboard_path do %>
-              <%= image_tag 'user.svg', class:"img_format" %>  <%= t(".profile", default: "Dashboard") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <%= image_tag 'log-in.svg', class:"img_format" %>
-              <span>Log out</span>
-            <% end %>
-          </li>
-        </ul>
-      </div>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        Log out
+      <% end %>
+
+      <%= link_to dashboard_path, class: "dashboard-link" do %>
+        <p>Bobby <strong>0 pts</strong></p>
+        <%= image_tag 'unicorn-1.png', id: "navbar-wagon-menu"%>
+      <% end %>
+
     </div>
 
   <% else %>
-    <div>
-      <%= link_to new_user_session_path do %>
-        <%= image_tag 'log-in.svg', class:"img_format" %>
-      <% end %>
-    </div>
+    <%= link_to new_user_session_path do %>
+      Log in
+    <% end %>
   <% end %>
 </div>
 
