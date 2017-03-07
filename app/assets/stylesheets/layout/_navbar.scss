@@ -1,15 +1,54 @@
 /* Main class */
 .unicorn-navbar {
-  height: 40px;
+  height: 60px;
   z-index: 1500;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #ECEBEC;
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 10px 50px;
+  img {
+    height: 40px;
+  }
+  a {
+    color: black;
+    font-weight: bold;
+    text-shadow: none;
+    font-size: 16px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#logo {
+  height: 30px;
+}
+.dashboard-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    margin: 0;
+    font-weight: lighter;
+    padding-right: 30px;
+  }
+  strong {
+    padding-left: 10px;
+  }
+}
+
+.unicorn-navbar-home {
   position: fixed;
   width: 100%;
   top: 0;
   right: 0;
+  background-color: transparent;
+  border: none;
+  a {
+    color: white;
+  }
 }
 
 .logo{
@@ -29,7 +68,6 @@
   color: $champagne-gold;
  }
 }
-
 
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -177,6 +215,8 @@
 .nav-corner-right{
   display: flex;
   align-items: center;
+  width: 400px;
+  justify-content: space-between;
 }
 
 .logo-nav{

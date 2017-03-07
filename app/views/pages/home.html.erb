@@ -1,3 +1,8 @@
+<% content_for(:navbar_class, "unicorn-navbar-home") %>
+
+
+
+
 <div class="banner-home">
   <div class="banner-content">
     <h1 class="title">
@@ -7,104 +12,36 @@
       for you!
     </h1>
     <form action="<%= venues_path %>" class="form-inline">
-
-
       <div class="search-area">
-        <!-- <p>What neighborhood do you want to go?</p> -->
         <input type="search-text" name= "area" id="search-input" list="areas" placeholder="What neighborhood is your date?" autofocus>
-
         <% Venue::AREAS.each do |area| %>
         <option value="<%= area %>"><% area %></option>
         <% end %>
-
       </div>
 
-
-   <!--    <div class="row-venue">
-        <ul class="list-inline venues">
-
-          <li class="venue-element unselected-hoverable">
-            <div class="venue-type">
-              <input name='restaurant' id="checkbox-restaurant" class="venue-checkbox" type="checkbox" />
-              <label for="checkbox-restaurant" class="venue-btn venue-glow-btn"><p>Restaurant</p></label>
-            </div>
-          </li>
-
-          <li class="venue-element element-active">
-            <div class="venue-type">
-              <input name='bar' id="checkbox-bar" class="venue-checkbox venue-btn venue-glow-btn" type="checkbox" checked="checked"/>
-              <label for="checkbox-bar" class="venue-btn venue-glow-btn active"><p>Bar</p></label>
-            </div>
-          </li>
-
-          <li class="venue-element unselected-hoverable">
-            <div class="venue-type">
-              <input name='cafe' id="checkbox-cafe" class="venue-checkbox venue-btn venue-glow-btn" type="checkbox" />
-              <label for="checkbox-cafe" class="venue-btn venue-glow-btn"><p>Cafe</p></label>
-            </div>
-          </li>
-
-        </ul>
-      </div> -->
-
-      <div class="row-venue">
-        <div class="venue-button unticked" id="venue-r">
-          <i class="fa fa-cutlery fa-venue" aria-hidden="true"></i>
-          <br>Restaurant
+      <div class="venue-categories">
+        <div class="venue-category">
+          <%= render "shared/icons/restaurant" %>
+          <h3>Restaurant</h3>
           <input name='restaurant' id="checkbox-restaurant" class="venue-checkbox" type="checkbox" />
-              <!-- <label for="checkbox-restaurant" class=""><p>Restaurant</p></label> -->
         </div>
-
-        <div class="venue-button ticked" id="venue-b">
-          <i class="fa fa-glass fa-venue" aria-hidden="true"></i>
-          <br>Bar
-          <input name='bar' id="checkbox-bar" class="venue-checkbox" type="checkbox" checked="checked" />
-              <!-- <label for="checkbox-bar" class=""><p>Bar</p></label> -->
+        <div class="venue-category checked">
+          <%= render "shared/icons/bar" %>
+          <h3>Bar</h3>
+          <input name='bar' id="checkbox-bar" class="venue-checkbox" type="checkbox" checked="checked"/>
         </div>
-
-        <div class="venue-button unticked" id="venue-c">
-          <i class="fa fa-coffee fa-venue" aria-hidden="true"></i>
-          <br>Cafe
+        <div class="venue-category">
+          <%= render "shared/icons/cafe" %>
+          <h3>Cafe</h3>
           <input name='cafe' id="checkbox-cafe" class="venue-checkbox" type="checkbox" />
-              <!-- <label for="checkbox-cafe" class=""><p>Cafe</p></label> -->
         </div>
-
-
-
-
-        <!-- <ul class="list-inline venues">
-          <li class="venue-element unselected-hoverable">
-            <div class="venue-type">
-              <input name='restaurant' id="checkbox-restaurant" class="venue-checkbox" type="checkbox" />
-              <label for="checkbox-restaurant" class="venue-btn venue-glow-btn"><p>Restaurant</p></label>
-            </div>
-          </li> -->
-
-          <!-- <li class="venue-element element-active">
-            <div class="venue-type">
-              <input name='bar' id="checkbox-bar" class="venue-checkbox venue-btn venue-glow-btn" type="checkbox" checked="checked"/>
-              <label for="checkbox-bar" class="venue-btn venue-glow-btn active"><p>Bar</p></label>
-            </div>
-          </li>
-
-          <li class="venue-element unselected-hoverable">
-            <div class="venue-type">
-              <input name='cafe' id="checkbox-cafe" class="venue-checkbox venue-btn venue-glow-btn" type="checkbox" />
-              <label for="checkbox-cafe" class="venue-btn venue-glow-btn"><p>Cafe</p></label>
-            </div>
-          </li>
- -->
-
       </div>
 
       <div class="btn-center">
-          <button type="submit" value="" class="next-page-button">
-            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i><p class="next-page">Next</p>
-              <!-- <input type="submit" class="next-btn text-center venue-btn venue-glow-btn" value='&#xf138'>
-              -->
-          </button>
+        <button type="submit" value="" class="next-page-button">
+          <i class="fa fa-chevron-circle-right" aria-hidden="true"></i><p class="next-page">Next</p>
+        </button>
       </div>
-
     </form>
   </div>
 </div>

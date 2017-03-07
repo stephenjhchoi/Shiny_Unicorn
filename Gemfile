@@ -14,11 +14,12 @@ gem "pundit"
 
 gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
+gem 'rails-assets-flip', source: 'https://rails-assets.org'
+gem 'magnific-popup-rails', '~> 1.1.0'
 
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
-
 
 gem "coffee-rails"
 gem "gmaps4rails"

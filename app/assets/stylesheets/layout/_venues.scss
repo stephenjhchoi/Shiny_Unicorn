@@ -1,0 +1,41 @@
+.venues-wrapper {
+  display: flex;
+  .results-list {
+    height: calc(100vh - 180px);
+    width: 800px;
+    overflow-y: scroll;
+    padding-top: 20px;
+  }
+
+  .venue-card {
+    margin: 10px 0;
+  }
+  .filter {
+    height: 120px;
+    background-color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    text-align: center;
+    h2 {
+      font-size: 20px;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
+.mood-choice {
+  font-weight: light;
+  padding: 10px;
+  border: 1px solid grey;
+  opacity: 0.3;
+  &:hover {
+    opacity: 1;
+  }
+  &.active {
+    background-color: $brand-primary;
+    color: white;
+    font-weight: bold;
+    opacity: 1;
+    border: 1px solid $brand-primary;
+  }
+}

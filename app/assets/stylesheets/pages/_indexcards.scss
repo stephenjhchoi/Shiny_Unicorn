@@ -27,7 +27,7 @@
   vertical-align: top;
   height: 480px;
   // width: 300px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .stream-image {
@@ -61,7 +61,7 @@
 }
 
 .stream-body{
-  height: 160px;
+  height: 180px;
   border: 1px solid #D3D3D3;
   font-family: Open Sans;
   color: #A9A9A9;
@@ -170,11 +170,6 @@
   opacity: 0;
 }
 
-.border-gold{
-  border: 2px solid $champagne-gold;
-  opacity: 0.6;
-
-}
 
 .venue-score {
   margin-left: 10px;
