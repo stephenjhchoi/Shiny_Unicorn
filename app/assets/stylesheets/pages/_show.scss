@@ -1,3 +1,8 @@
+.big-banner{
+  width: 100vh
+
+}
+
 .banner {
   color: white;
   text-align: center;
@@ -8,7 +13,12 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-
+  background-image:
+    radial-gradient(
+      circle at bottom left,
+      white,
+      #fff 50%
+    );
 }
 .banner h1 {
   font-size: 50px;
@@ -16,39 +26,99 @@
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 .banner p {
-  font-size: 20px;
-  font-weight: lighter;
+  font-size: 17px;
+  font-weight: 200;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
 }
 
 .banner-text{
-  justify-content: space-around;
-  align-items: center;
-  background: rgba(0,0,0,.65);
+  // justify-content: space-around;
+  // align-items: center;
+  // background: rgba(0,0,0,.65);
+  // width: 100%;
+  // left: 50%;
+  // top: 50%;
+  font-family: "Quicksand", "Helvetica", "sans-serif";
+  display: flex;
+  align-items: flex-start;
+  flex-flow: column;
+  height: 100%;
+  justify-content: flex-end;
+  z-index: 200;
+  max-width: 115rem;
+  padding: 0 1.5rem;
   width: 100%;
-  left: 50%;
-  top: 50%;
+  margin-bottom: 100px;
 
   h1 {
-    color: $champagne-gold;
+    color: white;
     // color: rgba(255, 255, 255, 0.74);
     font-weight: 100;
-    font-family: freight-big-pro;
     letter-spacing: 4.3px;
+    margin-top: 12px;
   }
 }
 
-.venue-mood h3{
-  letter-spacing: 4.3px;
-  color: white;
-  font-family: freight-big-pro;
+.venue-mood {
+  border-radius: 3px;
+  overflow: hidden;
+  font-family: visuelt-reg,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: .6875rem;
+  // letter-spacing: .05rem;
+  line-height: 1;
+  padding: 5px 7px 5px 7px;
+  background: rgba(255, 207, 166, 0.72);
+
+  // background: rgba(170,156,211,.8);
+
+  p{
+    letter-spacing: 4.3px;
+    color: white;
+    margin: 0px;
+    text-align: center;
+
+  }
 }
 
 .banner-content{
   margin: 0px;
 }
 
+.sub-banner{
+  background: #fff;
+  color: #404d57;
+  padding: 1.625rem 0;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+.sub-banner-content{
+  align-items: center;
+  display: flex;
+  max-width: 130rem;
+  padding: 0 1.5rem;
+  width: 100%;
+  line-height: 34px;
+  font-size: 20px;
+}
+
+.sub-banner-content-info{
+  flex: 1;
+}
+
+.fa-map-marker{
+  padding-left: 4px;
+}
+
+.extra-padding{
+padding-left: 5px;
+}
 
 .top-title-show{
   text-align: center;
@@ -73,6 +143,43 @@
   a {
     text-decoration: none;
   }
+}
+
+.fav-loc{
+  a {
+    text-decoration: none;
+    color: rgba(97, 88, 88, 0.81);;
+  }
+
+  span {
+    color: rgba(97, 88, 88, 0.81);;
+  }
+
+  i {
+     color: $peach  }
+}
+
+.sub-banner-content-booking{
+  position: static;
+  width: auto;
+
+  top: 90%;
+  display: flex;
+  justify-content: center;
+  left: 400px;
+  position: fixed;
+  transition: transform .48s;
+  width: 100%;
+  z-index: 300;
+}
+
+.btn-peach{
+  background-color: #FFCFA6;
+  color: white;
+  padding: 0 2rem;
+  height: 7.75rem;
+  width: 22.75rem;
+  font-size: 25px;
 }
 
 .socialrow .socialbutton {
@@ -176,13 +283,13 @@
   right: 0px;
   background-color: rgb(31, 29, 29);
   width: 100%;
-  color: #af9f69;
+  color: white;
   font-weight: 600;
   font-size: 18px;
 }
 
 .venue-name{
-  color: $champagne-gold;
+  color: white;
 }
 
 .gold-title{
