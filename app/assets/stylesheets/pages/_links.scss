@@ -1,0 +1,101 @@
+.bt--facebook {
+  display: block;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  background-color: #2d94bd;
+  border: 2px solid #2d94bd;
+  transition: all 0.5s ease;
+  width: 100%;
+  padding: 14px 30px 12px;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
+.bt--facebook:hover {
+  background-color: #fff;
+  border-color: #59b1eb;
+  text-decoration: none;
+  a{
+    color: #2d94bd;
+  }
+
+}
+
+.button-signup {
+  display: block;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  background-color: #25283D;
+  border: 2px solid #25283D;
+  transition: all 0.5s ease;
+  width: 100%;
+  padding: 14px 30px 12px;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.button-signup:hover {
+  background-color: #fff;
+  border-color: #25283D;
+  text-decoration: none;
+  a{
+    color: #2d94bd;
+  }
+}
+
+// .submit-btn{
+//   display: block;
+//   text-align: center;
+//   color: #fff;
+//   text-decoration: none;
+//   background-color: $champagne-gold;
+//   border: 2px solid $champagne-gold;
+//   transition: all 0.5s ease;
+
+//   padding: 14px 30px 12px;
+//   a{
+//     color: white;
+//     text-decoration: none;
+//   }
+
+// }
+
+// .submit-btn:hover {
+//   background-color: #fff;
+//   border-color: $champagne-gold;
+//   text-decoration: none;
+//   a{
+//     color: #2d94bd;
+//   }
+// }
+
+.divider {
+  width:100%;
+  text-align:center;
+  border: none;
+}
+
+.divider hr {
+  margin-left:auto;
+  margin-right:auto;
+  width:45%;
+
+}
+
+.divider span{
+  line-height: 40px;
+}
+
+.left {
+  float:left;
+}
+
+.right {
+  float:right;
+}
+
