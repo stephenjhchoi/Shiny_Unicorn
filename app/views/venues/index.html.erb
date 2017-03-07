@@ -1,46 +1,51 @@
 
-<!-- http://www.caever.com.au/ -->
-<p>What kind of magical mood do you want?</p>
+<div class="venues-wrapper">
+  <div class="results">
+    <div class="filter">
+      <div class="container-fluid">
+        <h2>What kind of magical mood do you want?</h2>
+        <form action="" class="form-inline">
+          <input type="hidden" name="area" value="<%=params[:area]%>">
+          <% if params[:restaurant] %>
+            <input type="hidden" name="restaurant" value="<%=params[:restaurant]%>">
+          <% end %>
+          <% if params[:bar] %>
+            <input type="hidden" name="bar" value="<%=params[:bar]%>">
+          <% end  %>
+          <% if params[:cafe] %>
+            <input type="hidden" name="cafe" value="<%=params[:cafe]%>">
+          <% end  %>
+
+          <% Venue::MOODS.each do |mood| %>
+            <% if params[:mood] && params[:mood].include?(mood) %>
+              <label for="<%= mood %>" class="mood-choice active">
+                <input type="checkbox" name="mood[]" value="<%= mood %>" id="<%= mood %>" checked class="hidden">
+                <%= mood %> <i class="fa fa-check"></i>
+              </label>
+            <% else %>
+              <label for="<%= mood %>" class="mood-choice">
+                <input type="checkbox" name="mood[]" value="<%= mood %>" id="<%= mood %>" class="hidden">
+                <%= mood %> <i class="fa fa-check"></i>
+              </label>
+            <% end %>
+          <% end %>
 
 
-  <form action="">
-    <input type="hidden" name="area" value="<%=params[:area]%>">
-    <% if params[:restaurant] %>
-      <input type="hidden" name="restaurant" value="<%=params[:restaurant]%>">
-    <% end %>
-    <% if params[:bar] %>
-      <input type="hidden" name="bar" value="<%=params[:bar]%>">
-    <% end  %>
-    <% if params[:cafe] %>
-      <input type="hidden" name="cafe" value="<%=params[:cafe]%>">
-    <% end  %>
-    <select name='mood' class="form-control1 custom-select box_size_cat">
-      <option value="" selected>Mood</option>
-      <% Venue::MOODS.each do |mood| %>
-        <option value="<%= mood %>"><%= mood %></option>
-      <% end %>
-    </select>
-    <button type="submit">Apply</button>
-  </form>
-
-
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 ">
-      <div class="fixed-cards">
-        <div class="row">
-          <% @venues.each_with_index do |venue, index| %>
+          <button type="submit" class="btn btn-success" style="padding: 10px;">Apply</button>
+        </form>
+      </div>
+    </div>
+    <div class="container-fluid results-list">
+      <div class="row">
+        <% @venues.each_with_index do |venue, index| %>
           <div class="col-xs-12 col-md-6" id="venue-<%= venue.id %>">
             <div class="stream-entry-inner" >
               <%=  link_to venue_path(venue) do %>
-              <div class="stream-image" style="background-image: url(<%= cl_image_path venue.photo.path %>)">
-                <div class="card_description">
-                  <h4><%= venue.name %></h4>
+                <div class="stream-image" style="background-image: url(<%= cl_image_path venue.photo.path %>)">
+                  <div class="card_description">
+                    <h4><%= venue.name %></h4>
+                  </div>
                 </div>
-
-              </div>
-
               <% end %>
               <div class="border-bc">
                 <div class="stream-body">
@@ -100,15 +105,11 @@
               </div>
             </div>
           </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <div id="map" style="width: 100%; height: 100vh;">
+        <% end %>
       </div>
     </div>
   </div>
+  <div id="map" style="width: 100%; height: 100vh;"></div>
 </div>
 
 <% content_for(:after_js) do %>

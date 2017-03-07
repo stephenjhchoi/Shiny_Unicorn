@@ -11,6 +11,7 @@
 //= require underscore
 //= require gmaps/google
 //= require smoothscroll
+//= require flip
 //= require_tree .
 
 $( document ).ready(function() {
@@ -40,13 +41,15 @@ $('.venue-glow-btn').on('click', function() {
 
 
 $( document ).ready(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip();
+  $(".mood-choice input").click(function(){
+    $(this).parent().toggleClass("active");
+  });
 });
 
 
-$('.venue-button').click(function () {
-  $(this).toggleClass("ticked");
-  $(this).toggleClass("unticked");
+$('.venue-category').click(function () {
+  $(this).toggleClass("checked").toggleClass("unchecked");
 
   var checkbox = $(this).find("input[type='checkbox']");
 

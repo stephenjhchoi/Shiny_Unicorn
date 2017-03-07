@@ -1,9 +1,9 @@
 <div class="unicorn-navbar <%= content_for?(:navbar_class) ? yield(:navbar_class) : '' %>">
   <%= link_to root_path do %>
     <% if content_for?(:navbar_class) %>
-      <%= image_tag "logo-white.png" %>
+      <%= image_tag "logo-white.png", id: "logo" %>
     <% else %>
-      <%= image_tag "logo-dark.png" %>
+      <%= image_tag "logo-dark.png", id: "logo" %>
     <% end %>
   <% end %>
 
@@ -17,8 +17,9 @@
         Log out
       <% end %>
 
-      <%= link_to dashboard_path do %>
-        <%= image_tag 'unicorn-icon.svg', class: "avatar", id: "navbar-wagon-menu"%>
+      <%= link_to dashboard_path, class: "dashboard-link" do %>
+        <p>Bobby <strong>0 pts</strong></p>
+        <%= image_tag 'unicorn-1.png', id: "navbar-wagon-menu"%>
       <% end %>
 
     </div>

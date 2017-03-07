@@ -5,10 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #ECEBEC;
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   padding: 10px 50px;
   img {
-    height: 30px;
+    height: 40px;
   }
   a {
     color: black;
@@ -18,6 +19,23 @@
     &:hover {
       text-decoration: none;
     }
+  }
+}
+
+#logo {
+  height: 30px;
+}
+.dashboard-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    margin: 0;
+    font-weight: lighter;
+    padding-right: 30px;
+  }
+  strong {
+    padding-left: 10px;
   }
 }
 
@@ -196,7 +214,7 @@
 .nav-corner-right{
   display: flex;
   align-items: center;
-  width: 300px;
+  width: 400px;
   justify-content: space-between;
 }
 

@@ -1,0 +1,52 @@
+.venue-categories {
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: center;
+}
+
+.venue-category {
+  svg {
+    height: 50px;
+    width: 70px;
+    path {
+      fill: white;
+    }
+  }
+  .assymetrical {
+    transform: translateX(3px);
+  }
+
+  width: 150px;
+  h3 {
+    font-size: 16px;
+    margin: 0;
+  }
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  &:first-child {
+    border-radius: 30px 0 0 30px;
+  }
+  &:last-child {
+    border-radius: 0px 30px 30px 0;
+  }
+}
+.venue-category:hover {
+  background: rgba(0, 0, 0, 0.4);
+  svg path {
+    fill: $brand-primary;
+  }
+  h3 {
+    color: $brand-primary;
+  }
+}
+
+.venue-category.checked {
+  background: white;
+  svg path {
+    fill: $brand-primary;
+  }
+  h3 {
+    color: $brand-primary;
+  }
+}

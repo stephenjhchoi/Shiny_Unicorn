@@ -19,20 +19,20 @@
         <% end %>
       </div>
 
-      <div class="row-venue">
-        <div class="venue-button unticked" id="venue-r">
-          <i class="fa fa-cutlery fa-venue" aria-hidden="true"></i>
-          <br>Restaurant
+      <div class="venue-categories">
+        <div class="venue-category">
+          <%= render "shared/icons/restaurant" %>
+          <h3>Restaurant</h3>
           <input name='restaurant' id="checkbox-restaurant" class="venue-checkbox" type="checkbox" />
         </div>
-        <div class="venue-button ticked" id="venue-b">
-          <i class="fa fa-glass fa-venue" aria-hidden="true"></i>
-          <br>Bar
-          <input name='bar' id="checkbox-bar" class="venue-checkbox" type="checkbox" checked="checked" />
+        <div class="venue-category checked">
+          <%= render "shared/icons/bar" %>
+          <h3>Bar</h3>
+          <input name='bar' id="checkbox-bar" class="venue-checkbox" type="checkbox" checked="checked"/>
         </div>
-        <div class="venue-button unticked" id="venue-c">
-          <i class="fa fa-coffee fa-venue" aria-hidden="true"></i>
-          <br>Cafe
+        <div class="venue-category">
+          <%= render "shared/icons/cafe" %>
+          <h3>Cafe</h3>
           <input name='cafe' id="checkbox-cafe" class="venue-checkbox" type="checkbox" />
         </div>
       </div>
