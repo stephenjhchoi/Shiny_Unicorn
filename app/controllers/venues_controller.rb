@@ -28,6 +28,11 @@ class VenuesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
       marker.lat venue.latitude
       marker.lng venue.longitude
+      marker.picture({
+                  url: view_context.image_path('unicorn-icon.svg'),
+                  width: 40,
+                  height: 40
+                 })
       marker.infowindow render_to_string(partial: "/venues/map_box", locals: { venue: venue })
       marker.json({ id: venue.id })
     end
@@ -42,6 +47,11 @@ class VenuesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@venue) do |venue, marker|
       marker.lat venue.latitude
       marker.lng venue.longitude
+      marker.picture({
+          url: view_context.image_path('unicorn-icon.svg'),
+          width: 40,
+          height: 40
+          })
     end
 
     @spot = Spot.new
@@ -101,5 +111,4 @@ class VenuesController < ApplicationController
   def venue_params
     params.require(:venue).permit(:name, :address, :area, :category, :mood, :description, :price, :light_level, :noise_level, :couch_comfort, :staff_level, :unicorn_score, :photo)
   end
-
 end
