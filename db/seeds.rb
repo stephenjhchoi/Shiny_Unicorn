@@ -31,6 +31,10 @@ VenueCategory.create(venue: venue4, category: category2)
 VenueCategory.create(venue: venue4, category: category3)
 VenueCategory.create(venue: venue5, category: category3)
 
+Unicorn.create!(name: 'Baby Unicorn', levelup_point: 1, photo: File.open(Rails.root.join('app/assets/images/babyunicorn.png')))
+Unicorn.create!(name: 'Cool Unicorn', levelup_point: 1, photo: File.open(Rails.root.join('app/assets/images/coolunicorn.png')))
+Unicorn.create!(name: 'Badass Unicorn', levelup_point: 2, photo: File.open(Rails.root.join('app/assets/images/badassunicorn.png')))
+Unicorn.create!(name: 'Master Unicorn', levelup_point: 4, photo: File.open(Rails.root.join('app/assets/images/masterunicorn.png')))
 
 # # user = User.create!(id: "1", first_name: 'Allison', last_name: 'Grekin', email: 'allison_grekin@hotmail.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/allison.jpg')))
 # # user2 = User.create!(id: "2", first_name: 'Stephen', last_name: 'Choi', email: 'stephen.choi@msn.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/stephen.jpeg')))
