@@ -32,10 +32,10 @@
     opacity: 1;
   }
   &.active {
-    background-color: $brand-primary;
+    background-color: $purple;
     color: white;
     font-weight: bold;
     opacity: 1;
-    border: 1px solid $brand-primary;
+    border: 1px solid $purple;
   }
 }
