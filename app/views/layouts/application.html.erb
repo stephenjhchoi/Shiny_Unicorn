@@ -8,7 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
-  <body>
+  <% if params[:action] == "home" %>
+    <% variable = "second-class-that-we-want-to-add" %>
+  <% else %>
+    <% variable = "class-that-we-want-to-add" %>
+  <% end %>
+  <body class="<%= variable %>">
   <%= render 'shared/navbar' %>
   <% render 'shared/sidebar' %>
   <%= render 'shared/flashes' %>

@@ -1,10 +1,17 @@
-<div class="show-card">
-  <div class="title-spots" style="background-color: white; padding-bottom: 20px; border-radius: 5px; margin-top: 40px;" >
-    <h3>Add a review</h3>
+
+  <div class="title-spots" style=" padding-bottom: 20px; border-radius: 5px;" >
+    <h4 class="gold-title">Add a review</h4>
     <%= simple_form_for [@venue, @review] do |f| %>
     <%= f.input :hotness_level, label: false, input_html: { data: { 'slider-min' => '1', 'slider-max' => '5', 'slider-step' => '1', 'slider-value' => '3', 'slider-handle' => 'custom'} }  %>
-    <%= f.input :description, as: :text %>
+    <%= f.input :description, as: :text, class:"subtitle" %>
     <%= f.submit "Add a review", class: "shiny-btn" %>
     <% end %>
   </div>
-</div>
+
+<!--   <div class="sliders first">
+        <input id="ex9" type="text" />
+      </div>
+      <div class="sliders second">
+        <input id="ex11" type="text" data-slider-handle="custom" data-slider-value="0"/>
+      </div> -->
+
