@@ -30,8 +30,8 @@ class VenuesController < ApplicationController
       marker.lng venue.longitude
       marker.picture({
                   url: view_context.image_path('unicorn-icon.svg'),
-                  width: 100,
-                  height: 100
+                  width: 50,
+                  height: 50
                  })
       marker.infowindow render_to_string(partial: "/venues/map_box", locals: { venue: venue })
       marker.json({ id: venue.id })
