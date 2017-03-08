@@ -1,5 +1,4 @@
 <div class="venue-spots">
-  <!-- form for admin -->
   <h4 class="gold-title"><strong>HOT SPOTS</strong></h4>
 
   <% render 'spots/spot-form' if user_signed_in? && current_user.admin %>
@@ -9,8 +8,8 @@
     <% @venue.spots.each do |spot| %>
       <% if spot.photo %>
         <%= link_to cl_image_path(spot.photo.path) do %>
-          <%= cl_image_tag spot.photo.path, style: "height: 200px;" %>
-          <%= @spot.name %>
+          <%= cl_image_tag(spot.photo.path, crop: :thumb, width: 200, height: 200) %>
+          <span><%= spot.name || "test" %></span>
         <% end %>
       <% end %>
     <% end %>
@@ -22,12 +21,3 @@
 
 
 
-<%= content_for :after_js do %>
-<script>
-  $('.venue-spot-photos').magnificPopup({
-    delegate: 'a',
-    type: 'image'
-  });
-
-</script>
-<% end %>

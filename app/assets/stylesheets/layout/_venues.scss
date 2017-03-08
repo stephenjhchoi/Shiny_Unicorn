@@ -30,6 +30,8 @@
   opacity: 0.3;
   &:hover {
     opacity: 1;
+    color: $purple;
+    border: 2px solid $purple;
   }
   &.active {
     background-color: $purple;

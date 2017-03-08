@@ -1,93 +1,117 @@
 
-<div class="">
-  <div class="banner" style="background-image: linear-gradient(rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 50%), url('<%= cl_image_path @venue.photo.path %>'); background-position: center;">
-    <div class="banner-text">
-      <div class="venue-mood">
-        <p><%= @venue.mood.capitalize %></p>
-      </div>
-      <div class='venue-name'>
-        <h1><%= @venue.name.upcase %></h1>
-      </div>
+<div class="banner" style="background-image: linear-gradient(rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 50%), url('<%= cl_image_path @venue.photo.path %>');">
+  <div class="banner-text">
+    <div class="venue-mood">
+      <p><%= @venue.mood.capitalize %></p>
+    </div>
+    <div class='venue-name'>
+      <h1><%= @venue.name.upcase %></h1>
+    </div>
 
 
-      <% if false %>
-      <div class="venue-area">
-        <p><%= @venue.area %> | <%= '£ ' * @venue.price %></p>
-      </div>
-      <div class='socialrow'>
-        <%= link_to '#' do %>
-        <div class='socialbutton instagram'>
-          <i class="fa fa-instagram"></i>
-        </div>
-        <% end %>
-        <%= link_to '#' do %>
-        <div class='socialbutton facebook'>
-          <i class="fa fa-facebook"></i>
-        </div>
-        <% end %>
-        <%= link_to '#' do %>
-        <div class='socialbutton twitter'>
-          <i class="fa fa-twitter"></i>
-        </div>
-        <% end %>
-      </div>
 
-      <div class="favoriterow text-center">
-        <% if user_signed_in? && @is_favorite %>
-        <%= link_to favorite_path(@venue.favorites.find_by_user_id(current_user.id)), method: :delete do %>
-        <i class="fa fa-heart-o"></i> <span>Remove from Favorites</span>
-        <% end  %>
-        <% else %>
-        <%= link_to venue_favorites_path(@venue), method: :post do %>
-        <i class="fa fa-heart"></i> <span>Add to Favorites</span>
-        <% end %>
-        <% end %>
+    <% if false %>
+    <div class="venue-area">
+      <p><%= @venue.area %> | <%= '£ ' * @venue.price %></p>
+    </div>
+    <div class='socialrow'>
+      <%= link_to '#' do %>
+      <div class='socialbutton instagram'>
+        <i class="fa fa-instagram"></i>
       </div>
       <% end %>
+      <%= link_to '#' do %>
+      <div class='socialbutton facebook'>
+        <i class="fa fa-facebook"></i>
+      </div>
 
+      <% end %>
+      <%= link_to '#' do %>
+      <div class='socialbutton twitter'>
+        <i class="fa fa-twitter"></i>
+
+
+      </div>
+      <% end %>
     </div>
+
+
+    <div class="favoriterow text-center">
+      <% if @is_favorite %>
+      <%= link_to favorite_path(@venue.favorites.find_by_user_id(current_user.id)), method: :delete do %>
+      <i class="fa fa-heart-o"></i> <span>Remove from Favorites</span>
+      <% end  %>
+      <% else %>
+      <%= link_to venue_favorites_path(@venue), method: :post do %>
+      <i class="fa fa-heart"></i> <span>Add to Favorites</span>
+      <% end %>
+      <% end %>
+    </div>
+    <% end %>
+
   </div>
 </div>
 
 <div class="sub-banner">
-<div class="sub-banner-content">
-  <div class="sub-banner-content-info">
-    <div class="fav-loc">
-      <% if user_signed_in? && @is_favorite %>
-      <%= link_to favorite_path(@venue.favorites.find_by_user_id(current_user.id)), method: :delete do %>
-      <i class="fa fa-heart-o"></i> <span class="extra-padding">Remove from Favorites</span>
-      <% end  %>
-      <% else %>
-      <%= link_to venue_favorites_path(@venue), method: :post do %>
-      <i class="fa fa-heart"></i> <span class="extra-padding">Add to Favorites</span>
-      <% end %>
-      <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+        <div class="fav-loc">
+          <% if @is_favorite %>
+          <%= link_to favorite_path(@venue.favorites.find_by_user_id(current_user.id)), method: :delete do %>
+          <i class="fa fa-heart-o"></i> <span class="extra-padding">Remove from Favorites</span>
+          <% end  %>
+          <% else %>
+          <%= link_to venue_favorites_path(@venue), method: :post do %>
+          <i class="fa fa-heart"></i> <span class="extra-padding">Add to Favorites</span>
+          <% end %>
+          <% end %>
+        </div>
+        <div class="fav-loc"><i class="fa fa-map-marker logo-loca"></i><span><%= @venue.area %> | <%= '£ ' * @venue.price %></span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <button type="" value="Create a Spot in Venue" class="btn btn-peach" id="create-spot-now">Book a Spot</button>
+      </div>
     </div>
-    <div class="fav-loc"><i class="fa fa-map-marker logo-loca"></i><span><%= @venue.area %> | <%= '£ ' * @venue.price %></span>
+    <div class="sub-banner-content-booking">
+
     </div>
-  </div>
-  <div class="sub-banner-content-booking">
-
-<button type="" value="Create a Spot in Venue" class="btn btn-peach" id="create-spot">Create Spot</button>
-
   </div>
 </div>
 
+<div class="description-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+        <%= render "venue_profile" %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="booking-form">
+          <h3>Book a spot</h3>
+          <%= simple_form_for [@venue, @booking] do |f| %>
+            <%= f.association :spot, collection: @venue.spots, :label_method => lambda { |spot| spot.name }, prompt: "Select your spot" %>
+            <%= f.input :date, as: :string, placeholder: "Select your date" %>
+            <%= f.submit "Book", class: "btn btn-peach" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="venue-wrapper">
-  <div class="venue-details">
-    <%= render "venue_profile" %>
-      <%= render "venue_spots" %>
-    <%= render "spots/spot-form" %>
-  </div>
-  <div class="venue-booking">
-    <%= render 'booking/booking-form' %>
+<div class="spots-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+        <%= render "venue_spots" %>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content text-center">
       <div class="modal-header">
@@ -98,23 +122,101 @@
       <div class="modal-body">
 
         <div class="login-btn facebook">
-          <!-- <i class="fa fa-facebook" aria-hidden="true"></i> -->
-          <%= link_to "Continue with Facebook", user_facebook_omniauth_authorize_path, class: "login-btn-txt" %>
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <%# link_to "Continue with Facebook", user_facebook_omniauth_authorize_path, class: "login-btn-txt" %>
         </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="description-box" id="reviews">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+        <h3>Reviews</h3>
+        <% @venue.reviews.each do |review| %>
+          <p><%= review.description %>, <%= review.hotness_level %></p>
+        <% end %>
+        <%= render 'reviews/review-form' %>
       </div>
     </div>
   </div>
 </div>
 
-<% render 'reviews/review-form' %>
+<div>
+  <div id="map" style="width: 100%; height: 300px; padding: 0px;"></div>
+</div>
 
 <% content_for :after_js do %>
 <script>
-  $('#create-spot').on('click', function(){
-    $('#create-spot-form').toggleClass('hidden');
+
+  $(document).ready(function() {
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' }, provider: {scrollwheel: false} }, function() {
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
+    });
+
+    $('.venue-spot-photos').magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      tLoading: 'Loading image #%curr%...',
+      gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+        preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+      },
+    });
+
+    $('input#booking_date').datetimepicker();
+
+
+
+    // BOOKING FORM
+    var elemTop = $(".booking-form").offset().top;
+    // var elemLeft = $(".booking-form").position().left;
+    var elemWidth = $(".booking-form").width() + 26
+    var mapEnter = $("#reviews").offset().top - $(window).height();
+
+    $( document ).scroll(function() {
+      var currentScroll = $(window).scrollTop();
+
+      console.log(currentScroll > 360)
+
+      if (currentScroll > 360) {
+        var elemTop = $(".booking-form").offset().top;
+        console.log(elemTop)
+        $(".booking-form").css({
+          "position": "fixed",
+          "top": elemTop - currentScroll,
+          "width": elemWidth
+        })
+      } else {
+        $(".booking-form").css({
+          "position": "static"
+        })
+      }
+    });
+    // BOOK NOW
+    $("#create-spot-now").click(function() {
+        $('html, body').animate({
+            scrollTop: mapEnter
+        }, 1000);
+    });
   });
+
 </script>
 <% end %>
+
+
+
 
 
 
