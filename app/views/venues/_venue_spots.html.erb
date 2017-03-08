@@ -1,7 +1,5 @@
 <div class="venue-spots">
-  <h4 class="gold-title"><strong>HOT SPOTS</strong></h4>
-
-  <% render 'spots/spot-form' if user_signed_in? && current_user.admin %>
+  <h3 class="gold-title">Hot Spots</h3>
 
   <% unless @venue.spots.empty? %>
   <div class="venue-spot-photos">
@@ -16,7 +14,9 @@
   </div>
   <% end %>
   <br>
-  <button type="" value="Create a Spot in Venue" class="btn btn-primary" id="create-spot">Create spot</button>
+
+  <button type="" value="Add a Spot to this Venue" class="btn btn-primary" id="create-spot">Create spot</button>
+  <%= render 'spots/spot-form' if user_signed_in? %>
 </div>
 
 

@@ -1,6 +1,10 @@
-<h3>Book a spot</h3>
+<h3 class="gold-title">Book a Spot</h3>
 <%= simple_form_for [@venue, @booking] do |f| %>
-  <%= f.association :spot, collection: @venue.spots, :label_method => lambda { |spot|  spot.name }, prompt: "Select your spot" %>
+  <% f.association :spot, collection: @venue.spots, :label_method => lambda { |spot|  spot.name }, prompt: "Select your spot" %>
+
+  <%= @venue.spots.each do |spot| %>
+<option value="<%= spot.id %>"><%= spot.name %></option>
+<% end %>
   <%= f.input :date, as: :string, placeholder: "Select your date" %>
   <%= f.submit "Book", class: "shiny-btn" %>
 <% end %>
