@@ -2,10 +2,9 @@
  <div class="header-wrapper">
   <div class="header-container">
     <div class="profile-header">
-      <%= image_tag "unicorn-icon.svg", id: "user-img"%>
-      <p id="profile-name"><%= current_user.first_name %></p>
-      <p id="profile-points">123 points</p>
-
+      <%= cl_image_tag current_user.unicorn.photo.path %>
+      <p><%= current_user.unicorn.name %></p>
+      <span class="unicorn-point"><%= current_user.point %> pt</span>
     </div>
   </div>
 </div>
@@ -13,24 +12,24 @@
 
 <div class="dashboard-container">
   <div class="row-unlocked-badges">
-    <p class="dashboard-title">Unlocked Badges</p>
+    <p class="dashboard-title">Unicorn Badges</p>
 
     <ul class="list-inline badges-list">
       <li>
-        <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
-        <p>50 points</p>
+        <%= image_tag "unicorn-icon.svg", class: "unicorn-badges"%>
+        <p>0 points</p>
       </li>
       <li>
-        <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
-        <p>100 points</p>
+        <%= image_tag "coolunicorn-hidden.png", class: "unicorn-badges"%>
+        <p>1 points</p>
       </li>
       <li>
-        <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
-        <p>150 points</p>
+        <%= image_tag "badassunicorn-hidden.png", class: "unicorn-badges"%>
+        <p>2 points</p>
       </li>
       <li>
-        <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
-        <p>200 points</p>
+        <%= image_tag "masterunicorn-hidden.png", class: "unicorn-badges"%>
+        <p>4 points</p>
       </li>
     </ul>
   </div>

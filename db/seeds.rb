@@ -25,7 +25,6 @@ category1 = Category.create!(title: "restaurant")
 category2 = Category.create!(title: "bar")
 category3 = Category.create!(title: "cafe")
 
-
 # 20.times { VenueCategory.create(venue: Venue.all.sample, category: Category.all.sample) }
 
 VenueCategory.create(venue: venue1, category: category1)
@@ -37,11 +36,15 @@ VenueCategory.create(venue: venue4, category: category2)
 VenueCategory.create(venue: venue4, category: category3)
 VenueCategory.create(venue: venue5, category: category3)
 
+Unicorn.create!(name: 'Baby Unicorn', levelup_point: 1, photo: File.open(Rails.root.join('app/assets/images/babyunicorn.png')))
+Unicorn.create!(name: 'Cool Unicorn', levelup_point: 1, photo: File.open(Rails.root.join('app/assets/images/coolunicorn.png')))
+Unicorn.create!(name: 'Badass Unicorn', levelup_point: 2, photo: File.open(Rails.root.join('app/assets/images/badassunicorn.png')))
+Unicorn.create!(name: 'Master Unicorn', levelup_point: 4, photo: File.open(Rails.root.join('app/assets/images/masterunicorn.png')))
+
 VenueCategory.create(venue: venue6, category: category2)
 VenueCategory.create(venue: venue7, category: category1)
 VenueCategory.create(venue: venue8, category: category2)
 VenueCategory.create(venue: venue9, category: category2)
-
 
 # # user = User.create!(id: "1", first_name: 'Allison', last_name: 'Grekin', email: 'allison_grekin@hotmail.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/allison.jpg')))
 # # user2 = User.create!(id: "2", first_name: 'Stephen', last_name: 'Choi', email: 'stephen.choi@msn.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/stephen.jpeg')))
