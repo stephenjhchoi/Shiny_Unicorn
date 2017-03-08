@@ -3,10 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :venues, through: :favorites
-  has_many :reviews
-  has_many :bookings
+  has_many :reviews, dependent: :destroy
+  has_many :bookings, dependent: :destroy
+  belongs_to :unicorn
+  before_create :add_first_unicorn_to_user
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
@@ -27,5 +29,17 @@ class User < ApplicationRecord
     end
 
     return user
+  end
+
+  def earn_point
+    self.point += 1
+    self.unicorn = Unicorn.where("levelup_point <= ?", self.point).last
+    self.save
+  end
+
+  private
+
+  def add_first_unicorn_to_user
+    self.unicorn = Unicorn.first
   end
 end

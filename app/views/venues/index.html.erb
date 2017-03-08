@@ -95,7 +95,7 @@
                   <span><%= venue.area %>  | <%= '£' * venue.price %></span>
 
 
-                  <% if venue.favorite?(current_user) %>
+                  <% if user_signed_in? && venue.favorite?(current_user) %>
                     <%= link_to favorite_path(venue.favorites.find_by_user_id(current_user.id)), method: :delete do %>
                     <i class="fa fa-heart"></i>
                     <% end %>

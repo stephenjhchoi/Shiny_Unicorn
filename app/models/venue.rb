@@ -6,7 +6,7 @@ class Venue < ApplicationRecord
   after_validation :geocode, if: :address_changed?
   has_many :venue_categories, dependent: :destroy
   has_many :categories, through: :venue_categories
-  has_many :spots
+  has_many :spots, dependent: :destroy
   has_many :bookings, through: :spots
 
   CATEGORIES = ["Bar", "Restaurant", "Cafe"]

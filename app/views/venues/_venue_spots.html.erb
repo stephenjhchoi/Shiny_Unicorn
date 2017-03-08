@@ -1,7 +1,7 @@
 <div class="venue-spots">
   <h4 class="gold-title"><strong>HOT SPOTS</strong></h4>
 
-  <% render 'spots/spot-form' if current_user.admin %>
+  <% render 'spots/spot-form' if user_signed_in? && current_user.admin %>
 
   <% unless @venue.spots.empty? %>
   <div class="venue-spot-photos">

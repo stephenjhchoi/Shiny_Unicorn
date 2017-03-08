@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303141925) do
+ActiveRecord::Schema.define(version: 20170308125300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,13 @@ ActiveRecord::Schema.define(version: 20170303141925) do
     t.index ["venue_id"], name: "index_spots_on_venue_id", using: :btree
   end
 
+  create_table "unicorns", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "levelup_point"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -101,8 +108,12 @@ ActiveRecord::Schema.define(version: 20170303141925) do
     t.string   "token"
     t.datetime "token_expiry"
     t.boolean  "admin"
+    t.string   "username"
+    t.integer  "point",                  default: 0
+    t.integer  "unicorn_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["unicorn_id"], name: "index_users_on_unicorn_id", using: :btree
   end
 
   create_table "venue_categories", force: :cascade do |t|
@@ -140,6 +151,7 @@ ActiveRecord::Schema.define(version: 20170303141925) do
   add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "venues"
   add_foreign_key "spots", "venues"
+  add_foreign_key "users", "unicorns"
   add_foreign_key "venue_categories", "categories"
   add_foreign_key "venue_categories", "venues"
 end

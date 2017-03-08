@@ -1,3 +1,4 @@
+
 <div class="banner" style="background-image: linear-gradient(rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 50%), url('<%= cl_image_path @venue.photo.path %>');">
   <div class="banner-text">
     <div class="venue-mood">
@@ -6,6 +7,7 @@
     <div class='venue-name'>
       <h1><%= @venue.name.upcase %></h1>
     </div>
+
 
 
     <% if false %>
@@ -22,13 +24,17 @@
       <div class='socialbutton facebook'>
         <i class="fa fa-facebook"></i>
       </div>
+
       <% end %>
       <%= link_to '#' do %>
       <div class='socialbutton twitter'>
         <i class="fa fa-twitter"></i>
+
+
       </div>
       <% end %>
     </div>
+
 
     <div class="favoriterow text-center">
       <% if @is_favorite %>
