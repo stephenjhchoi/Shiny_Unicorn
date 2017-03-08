@@ -13,7 +13,7 @@ gem "geocoder"
 gem "pundit"
 
 gem 'momentjs-rails'
-gem 'bootstrap3-datetimepicker-rails'
+gem 'rails-assets-bootstrap-datetimepicker-3', source: 'https://rails-assets.org'
 gem 'rails-assets-flip', source: 'https://rails-assets.org'
 gem 'magnific-popup-rails', '~> 1.1.0'
 
