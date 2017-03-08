@@ -47,7 +47,7 @@
     </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        <button type="" value="Create a Spot in Venue" class="btn btn-peach" id="create-spot-now">Book a Spot</button>
+        <button type="" value="Create a Spot in Venue" class="btn shiny-btn" id="create-spot-now">Book a Spot</button>
       </div>
     </div>
     <div class="sub-banner-content-booking">
@@ -68,7 +68,7 @@
           <%= simple_form_for [@venue, @booking] do |f| %>
             <%= f.association :spot, collection: @venue.spots, :label_method => lambda { |spot| spot.name }, prompt: "Select your spot" %>
             <%= f.input :date, as: :string, placeholder: "Select your date" %>
-            <%= f.submit "Book", class: "btn btn-peach" %>
+            <%= f.submit "Book", class: "btn shiny-btn" %>
           <% end %>
         </div>
       </div>

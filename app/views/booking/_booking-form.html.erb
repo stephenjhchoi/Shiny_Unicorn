@@ -5,6 +5,7 @@
   <%= @venue.spots.each do |spot| %>
 <option value="<%= spot.id %>"><%= spot.name %></option>
 <% end %>
+
   <%= f.input :date, as: :string, placeholder: "Select your date" %>
   <%= f.submit "Book", class: "shiny-btn" %>
 <% end %>
