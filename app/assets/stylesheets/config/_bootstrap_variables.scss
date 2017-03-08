@@ -15,10 +15,11 @@ $headings-font-family:    $header-font;
 $gray-base:       $gray;
 $brand-primary:   #f9b881;
 // $brand-primary:   #eb5c4a;
-$brand-success:   #C49AE9;
+$brand-success:   $green;
 $brand-info:      $yellow;
 $brand-danger:    #eb5c4a;
 $brand-warning:   $orange;
+$grey-body: rgba(51, 51, 51, 0.68);
 
 // Buttons / inputs radius
 $border-radius-base:  2px;
