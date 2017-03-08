@@ -52,6 +52,38 @@ VenueCategory.create(venue: venue11, category: category1)
 VenueCategory.create(venue: venue11, category: category2)
 VenueCategory.create(venue: venue11, category: category3)
 
+user1 = User.create(first_name: 'Remi', last_name: 'Takalove', email: 'remi@gmail.com', password:'123456', password_confirmation: '123456')
+4.times{user1.earn_point}
+
+user2 = User.create(first_name: 'Evan', last_name: 'Thomas', email: 'evan@gmail.com', password:'123456', password_confirmation: '123456')
+3.times{user2.earn_point}
+
+user3 = User.create(first_name: 'Ugo', last_name: 'Marrr', email: 'ugo@gmail.com', password:'123456', password_confirmation: '123456')
+3.times{user3.earn_point}
+
+user4 = User.create(first_name: 'Allison', last_name: 'Greks', email: 'allison@gmail.com', password:'123456', password_confirmation: '123456')
+2.times{user4.earn_point}
+
+user5 = User.create(first_name: 'Antonini', last_name: 'Limatino', email: 'antonini@gmail.com', password:'123456', password_confirmation: '123456')
+2.times{user5.earn_point}
+
+user6 = User.create(first_name: 'Joy', last_name: 'Angry', email: 'joy@gmail.com', password:'123456', password_confirmation: '123456')
+2.times{user6.earn_point}
+
+
+user7 = User.create(first_name: 'Archae', last_name: 'Gilbear', email: 'archae@gmail.com', password:'123456', password_confirmation: '123456')
+4.times{user7.earn_point}
+
+user8 = User.create(first_name: 'Teddae', last_name: 'Bear', email: 'teddae@gmail.com', password:'123456', password_confirmation: '123456')
+3.times{user8.earn_point}
+
+
+
+
+
+
+
+
 # # user = User.create!(id: "1", first_name: 'Allison', last_name: 'Grekin', email: 'allison_grekin@hotmail.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/allison.jpg')))
 # # user2 = User.create!(id: "2", first_name: 'Stephen', last_name: 'Choi', email: 'stephen.choi@msn.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/stephen.jpeg')))
 # # user3 = User.create!(id: "3", first_name: 'Archie', last_name: 'San', email: 'archie.hero@msn.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/archie.jpg')))
