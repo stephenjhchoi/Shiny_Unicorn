@@ -3,7 +3,7 @@
   <div class="results">
     <div class="filter">
       <div class="container-fluid">
-        <h2>What kind of magical mood do you want?</h2>
+        <h2><strong>What Kind of Magical Mood Do You Want?</strong></h2>
         <form action="" class="form-inline">
           <input type="hidden" name="area" value="<%=params[:area]%>">
           <% if params[:restaurant] %>
@@ -20,12 +20,12 @@
             <% if params[:mood] && params[:mood].include?(mood) %>
               <label for="<%= mood %>" class="mood-choice active">
                 <input type="checkbox" name="mood[]" value="<%= mood %>" id="<%= mood %>" checked class="hidden">
-                <%= mood %> <i class="fa fa-check"></i>
+                <%= mood.capitalize %> <i class="fa fa-check"></i>
               </label>
             <% else %>
               <label for="<%= mood %>" class="mood-choice">
                 <input type="checkbox" name="mood[]" value="<%= mood %>" id="<%= mood %>" class="hidden">
-                <%= mood %> <i class="fa fa-check"></i>
+                <%= mood.capitalize %> <i class="fa fa-check"></i>
               </label>
             <% end %>
           <% end %>
@@ -92,7 +92,7 @@
                   <a href="#"><i class="fa fa-instagram"></i></a>
 
 
-                  <span><%= venue.area %> <%= '£' * venue.price %></span>
+                  <span><%= venue.area %>  | <%= '£' * venue.price %></span>
 
 
                   <% if venue.favorite?(current_user) %>
@@ -119,7 +119,7 @@
 <script>
   $(document).ready(function() {
     var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' }, provider: {styles: [{"featureType":"water","stylers":[{"visibility":"on"},{"color":"#b5cbe4"}]},{"featureType":"landscape","stylers":[{"color":"#efefef"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#83a5b0"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#bdcdd3"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#e3eed3"}]},{"featureType":"administrative","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"road"},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":20}]},{},{"featureType":"road","stylers":[{"lightness":20}]}]} }, function() {
+    handler.buildMap({ internal: { id: 'map' } }, function() {
 
 
       markers_json = <%=raw @hash.to_json %>;

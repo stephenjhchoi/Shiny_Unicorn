@@ -8,14 +8,26 @@
 }
 .venue-profile {
   background: #efefef;
-  padding: 30px;
   border-radius: 5px;
 }
-.venue-spots {
-  background: #efefef;
-  padding: 30px;
-  border-radius: 5px;
-  margin-top: 20px;
+.venue-spot-photos {
+  display: flex;
+  // width: 100%;
+  overflow-y: scroll;
+  padding-bottom: 10px;
+
+  a {
+    max-width: 212px;
+    padding: 5px;
+    border: 1px solid #EFEFEF;
+    border-radius: 2px;
+    margin-right: 10px;
+  }
+
+  span {
+    text-decoration: none;
+    color: #222;
+  }
 }
 .venue-booking {
   width: 500px;

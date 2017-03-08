@@ -1,13 +1,12 @@
 <div class="venue-profile">
   <h4 class="gold-title"><strong>VENUE DETAILS</strong></h4>
   <p><i class="fa fa-map-marker logo-loca"></i><span><strong>Address: </strong></span></p>
-  <p class="ven-add text-justify"><%= @venue.address %>, <%= @venue.area %>, London </p>
+  <p class="ven-add "><%= @venue.address %>, <%= @venue.area %>, London </p>
   <p><strong>Price: </strong><%= '£  ' * @venue.price %></p>
   <p><strong>Area: </strong><%= @venue.area %></p>
-  <div class="divider2">
-    <hr/>
-  </div>
-  <p class="text-justify"><strong>Description: </strong><%= @venue.description %></p>
+  <div class="divider2"></div>
+  <p class=""><strong>Description: </strong><%= @venue.description %></p>
+  <div class="divider2"></div>
 
   <div class="stream-body-bars">
     <div class="img_progress">
