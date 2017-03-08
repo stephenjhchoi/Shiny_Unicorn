@@ -17,19 +17,30 @@
     <ul class="list-inline badges-list">
       <li>
         <%= image_tag "unicorn-icon.svg", class: "unicorn-badges"%>
-        <p>0 points</p>
       </li>
       <li>
-        <%= image_tag "coolunicorn-hidden.png", class: "unicorn-badges"%>
-        <p>1 points</p>
+        <% if current_user.point < 1 %>
+          <%= image_tag "coolunicorn-hidden.png", class: "unicorn-badges"%>
+          <p class="text-center">1 point to unlock</p>
+        <% else %>
+          <%= image_tag "coolunicorn.png", class: "unicorn-badges"%>
+        <% end %>
       </li>
       <li>
-        <%= image_tag "badassunicorn-hidden.png", class: "unicorn-badges"%>
-        <p>2 points</p>
+        <% if current_user.point < 2 %>
+          <%= image_tag "badassunicorn-hidden.png", class: "unicorn-badges"%>
+          <p class="text-center">2 points to unlock</p>
+        <% else %>
+          <%= image_tag "badassunicorn.png", class: "unicorn-badges"%>
+        <% end %>
       </li>
       <li>
-        <%= image_tag "masterunicorn-hidden.png", class: "unicorn-badges"%>
-        <p>4 points</p>
+        <% if current_user.point < 4 %>
+          <%= image_tag "masterunicorn-hidden.png", class: "unicorn-badges"%>
+          <p class="text-center">4 points to unlock</p>
+        <% else %>
+          <%= image_tag "masterunicorn.png", class: "unicorn-badges"%>
+        <% end %>
       </li>
     </ul>
   </div>
