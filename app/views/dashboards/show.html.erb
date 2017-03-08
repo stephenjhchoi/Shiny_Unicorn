@@ -12,8 +12,8 @@
 
 
 <div class="dashboard-container">
-  <div class="row unlocked-badges">
-    <p>Unlocked Badges</p>
+  <div class="row-unlocked-badges">
+    <p class="dashboard-title">Unlocked Badges</p>
 
     <ul class="list-inline badges-list">
       <li>
@@ -32,8 +32,8 @@
   </div>
 
 
-  <div class="row favorite-spots">
-    <p>Favorite Spots</p>
+  <div class="row-favorite-spots">
+    <p class="dashboard-title">Favorite Spots</p>
     <div class="col-md-12">
       <% current_user.venues.first(3).each do |venue| %>
         <%= render 'venues/venuecard', venue: venue %>
@@ -43,8 +43,8 @@
 
   </div>
 
-  <div class="row bookings">
-    <p>Bookings</p>
+  <div class="row-bookings">
+    <p class="dashboard-title">Bookings</p>
     <div class="col-md-12">
     <% current_user.bookings.each do |booking| %>
       <%= render 'dashboards/bookingcard', booking: booking %>
