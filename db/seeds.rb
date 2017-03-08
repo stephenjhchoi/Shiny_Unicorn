@@ -16,6 +16,11 @@ venue3 = Venue.create!(name: 'Evans & Peel Detective Agency', address: '310c Ear
 venue4 = Venue.create!(name: 'Bar 212', address: '212 Brick Ln, London E1 6SA', area: 'Shoreditch', mood: 'chill', description: 'The 212 Café & Bar is a hangout for music, food and art lovers', price: '2', light_level: '3', noise_level: '7', couch_comfort: '8', staff_level: '6', unicorn_score: '8', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/bar212.png')))
 venue5 = Venue.create!(name: 'Daisy Green', address: '20 Seymour St, Marylebone, London W1H 7HX', area: 'Marylebone', mood: 'chill', description: 'Artisan coffee, gourmet frozen yogurt and healthy bites in a quirky, vibrant cafe with grass carpet.', price: '2', light_level: '9', noise_level: '4', couch_comfort: '4', staff_level: '8', unicorn_score: '8', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/daiseygreen.png')))
 
+venue6 = Venue.create!(name: 'The Cocktail Trading Company', address: '68, Bethnal Green Rd, London E1 6GQ', area: 'Shoreditch', mood: 'seductive', description: 'Cocktail bar that just gets it right. Perfect spot to lounge in comfy sofas while enjoying creative cocktails.', price: '2', light_level: '2', noise_level: '2', couch_comfort: '8', staff_level: '9', unicorn_score: '9', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/cocktailtrading.png')))
+venue7 = Venue.create!(name: "Bill's Shoreditch Restaurant", address: '1 Hoxton Square, London N1 6NU', area: 'Shoreditch', mood: 'classy', description: 'Contemporary European chain dishing up separate breakfast, afternoon tea, lunch and dinner menus.', price: '2', light_level: '8', noise_level: '5', couch_comfort: '4', staff_level: '7', unicorn_score: '7', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/bills.png')))
+venue8 = Venue.create!(name: 'Nightjar', address: '129 City Rd, London EC1V 1JB', area: 'Shoreditch', mood: 'chill', description: 'Speakeasy-style subterranean bar with live jazz and blues, for cocktails and rare spirits.', price: '2', light_level: '3', noise_level: '4', couch_comfort: '7', staff_level: '8', unicorn_score: '8', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/nightjar.png')))
+venue9 = Venue.create!(name: 'Ninetyeight Bar and Lounge', address: 'Morrell House, 98 Curtain Rd, Shoreditch, London EC2A 3AF', area: 'Shoreditch', mood: 'adventurous', description: 'Zebra prints, lavish colorful fittings and Victoriana lend this cocktail bar a fairy tale vibe.', price: '2', light_level: '3', noise_level: '4', couch_comfort: '7', staff_level: '8', unicorn_score: '8', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/ninetyeight.png')))
+
 category1 = Category.create!(title: "restaurant")
 category2 = Category.create!(title: "bar")
 category3 = Category.create!(title: "cafe")
@@ -31,6 +36,11 @@ VenueCategory.create(venue: venue3, category: category2)
 VenueCategory.create(venue: venue4, category: category2)
 VenueCategory.create(venue: venue4, category: category3)
 VenueCategory.create(venue: venue5, category: category3)
+
+VenueCategory.create(venue: venue6, category: category2)
+VenueCategory.create(venue: venue7, category: category1)
+VenueCategory.create(venue: venue8, category: category2)
+VenueCategory.create(venue: venue9, category: category2)
 
 
 # # user = User.create!(id: "1", first_name: 'Allison', last_name: 'Grekin', email: 'allison_grekin@hotmail.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/allison.jpg')))
