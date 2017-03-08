@@ -12,16 +12,11 @@
       <% if current_user.admin %>
         <%= link_to 'Create Venue', new_venue_path %>
       <% end %>
-
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        Log out
-      <% end %>
-
+      <p style="margin: 0;"><%= current_user.first_name %> <strong><%= current_user.point %> pts</strong></p>
+      <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
       <%= link_to dashboard_path, class: "dashboard-link" do %>
-        <p><%= current_user.first_name %> <strong><%= current_user.point %> pts</strong></p>
         <%= cl_image_tag current_user.unicorn.photo.path, id: "navbar-wagon-menu" %>
       <% end %>
-
     </div>
 
   <% else %>
