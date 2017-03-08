@@ -18,7 +18,7 @@
       <% end %>
 
       <%= link_to dashboard_path, class: "dashboard-link" do %>
-        <p>Bobby <strong>0 pts</strong></p>
+        <p><%= current_user.first_name %> <strong>0 pts</strong></p>
         <%= image_tag 'unicorn-1.png', id: "navbar-wagon-menu"%>
       <% end %>
 
