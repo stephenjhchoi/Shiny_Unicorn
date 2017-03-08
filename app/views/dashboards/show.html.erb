@@ -3,8 +3,8 @@
   <div class="header-container">
     <div class="profile-header">
       <%= cl_image_tag current_user.unicorn.photo.path %>
-      <p><%= current_user.unicorn.name %></p>
-      <span class="unicorn-point"><%= current_user.point %> pt</span>
+      <p id="profile-name"><%= current_user.unicorn.name %></p>
+      <p id="profile-points"><%= current_user.point %> pt</p>
     </div>
   </div>
 </div>
