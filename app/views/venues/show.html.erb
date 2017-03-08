@@ -1,45 +1,78 @@
-<div class="banner" style="background-image: url('<%= cl_image_path @venue.photo.path %>');">
-  <div class="banner-text">
-    <div class='venue-name'>
-      <h1><%= @venue.name.upcase %></h1>
-    </div>
-    <div class="venue-mood">
-      <h3><%= @venue.mood.capitalize %></h3>
-    </div>
-    <div class="venue-area">
-      <p><%= @venue.area %> | <%= '£ ' * @venue.price %></p>
-    </div>
-    <div class='socialrow'>
-    <%= link_to '#' do %>
-    <div class='socialbutton instagram'>
-      <i class="fa fa-instagram"></i>
-    </div>
-    <% end %>
-    <%= link_to '#' do %>
-    <div class='socialbutton facebook'>
-      <i class="fa fa-facebook"></i>
-    </div>
-    <% end %>
-    <%= link_to '#' do %>
-    <div class='socialbutton twitter'>
-      <i class="fa fa-twitter"></i>
-    </div>
-    <% end %>
-    </div>
 
-    <div class="favoriterow text-center">
-    <% if @is_favorite %>
+<div class="">
+  <div class="banner" style="background-image: linear-gradient(rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 50%), url('<%= cl_image_path @venue.photo.path %>');">
+    <div class="banner-text">
+      <div class="venue-mood">
+        <p><%= @venue.mood.capitalize %></p>
+      </div>
+      <div class='venue-name'>
+        <h1><%= @venue.name.upcase %></h1>
+      </div>
+
+
+      <% if false %>
+      <div class="venue-area">
+        <p><%= @venue.area %> | <%= '£ ' * @venue.price %></p>
+      </div>
+      <div class='socialrow'>
+        <%= link_to '#' do %>
+        <div class='socialbutton instagram'>
+          <i class="fa fa-instagram"></i>
+        </div>
+        <% end %>
+        <%= link_to '#' do %>
+        <div class='socialbutton facebook'>
+          <i class="fa fa-facebook"></i>
+        </div>
+        <% end %>
+        <%= link_to '#' do %>
+        <div class='socialbutton twitter'>
+          <i class="fa fa-twitter"></i>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="favoriterow text-center">
+        <% if user_signed_in? && @is_favorite %>
         <%= link_to favorite_path(@venue.favorites.find_by_user_id(current_user.id)), method: :delete do %>
-          <i class="fa fa-heart-o"></i> <span>Remove from Favorites</span>
+        <i class="fa fa-heart-o"></i> <span>Remove from Favorites</span>
         <% end  %>
-      <% else %>
+        <% else %>
         <%= link_to venue_favorites_path(@venue), method: :post do %>
-          <i class="fa fa-heart"></i> <span>Add to Favorites</span>
+        <i class="fa fa-heart"></i> <span>Add to Favorites</span>
+        <% end %>
+        <% end %>
+      </div>
       <% end %>
-    <% end %>
+
     </div>
+  </div>
+</div>
+
+<div class="sub-banner">
+<div class="sub-banner-content">
+  <div class="sub-banner-content-info">
+    <div class="fav-loc">
+      <% if user_signed_in? && @is_favorite %>
+      <%= link_to favorite_path(@venue.favorites.find_by_user_id(current_user.id)), method: :delete do %>
+      <i class="fa fa-heart-o"></i> <span class="extra-padding">Remove from Favorites</span>
+      <% end  %>
+      <% else %>
+      <%= link_to venue_favorites_path(@venue), method: :post do %>
+      <i class="fa fa-heart"></i> <span class="extra-padding">Add to Favorites</span>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="fav-loc"><i class="fa fa-map-marker logo-loca"></i><span><%= @venue.area %> | <%= '£ ' * @venue.price %></span>
+    </div>
+  </div>
+  <div class="sub-banner-content-booking">
+
+<button type="" value="Create a Spot in Venue" class="btn btn-peach" id="create-spot">Create Spot</button>
 
   </div>
+</div>
+
 </div>
 
 <div class="venue-wrapper">

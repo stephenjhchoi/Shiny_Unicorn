@@ -1,9 +1,9 @@
 <div class="unicorn-navbar <%= content_for?(:navbar_class) ? yield(:navbar_class) : '' %>">
   <%= link_to root_path do %>
     <% if content_for?(:navbar_class) %>
-      <%= image_tag "logo-white.png", id: "logo" %>
+      <%= image_tag "logo-peach.png", id: "logo" %>
     <% else %>
-      <%= image_tag "logo-dark.png", id: "logo" %>
+      <%= image_tag "logo-peach-dark.png", id: "logo" %>
     <% end %>
   <% end %>
 
@@ -18,7 +18,7 @@
       <% end %>
 
       <%= link_to dashboard_path, class: "dashboard-link" do %>
-        <p>Bobby <strong>0 pts</strong></p>
+        <p><%= current_user.first_name %> <strong>0 pts</strong></p>
         <%= image_tag 'unicorn-1.png', id: "navbar-wagon-menu"%>
       <% end %>
 
