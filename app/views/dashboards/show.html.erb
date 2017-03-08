@@ -3,8 +3,8 @@
   <div class="header-container">
     <div class="profile-header">
       <%= image_tag "unicorn-icon.svg", id: "user-img"%>
-      <p><%= current_user.first_name %></p>
-      <p>123 points</p>
+      <p id="profile-name"><%= current_user.first_name %></p>
+      <p id="profile-points">123 points</p>
 
     </div>
   </div>
@@ -22,11 +22,15 @@
       </li>
       <li>
         <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
-        <p>50 points</p>
+        <p>100 points</p>
       </li>
       <li>
         <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
-        <p>50 points</p>
+        <p>150 points</p>
+      </li>
+      <li>
+        <%= image_tag "unicorn-icon.svg", class: "unlocked-badges"%>
+        <p>200 points</p>
       </li>
     </ul>
   </div>
