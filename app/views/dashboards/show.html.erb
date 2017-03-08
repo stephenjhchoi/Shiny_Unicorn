@@ -10,13 +10,14 @@
 </div>
 
 
-<div class="dashboard-container">
+<div class="dashboard-container text-center">
   <div class="row-unlocked-badges">
     <p class="dashboard-title">Unicorn Badges</p>
 
     <ul class="list-inline badges-list">
-      <li>
+      <li class="text-center">
         <%= image_tag "unicorn-icon.svg", class: "unicorn-badges"%>
+        <p>Baby Unicorn</p>
       </li>
       <li class="text-center">
         <% if current_user.point < 1 %>
@@ -24,6 +25,7 @@
           <p>1 point to unlock</p>
         <% else %>
           <%= image_tag "coolunicorn.png", class: "unicorn-badges"%>
+          <p>Cool Unicorn</p>
         <% end %>
       </li>
       <li class="text-center">
@@ -32,6 +34,7 @@
           <p>2 points to unlock</p>
         <% else %>
           <%= image_tag "badassunicorn.png", class: "unicorn-badges"%>
+          <p>Badass Unicorn</p>
         <% end %>
       </li>
       <li class="text-center">
@@ -40,6 +43,7 @@
           <p>4 points to unlock</p>
         <% else %>
           <%= image_tag "masterunicorn.png", class: "unicorn-badges"%>
+          <p>Master Unicorn</p>
         <% end %>
       </li>
     </ul>

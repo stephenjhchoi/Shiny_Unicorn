@@ -44,9 +44,13 @@
 }
 
 .slider-selection {
-  background: #AF9F69 !important;
+  background: rgba(175, 159, 105, 0.39) !important;
 }
 
 .slider-handle.custom::before{
-  color: #998a58 !important;
+  color: $champagne-gold !important;
+}
+
+.slider.slider-horizontal {
+
 }
