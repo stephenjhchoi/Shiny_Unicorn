@@ -1,18 +1,24 @@
 
  <div class="header-wrapper">
-  <div class="header-container">
+  <!-- <div class="header-container"> -->
     <div class="profile-header">
-      <%= cl_image_tag current_user.unicorn.photo.path %>
-      <p id="profile-name"><%= current_user.unicorn.name %></p>
-      <p id="profile-points"><%= current_user.point %> pt</p>
+
+      <%= cl_image_tag current_user.unicorn.photo.path, id: "unicorn-banner" %>
+      <p><%= current_user.unicorn.name %></p>
+      <span class="unicorn-point"><%= current_user.point %> pt</span><%= image_tag 'coin.png', class:"img_format2" %>
+
     </div>
-  </div>
+  <!-- </div> -->
 </div>
 
 
-<div class="dashboard-container text-center">
+<div class="container">
+<div class="dashboard-container">
+
   <div class="row-unlocked-badges">
-    <p class="dashboard-title">Unicorn Badges</p>
+    <h3 class="dashboard-title text-center">Unicorn Badges</h3>
+
+
 
     <ul class="list-inline badges-list">
       <li class="text-center">
@@ -22,7 +28,7 @@
       <li class="text-center">
         <% if current_user.point < 1 %>
           <%= image_tag "coolunicorn-hidden.png", class: "unicorn-badges"%>
-          <p>1 point to unlock</p>
+          <p>1 point to unlock</p><%= image_tag 'coin.png', class:"img_format2" %>
         <% else %>
           <%= image_tag "coolunicorn.png", class: "unicorn-badges"%>
           <p>Cool Unicorn</p>
@@ -31,7 +37,7 @@
       <li class="text-center">
         <% if current_user.point < 2 %>
           <%= image_tag "badassunicorn-hidden.png", class: "unicorn-badges"%>
-          <p>2 points to unlock</p>
+          <p>2 points to unlock</p><%= image_tag 'coin.png', class:"img_format2" %>
         <% else %>
           <%= image_tag "badassunicorn.png", class: "unicorn-badges"%>
           <p>Badass Unicorn</p>
@@ -40,37 +46,41 @@
       <li class="text-center">
         <% if current_user.point < 4 %>
           <%= image_tag "masterunicorn-hidden.png", class: "unicorn-badges"%>
-          <p>4 points to unlock</p>
+          <p>4 points to unlock</p><%= image_tag 'coin.png', class:"img_format2" %>
         <% else %>
           <%= image_tag "masterunicorn.png", class: "unicorn-badges"%>
           <p>Master Unicorn</p>
         <% end %>
+
       </li>
     </ul>
   </div>
 
 
+  <br>
+
+
   <div class="row-favorite-spots">
-    <p class="dashboard-title">Favorite Spots</p>
-    <div class="col-md-12">
-      <% current_user.venues.first(3).each do |venue| %>
-        <%= render 'venues/venuecard', venue: venue %>
-      <% end %>
+    <h3 class="dashboard-title text-center">Favorite Spots</h3>
+    <div class="row">
+
+        <% current_user.venues.first(3).each do |venue| %>
+          <%= render 'venues/venuecard', venue: venue %>
+        <% end %>
+
     </div>
-
-
   </div>
 
+  <br>
+
   <div class="row-bookings">
-    <p class="dashboard-title">Bookings</p>
-    <div class="col-md-12">
+    <h3 class="dashboard-title text-center">Bookings</h3>
+    <div class="col-xs-12 col-md-6">
     <% current_user.bookings.each do |booking| %>
       <%= render 'dashboards/bookingcard', booking: booking %>
     <% end %>
     </div>
   </div>
-
-
-
+  <br>
 </div>
-
+</div>

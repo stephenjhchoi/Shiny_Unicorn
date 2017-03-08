@@ -44,18 +44,50 @@
   width: 100%;
   margin: 13px 0;
   padding: 7px 9px 7px;
-  font-size: 16px;
+  font-size: 20px;
   color: white;
   padding: 14px 30px 12px;
   a{
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 
 
+
 .shiny-btn:hover {
+  background-color: #fff;
+  border-color: $brand-primary;
+  color: $brand-primary;
+  a{
+    color: $brand-primary;
+    text-decoration: none;
+  }
+}
+
+.shiny-btn2 {
+  display: inline-block;
+  background-color: $brand-primary;
+  border: 2px solid $brand-primary;
+  transition: all 0.5s ease;
+  width: 20%;
+  // margin: 13px 0;
+  margin-right: 0px;
+    margin-bottom: 13px;
+    margin-left: 0px;
+  font-size: 20px;
+  color: white;
+  a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+}
+
+
+
+.shiny-btn2:hover {
   background-color: #fff;
   border-color: $brand-primary;
   color: $brand-primary;
@@ -140,48 +172,18 @@
 }
 
 
-// // ------Tabs-------
-
-// .tabs {
-//   background: #53443F;
-//   display: flex;
-//   padding: 10px 10px 0 10px
-// }
-// .tabs a {
-//   color: white;
-// }
-// .tabs a:hover {
-//   cursor: pointer;
-//   text-decoration: none;
-//   opacity: 0.8;
-// }
-// .tabs h3 {
-//   font-size: 17px;
-//   font-weight: bold;
-//   margin-top: 0;
-// }
-
-// .tab {
-//   background: #756A66;
-//   flex: 0 0 25%;
-//   text-align: center;
-//   padding: 20px 0;
-// }
-// .tab:first-child {
-//   border-radius: 10px 0 0 0;
-// }
-// .tab:last-child {
-//   border-radius: 0 10px 0 0;
-// }
-// .tab.active {
-//   background: white;
-//   color: black;
-// }
-
-
-
 .header-wrapper{
-  background-color: $purple;
+  background-color: rgba(40, 39, 43, 0.92);
+
+
+}
+
+#unicorn-banner{
+  height: 200px;
+  border-radius: 108px;
+  border: 3px solid white;
+  padding: 4px;
+  background-color: white;
 }
 
 .profile-header{
@@ -189,9 +191,10 @@
   display: block;
   padding: 20px 0;
   text-align: center;
-  img {
-    height: 100px;
-  }
+
+  height: 323px;
+  color: white;
+
 }
 
 
@@ -220,10 +223,17 @@
   height: 78px;
 }
 
-.badges-list {
-  display: flex;
-  align-items: flex-start;
+.unicorn-point{
+  color: white;
+  font-size: 23px;
 }
+
+.badges-list {
+  display: inline;
+  align-items: flex-start;
+
+}
+
 
 .badges-list li {
   display: inline-block;
@@ -233,11 +243,12 @@
 
 .row-unlocked-badges {
   margin-top: 30px;
+  text-align: center;
 }
 
 .dashboard-title {
   font-weight: bold;
-  font-size: 20px;
+  // font-size: 20px;
 }
 
 .dashboard-container{
