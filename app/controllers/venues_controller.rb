@@ -49,8 +49,8 @@ class VenuesController < ApplicationController
       marker.lng venue.longitude
       marker.picture({
           url: view_context.image_path('unicorn-icon.svg'),
-          width: 40,
-          height: 40
+          width: 100,
+          height: 100
           })
     end
 
