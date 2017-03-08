@@ -70,7 +70,6 @@ user5 = User.create(first_name: 'Antonini', last_name: 'Limatino', email: 'anton
 user6 = User.create(first_name: 'Joy', last_name: 'Angry', email: 'joy@gmail.com', password:'123456', password_confirmation: '123456')
 2.times{user6.earn_point}
 
-
 user7 = User.create(first_name: 'Archae', last_name: 'Gilbear', email: 'archae@gmail.com', password:'123456', password_confirmation: '123456')
 4.times{user7.earn_point}
 

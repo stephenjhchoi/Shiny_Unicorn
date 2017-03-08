@@ -109,11 +109,33 @@
 <div class="description-box" id="reviews">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-8 margin-rid">
+
+      <div class="col-xs-12 col-sm-8">
         <h3 class="gold-title">Reviews</h3>
+
         <% @venue.reviews.each do |review| %>
-          <p><%= review.description %>, <%= review.hotness_level %></p>
+          <div class="unicorn-review">
+            <div id="unicorn-review-photo" class="text-center">
+              <%= cl_image_tag review.user.unicorn.photo.path, width: "50px"%>
+              <p><%= review.user.unicorn.name %></p>
+            </div>
+            <div class="unicorn-review-description">
+              <p>
+                <% review.hotness_level.times do %>
+                  <i class="fa fa-star" style="color: yellow;"></i>
+                <% end %>
+                <% (5 - review.hotness_level).times do %>
+                  <i class="fa fa-star" style="color: #E5E5E5;"></i>
+                <% end %>
+              </p>
+              <p>
+                <%= review.description %>
+              <p>
+            </div>
+          </div>
+
         <% end %>
+
         <hr>
         <%= render 'reviews/review-form' %>
       </div>

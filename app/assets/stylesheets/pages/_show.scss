@@ -375,12 +375,6 @@ padding-left: 5px;
   color: white;
 }
 
-.gold-title{
-  color: #716f6f;
-  letter-spacing: 2.3px;
-  // font-family: inherit;
-  font-family: "Quicksand", "Helvetica", "sans-serif";
-}
 
 div hr{
     margin-top: 22px;
@@ -413,6 +407,36 @@ div hr{
 //   right: 0;
 // }
 
+.gold-title{
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 30px;
+  padding-left: 0;
+  padding-top: 0;
+  color: #716f6f;
+  letter-spacing: 2.3px;
+  // font-family: inherit;
+  font-family: "Quicksand", "Helvetica", "sans-serif";
+}
 
+#unicorn-review-photo {
+  float: left;
+  padding: 20px;
+}
+
+.unicorn-review-description {
+  font-size: 20px;
+  margin: 0;
+}
+
+.unicorn-review {
+  background-color: white;
+  padding: 0px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
 
