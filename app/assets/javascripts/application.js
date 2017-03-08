@@ -7,7 +7,7 @@
 //= require attachinary
 //= require bootstrap-slider
 //= require moment
-//= require bootstrap-datetimepicker
+//= require bootstrap-datetimepicker-3
 //= require underscore
 //= require gmaps/google
 //= require smoothscroll
