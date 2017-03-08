@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     #@booking.spot =
     if @booking.save
+      current_user.earn_point
       redirect_to dashboard_path
     else
       #render

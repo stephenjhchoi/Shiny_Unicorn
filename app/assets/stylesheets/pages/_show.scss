@@ -201,7 +201,7 @@ padding-left: 5px;
 }
 
 .socialrow {
-  margin: auto;
+  // margin: auto;
   width: 130px;
   display: flex;
   align-items: center;
@@ -250,6 +250,7 @@ padding-left: 5px;
   height: 4.75rem;
   width: 100%;
   font-size: 20px;
+
 }
 
 .socialrow .socialbutton {
@@ -300,12 +301,6 @@ padding-left: 5px;
 // }
 
 
-.attachinary-input{
-  margin: auto;
-}
-
-
-
 .show-card {
   background-color: white;
   padding: 20px;
@@ -337,10 +332,18 @@ padding-left: 5px;
     z-index: 2;
   }
 
-.title-spots h3 {
-  margin-top: 6px;
-  margin-bottom: 26px;
-  color: $champagne-gold;
+.title-spots {
+  margin-top: 0px;
+
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 26px;
+    // color: $champagne-gold;
+  }
+}
+
+.margin-rid p {
+  margin: 0px;
 }
 
 .spot-name {
@@ -373,8 +376,19 @@ padding-left: 5px;
 }
 
 .gold-title{
-  color: $champagne-gold;
+  color: #716f6f;
+  letter-spacing: 2.3px;
+  // font-family: inherit;
+  font-family: "Quicksand", "Helvetica", "sans-serif";
 }
+
+div hr{
+    margin-top: 22px;
+    margin-bottom: 22px;
+    border: 0;
+    border-top: 1px solid #b5aeae;
+  }
+
 
 .dashboard{
   height: 378px;

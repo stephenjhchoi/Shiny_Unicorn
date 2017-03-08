@@ -1,10 +1,10 @@
-  <div class="venue-spots hidden" id="create-spot-form">
-  <h3>Create a spot in Venue</h3>
+  <div class="venue-spots" id="create-spot-form" style="display:none">
+  <h4 class="gold-title">Create a spot for this venue</h4>
 
   <%= simple_form_for [@venue, @spot] do |f| %>
     <%= f.input :photo, as: :attachinary %>
     <%= f.input :name %>
-    <%= f.submit 'create', class: "shiny-btn" %>
+    <%= f.submit 'Add this spot', class: "shiny-btn" %>
   <% end %>
   </div>
 
