@@ -8,8 +8,10 @@ class ReviewsController < ApplicationController
     @review.venue = @venue
     @review.user = current_user
     if @review.save
+      current_user.earn_point
       redirect_to venue_path(@review.venue)
     end
+
   end
 
   private
