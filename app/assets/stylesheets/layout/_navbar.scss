@@ -11,7 +11,7 @@
   img {
     height: 40px;
   }
-  a {
+  a, p {
     color: $grey-body-main;
     font-weight: bold;
     text-shadow: none;
@@ -46,7 +46,7 @@
   right: 0;
   background-color: transparent;
   border: none;
-  a {
+  a, p {
     color: white;
   }
 }
