@@ -21,6 +21,7 @@ class FavoritesController < ApplicationController
     @favorite.venue = @venue
     @favorite.user = current_user
     @favorite.save
+    flash[:notice] = "🦄 Venue Added To Your Favorites 🦄"
     redirect_to :back
   end
 

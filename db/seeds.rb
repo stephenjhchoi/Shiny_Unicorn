@@ -103,10 +103,8 @@ Review.create!(venue: venue9, user: user7, hotness_level: 5, description: "Why h
 
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/couchbodega.png')), name: "Comfy Couch - Available for Drinks and/or Dinner", venue: venue1)
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/fireplace.png')), name: "Comfy Spot by the fireplace", venue: venue1)
-
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/bills_spot.png')), name: "Cozy leather sofa in the secluded corner", venue: venue7)
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/nightjar_spot.png')), name: "Intimate spot with comfy leather sofa", venue: venue8)
-
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/furry_spot.png')), name: "Furry sofas with furry pillows", venue: venue9)
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/piano_spot.png')), name: "Piano spot with jungle vibes", venue: venue9)
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/unicorn_spot.png')), name: "Cozy sofa by a cheeky pony", venue: venue9)
