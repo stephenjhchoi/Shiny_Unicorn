@@ -1,7 +1,34 @@
+<div id="wrapper">
+  <form action="" method="post">
+    <p class="clasificacion">
+       <input id="radio1" type="radio"  value="5"><!--
+      --><label for="radio1">&#9733;</label><!--
+      --><input id="radio2" type="radio"  value="4"><!--
+      --><label for="radio2">&#9733;</label><!--
+      --><input id="radio3" type="radio"  value="3"><!--
+      --><label for="radio3">&#9733;</label><!--
+      --><input id="radio4" type="radio"  value="2"><!--
+      --><label for="radio4">&#9733;</label><!--
+      --><input id="radio5" type="radio"  value="1"><!--
+      --><label for="radio5">&#9733;</label>
+    </p>
+
+    <p>
+      <input type="submit" value="submit" name="submit" />
+    </p>
+  </form>
+</div>
+<div>
+
+</div>
+
+
+
 
   <div class="title-spots" style=" padding-bottom: 20px; border-radius: 5px;" >
     <h4 class="gold-title">Add a review</h4>
     <%= simple_form_for [@venue, @review] do |f| %>
+      <%= f.input :hotness_level, as:  %>
       <%= f.input :hotness_level, label: false, input_html: { data: { 'slider-min' => '1', 'slider-max' => '5', 'slider-step' => '1', 'slider-value' => '3', 'slider-handle' => 'custom'} }  %>
       <%= f.input :description, as: :text %>
       <%= f.submit "Add a review", class: "shiny-btn" %>
