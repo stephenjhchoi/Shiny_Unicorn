@@ -91,7 +91,8 @@ User.create(first_name: 'Sandrine', last_name: 'Sandrine', email: 'sandrine@gmai
 User.create(first_name: 'Elissa', last_name: 'Elissa', email: 'elissa@gmail.com', password:'123456', password_confirmation: '123456')
 User.create(first_name: 'Nikolei', last_name: 'Nikolei', email: 'nikolei@gmail.com', password:'123456', password_confirmation: '123456')
 
-
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/couchbodega.png')), name: "Comfy Couch - Available for Drinks and/or Dinner", venue: venue1)
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/fireplace.png')), name: "Comfy Spot by the fireplace", venue: venue1)
 
 
 

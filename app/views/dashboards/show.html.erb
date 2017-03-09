@@ -5,7 +5,7 @@
 
       <%= cl_image_tag current_user.unicorn.photo.path, id: "unicorn-banner" %>
       <p><%= current_user.unicorn.name %></p>
-      <span class="unicorn-point"><%= current_user.point %> pt</span><%= image_tag 'coin.png', class:"img_format2" %>
+      <span class="unicorn-point"><%= current_user.point %> pts</span><%= image_tag 'coin.png', class:"img_format2" %>
 
     </div>
   <!-- </div> -->
@@ -24,7 +24,7 @@
     <ul class="list-inline badges-list">
       <li class="text-center">
         <%= image_tag "unicorn-icon.svg", class: "unicorn-badges"%>
-        <p>Baby Unicorn</p>
+        <p class="unicorn-status"><strong>Baby Unicorn</strong></p>
       </li>
       <li class="text-center">
         <% if current_user.point < 1 %>
@@ -32,7 +32,7 @@
           <p>1 point to unlock</p><%= image_tag 'coin.png', class:"img_format2" %>
         <% else %>
           <%= image_tag "coolunicorn.png", class: "unicorn-badges"%>
-          <p>Cool Unicorn</p>
+          <p class="unicorn-status"><strong>Cool Unicorn</strong></p>
         <% end %>
       </li>
       <li class="text-center">
@@ -41,7 +41,7 @@
           <p>2 points to unlock</p><%= image_tag 'coin.png', class:"img_format2" %>
         <% else %>
           <%= image_tag "badassunicorn.png", class: "unicorn-badges"%>
-          <p>Badass Unicorn</p>
+          <p class="unicorn-status"><strong>Badass Unicorn</strong></p>
         <% end %>
       </li>
       <li class="text-center">
@@ -50,7 +50,7 @@
           <p>4 points to unlock</p><%= image_tag 'coin.png', class:"img_format2" %>
         <% else %>
           <%= image_tag "masterunicorn.png", class: "unicorn-badges"%>
-          <p>Master Unicorn</p>
+          <p class="unicorn-status"><strong>Master Unicorn</strong></p>
         <% end %>
 
       </li>
