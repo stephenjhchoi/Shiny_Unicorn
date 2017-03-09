@@ -3,10 +3,10 @@
 # #
 # # Examples:
 # #
-# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-# #   Character.create(name: 'Luke', movie: movies.first)
+# #   movies = Movie.create!([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+# #   Character.create!(name: 'Luke', movie: movies.first)
 
-# # User.destroy_all
+User.destroy_all
 Venue.destroy_all
 Category.destroy_all
 
@@ -27,75 +27,100 @@ category1 = Category.create!(title: "restaurant")
 category2 = Category.create!(title: "bar")
 category3 = Category.create!(title: "cafe")
 
-# 20.times { VenueCategory.create(venue: Venue.all.sample, category: Category.all.sample) }
+# 20.times { VenueCategory.create!(venue: Venue.all.sample, category: Category.all.sample) }
 
-VenueCategory.create(venue: venue1, category: category1)
-VenueCategory.create(venue: venue1, category: category2)
-VenueCategory.create(venue: venue2, category: category2)
-VenueCategory.create(venue: venue3, category: category1)
-VenueCategory.create(venue: venue3, category: category2)
-VenueCategory.create(venue: venue4, category: category2)
-VenueCategory.create(venue: venue4, category: category3)
-VenueCategory.create(venue: venue5, category: category3)
+VenueCategory.create!(venue: venue1, category: category1)
+VenueCategory.create!(venue: venue1, category: category2)
+VenueCategory.create!(venue: venue2, category: category2)
+VenueCategory.create!(venue: venue3, category: category1)
+VenueCategory.create!(venue: venue3, category: category2)
+VenueCategory.create!(venue: venue4, category: category2)
+VenueCategory.create!(venue: venue4, category: category3)
+VenueCategory.create!(venue: venue5, category: category3)
+VenueCategory.create!(venue: venue6, category: category2)
+VenueCategory.create!(venue: venue7, category: category1)
+VenueCategory.create!(venue: venue8, category: category2)
+VenueCategory.create!(venue: venue9, category: category2)
+VenueCategory.create!(venue: venue10, category: category2)
+VenueCategory.create!(venue: venue11, category: category1)
+VenueCategory.create!(venue: venue11, category: category2)
+VenueCategory.create!(venue: venue11, category: category3)
 
 Unicorn.create!(name: 'Baby Unicorn', levelup_point: 1, photo: File.open(Rails.root.join('app/assets/images/babyunicorn.png')))
 Unicorn.create!(name: 'Cool Unicorn', levelup_point: 1, photo: File.open(Rails.root.join('app/assets/images/coolunicorn.png')))
 Unicorn.create!(name: 'Badass Unicorn', levelup_point: 2, photo: File.open(Rails.root.join('app/assets/images/badassunicorn.png')))
 Unicorn.create!(name: 'Master Unicorn', levelup_point: 4, photo: File.open(Rails.root.join('app/assets/images/masterunicorn.png')))
 
-VenueCategory.create(venue: venue6, category: category2)
-VenueCategory.create(venue: venue7, category: category1)
-VenueCategory.create(venue: venue8, category: category2)
-VenueCategory.create(venue: venue9, category: category2)
-VenueCategory.create(venue: venue10, category: category2)
-VenueCategory.create(venue: venue11, category: category1)
-VenueCategory.create(venue: venue11, category: category2)
-VenueCategory.create(venue: venue11, category: category3)
+user_main = User.create!(first_name: 'Stephen', last_name: 'Choi', email: 'stephen@choi.com', password:'123456', password_confirmation: '123456')
 
-user1 = User.create(first_name: 'Remi', last_name: 'Takalove', email: 'remi@gmail.com', password:'123456', password_confirmation: '123456')
+user1 = User.create!(first_name: 'Remi', last_name: 'Takalove', email: 'remi@gmail.com', password:'123456', password_confirmation: '123456')
 4.times{user1.earn_point}
 
-user2 = User.create(first_name: 'Evan', last_name: 'Thomas', email: 'evan@gmail.com', password:'123456', password_confirmation: '123456')
+user2 = User.create!(first_name: 'Evan', last_name: 'Thomas', email: 'evan@gmail.com', password:'123456', password_confirmation: '123456')
 3.times{user2.earn_point}
 
-user3 = User.create(first_name: 'Ugo', last_name: 'Marrr', email: 'ugo@gmail.com', password:'123456', password_confirmation: '123456')
+user3 = User.create!(first_name: 'Ugo', last_name: 'Marrr', email: 'ugo@gmail.com', password:'123456', password_confirmation: '123456')
 3.times{user3.earn_point}
 
-user4 = User.create(first_name: 'Allison', last_name: 'Greks', email: 'allison@gmail.com', password:'123456', password_confirmation: '123456')
+user4 = User.create!(first_name: 'Allison', last_name: 'Greks', email: 'allison@gmail.com', password:'123456', password_confirmation: '123456')
 2.times{user4.earn_point}
 
-user5 = User.create(first_name: 'Antonini', last_name: 'Limatino', email: 'antonini@gmail.com', password:'123456', password_confirmation: '123456')
+user5 = User.create!(first_name: 'Antonini', last_name: 'Limatino', email: 'antonini@gmail.com', password:'123456', password_confirmation: '123456')
 2.times{user5.earn_point}
 
-user6 = User.create(first_name: 'Joy', last_name: 'Angry', email: 'joy@gmail.com', password:'123456', password_confirmation: '123456')
+user6 = User.create!(first_name: 'Joy', last_name: 'Angry', email: 'joy@gmail.com', password:'123456', password_confirmation: '123456')
 2.times{user6.earn_point}
 
-user7 = User.create(first_name: 'Archae', last_name: 'Gilbear', email: 'archae@gmail.com', password:'123456', password_confirmation: '123456')
+user7 = User.create!(first_name: 'Archae', last_name: 'Gilbear', email: 'archae@gmail.com', password:'123456', password_confirmation: '123456')
 4.times{user7.earn_point}
 
-user8 = User.create(first_name: 'Teddae', last_name: 'Bear', email: 'teddae@gmail.com', password:'123456', password_confirmation: '123456')
+user8 = User.create!(first_name: 'Teddae', last_name: 'Bear', email: 'teddae@gmail.com', password:'123456', password_confirmation: '123456')
 3.times{user8.earn_point}
 
-User.create(first_name: 'Cat', last_name: 'Cat', email: 'cat@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Katie', last_name: 'Katie', email: 'katie@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Josh', last_name: 'Josh', email: 'josh@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Ed', last_name: 'Ed', email: 'ed@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Kit', last_name: 'Kit', email: 'kit@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Ralph', last_name: 'Ralph', email: 'ralph@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Harry', last_name: 'Harry', email: 'harry@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Fahad', last_name: 'Fahad', email: 'fahad@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Arthur', last_name: 'Arthur', email: 'arthur@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Romain', last_name: 'Romain', email: 'romain@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Boris', last_name: 'Boris', email: 'boris@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Sandrine', last_name: 'Sandrine', email: 'sandrine@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Elissa', last_name: 'Elissa', email: 'elissa@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Nikolei', last_name: 'Nikolei', email: 'nikolei@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Cat', last_name: 'Cat', email: 'cat@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Katie', last_name: 'Katie', email: 'katie@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Josh', last_name: 'Josh', email: 'josh@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Ed', last_name: 'Ed', email: 'ed@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Kit', last_name: 'Kit', email: 'kit@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Ralph', last_name: 'Ralph', email: 'ralph@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Harry', last_name: 'Harry', email: 'harry@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Fahad', last_name: 'Fahad', email: 'fahad@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Arthur', last_name: 'Arthur', email: 'arthur@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Romain', last_name: 'Romain', email: 'romain@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Boris', last_name: 'Boris', email: 'boris@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Sandrine', last_name: 'Sandrine', email: 'sandrine@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Elissa', last_name: 'Elissa', email: 'elissa@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Nikolei', last_name: 'Nikolei', email: 'nikolei@gmail.com', password:'123456', password_confirmation: '123456')
 
+Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
+# Review.create!(venue: venue1, user: user1, hotness_level: 5, description: "This is an amazing")
 
-
-
-
-
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch", venue: venue1)
+# Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch")
+# Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch")
+# Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch")
+# Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch")
+# Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch")
+# Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch")
+# Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch")
+# Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch")
+# Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch")
+# Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch")
+# Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch")
+# Spot.create!(photo: File.open(Rails.root.join('app/assets/images/acehotel.png')), name: "Couch")
 
 
 # # user = User.create!(id: "1", first_name: 'Allison', last_name: 'Grekin', email: 'allison_grekin@hotmail.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/allison.jpg')))
