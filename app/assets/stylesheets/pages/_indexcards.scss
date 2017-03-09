@@ -30,6 +30,18 @@
   margin-bottom: 50px;
 }
 
+.stream-entry-inner2 {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #fff;
+  position: relative;
+  vertical-align: top;
+  height: 323px;
+  // width: 300px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.12);
+}
+
 .stream-image {
   background-position: 50%;
   background-size: cover;
@@ -44,6 +56,16 @@
   opacity: 0.5;
 }
 
+.stream-image2 {
+  background-position: 50%;
+  background-size: cover;
+  // border-color: champagne-gold;
+  height: 270px;
+  position: relative;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
 .card_description{
   position: absolute;
   bottom: -4px;
@@ -52,11 +74,46 @@
   border-radius: 3px;
 
   & > h4 {
-    color: champagne-gold;
+    color: $brand-primary;
     margin-top: 5px;
     margin-bottom: 4px;
     margin-right: 10px;
     margin-left: 10px;
+  }
+}
+
+.stream-body-bc{
+  height: 78px;
+  border: 1px solid #D3D3D3;
+  font-family: Open Sans;
+  color: #A9A9A9;
+  letter-spacing: .04em;
+  // line-height: 22px;
+  font-size: 14px;
+  border-top: none;
+  // display: flex;
+  // flex-direction: column;
+  // min-height: 110px;
+  // justify-content: space-between;
+  // align-items: center;
+  // text-align: justify;
+  padding: 8px 17px;
+  line-height: 25px;
+  h3{
+    font-size: 22px;
+  }
+
+
+  .stream-body-description {
+    text-decoration: none;
+    z-index: 10;
+    h3{
+      margin-top: 10px;
+      color: #131010;
+    }
+    p{
+      color: rgba(70, 61, 54, 0.52);
+    }
   }
 }
 

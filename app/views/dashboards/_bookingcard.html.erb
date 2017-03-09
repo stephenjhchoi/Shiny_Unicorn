@@ -1,13 +1,51 @@
-    <div class="col-xs-12 col-sm-6">
+    <div class="col-xs-12 col-md-4">
+      <div class="stream-entry-inner2" >
+        <% if booking.spot.photo %>
+        <div class="stream-image2" style="background-image: url(<%= cl_image_path booking.spot.photo.path%>)">
+          <% else %>
+          <% url = "https://static.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg" %>
+          <% end %>
+          <!-- <div class="card" style="background-image: url(<%= url %>);"> -->
+          <div class="venue-mood2">
+            <p><%= booking.spot.venue.mood.capitalize %></p>
+          </div>
+          <!-- <div class="card-category">
+            <h2><%# booking.spot.venue.name %></h2>
+          </div> -->
+          <div class="card_description">
+            <h4><%= booking.spot.venue.name %></h4>
+          </div>
+        </div>
+          <div class="border-bc">
+            <div class="stream-body-bc">
+              <div class="stream-body-description">
+                <h3><%= truncate(booking.spot.name, length: 28) %></h3>
+                <p>Booked on <%= booking.date.strftime("%b %e, %l:%M %p") %></p>
+              </div>
+            </div>
+          </div>
+          <%= link_to "", venue_path(booking.spot.venue), class: "card-link" %>
 
-      <div class="card" style="background-image: url(<%= cl_image_path booking.spot.photo.path || booking. %>);">
-        <div class="card-category">
-          <h2><%= booking.spot.venue.name %></h2>
-        </div>
-        <div class="card-description">
-          <h3><%= booking.spot.name %></h3>
-          <p>Booked on <%= booking.date %></p>
-        </div>
-         <%= link_to "", venue_path(booking.spot.venue), class: "card-link" %>
       </div>
     </div>
+
+
+
+
+<!--     <div class="col-xs-12 col-md-4">
+      <%# if booking.spot.photo %>
+      <%# url = cl_image_path booking.spot.photo.path %>
+      <%# else %>
+      <%# url = "https://static.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg" %>
+      <%# end %>
+      <div class="card" style="background-image: url(<%# url %>);">
+        <div class="card-category">
+          <h2><%# booking.spot.venue.name %></h2>
+        </div>
+        <div class="card-description">
+          <h3><%# booking.spot.name %></h3>
+          <p>Booked on <%# booking.date.strftime("%b %e, %l:%M %p") %></p>
+        </div>
+         <%# link_to "", venue_path(booking.spot.venue), class: "card-link" %>
+      </div>
+    </div> -->
