@@ -13,6 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-position: center;
   background-image:
     radial-gradient(
       circle at bottom left,
@@ -416,12 +417,13 @@ div hr{
 
 #unicorn-review-photo {
   float: left;
-  padding: 20px;
+  padding: 21px;
 }
 
 .unicorn-review-description {
-  font-size: 20px;
+  font-size: 16px;
   margin: 0;
+  padding-right: 21px;
 }
 
 .unicorn-review {
