@@ -86,25 +86,8 @@
   </div>
 </div>
 
-<!-- Modal -->
-<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content text-center">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Find hidden magical date spots in your neighborhood</h4>
-      </div>
 
-      <div class="modal-body">
 
-        <div class="login-btn facebook">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-          <%# link_to "Continue with Facebook", user_facebook_omniauth_authorize_path, class: "login-btn-txt" %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 
 <div class="description-box" id="reviews">
   <div class="container">
@@ -117,12 +100,12 @@
           <div class="unicorn-review">
             <div id="unicorn-review-photo" class="text-center">
               <%= cl_image_tag review.user.unicorn.photo.path, width: "50px"%>
-              <p><%= review.user.unicorn.name %></p>
+              <p><%= review.user.first_name.first %>.<%= review.user.last_name.first %></p>
             </div>
             <div class="unicorn-review-description">
               <p>
                 <% review.hotness_level.times do %>
-                  <i class="fa fa-star" style="color: yellow;"></i>
+                  <i class="fa fa-star" style="color: orange;"></i>
                 <% end %>
                 <% (5 - review.hotness_level).times do %>
                   <i class="fa fa-star" style="color: #E5E5E5;"></i>
