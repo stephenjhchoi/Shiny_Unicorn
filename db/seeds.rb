@@ -1,11 +1,3 @@
-# # This file should contain all the record creation needed to seed the database with its default values.
-# # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-# #
-# # Examples:
-# #
-# #   movies = Movie.create!([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-# #   Character.create!(name: 'Luke', movie: movies.first)
-
 User.destroy_all
 Venue.destroy_all
 Category.destroy_all
@@ -104,6 +96,7 @@ Review.create!(venue: venue9, user: user7, hotness_level: 5, description: "Why h
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/couchbodega.png')), name: "Comfy Couch - Available for Drinks and/or Dinner", venue: venue1)
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/fireplace.png')), name: "Comfy Spot by the fireplace", venue: venue1)
 
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/ctrading_spot.png')), name: "Comfy leather sofas in the intimate corner", venue: venue6)
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/bills_spot.png')), name: "Cozy leather sofa in the secluded corner", venue: venue7)
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/nightjar_spot.png')), name: "Intimate spot with comfy leather sofa", venue: venue8)
 
@@ -112,12 +105,5 @@ Spot.create!(photo: File.open(Rails.root.join('app/assets/images/piano_spot.png'
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/unicorn_spot.png')), name: "Cozy sofa by a cheeky pony", venue: venue9)
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/white_room.png')), name: "Intimate white room", venue: venue9)
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/zebra_spot.png')), name: "Adventurous zebra leathery spot", venue: venue9)
-
-
-
-# # d = DateTime.new(2017, 3 , 30, 5, 40, 46, "-06:00")
-# # lesson = Lesson.create!(user_id: "1", category: "Cardio", price: "30", start_date_time: d.strftime, duration: "30min", neighborhood:"Chelsea", description: "Cardio exercise is any exercise that raises your heart rate. Face it our bodies were made to move. And we all know that to keep our muscles in shape we need move them.")
-# # lesson2 = Lesson.create!(user_id: "2", category: "Yoga", price: "35", start_date_time: d.strftime, duration: "40min", neighborhood:"Knightsbridge", description: "A Hindu spiritual and ascetic discipline, a part of which, including breath control, simple meditation, and the adoption of specific bodily postures, is widely practised for health and relaxation.")
-
 
 

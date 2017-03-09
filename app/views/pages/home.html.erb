@@ -12,7 +12,7 @@
     </h1>
     <form action="<%= venues_path %>" class="form-inline">
       <div class="search-area">
-        <input type="search-text" name= "area" id="search-input" list="areas" placeholder="What neighborhood is your date?" autofocus>
+        <input type="search-text" name= "area" id="search-input" list="areas" placeholder="Pick your date area..." autofocus>
         <% Venue::AREAS.each do |area| %>
         <option value="<%= area %>"><% area %></option>
         <% end %>
