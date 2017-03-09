@@ -3,10 +3,10 @@
 # #
 # # Examples:
 # #
-# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-# #   Character.create(name: 'Luke', movie: movies.first)
+# #   movies = Movie.create!([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+# #   Character.create!(name: 'Luke', movie: movies.first)
 
-# # User.destroy_all
+User.destroy_all
 Venue.destroy_all
 Category.destroy_all
 
@@ -27,102 +27,97 @@ category1 = Category.create!(title: "restaurant")
 category2 = Category.create!(title: "bar")
 category3 = Category.create!(title: "cafe")
 
-# 20.times { VenueCategory.create(venue: Venue.all.sample, category: Category.all.sample) }
+# 20.times { VenueCategory.create!(venue: Venue.all.sample, category: Category.all.sample) }
 
-VenueCategory.create(venue: venue1, category: category1)
-VenueCategory.create(venue: venue1, category: category2)
-VenueCategory.create(venue: venue2, category: category2)
-VenueCategory.create(venue: venue3, category: category1)
-VenueCategory.create(venue: venue3, category: category2)
-VenueCategory.create(venue: venue4, category: category2)
-VenueCategory.create(venue: venue4, category: category3)
-VenueCategory.create(venue: venue5, category: category3)
+VenueCategory.create!(venue: venue1, category: category1)
+VenueCategory.create!(venue: venue1, category: category2)
+VenueCategory.create!(venue: venue2, category: category2)
+VenueCategory.create!(venue: venue3, category: category1)
+VenueCategory.create!(venue: venue3, category: category2)
+VenueCategory.create!(venue: venue4, category: category2)
+VenueCategory.create!(venue: venue4, category: category3)
+VenueCategory.create!(venue: venue5, category: category3)
+VenueCategory.create!(venue: venue6, category: category2)
+VenueCategory.create!(venue: venue7, category: category1)
+VenueCategory.create!(venue: venue8, category: category2)
+VenueCategory.create!(venue: venue9, category: category2)
+VenueCategory.create!(venue: venue10, category: category2)
+VenueCategory.create!(venue: venue11, category: category1)
+VenueCategory.create!(venue: venue11, category: category2)
+VenueCategory.create!(venue: venue11, category: category3)
 
 Unicorn.create!(name: 'Baby Unicorn', levelup_point: 1, photo: File.open(Rails.root.join('app/assets/images/babyunicorn.png')))
 Unicorn.create!(name: 'Cool Unicorn', levelup_point: 1, photo: File.open(Rails.root.join('app/assets/images/coolunicorn.png')))
 Unicorn.create!(name: 'Badass Unicorn', levelup_point: 2, photo: File.open(Rails.root.join('app/assets/images/badassunicorn.png')))
 Unicorn.create!(name: 'Master Unicorn', levelup_point: 4, photo: File.open(Rails.root.join('app/assets/images/masterunicorn.png')))
 
-VenueCategory.create(venue: venue6, category: category2)
-VenueCategory.create(venue: venue7, category: category1)
-VenueCategory.create(venue: venue8, category: category2)
-VenueCategory.create(venue: venue9, category: category2)
-VenueCategory.create(venue: venue10, category: category2)
-VenueCategory.create(venue: venue11, category: category1)
-VenueCategory.create(venue: venue11, category: category2)
-VenueCategory.create(venue: venue11, category: category3)
+user_main = User.create!(first_name: 'Stephen', last_name: 'Choi', email: 'stephenjhchoi@gmail.com', password:'123456', password_confirmation: '123456')
 
-user1 = User.create(first_name: 'Remi', last_name: 'Takalove', email: 'remi@gmail.com', password:'123456', password_confirmation: '123456')
+user1 = User.create!(first_name: 'Remi', last_name: 'Takalove', email: 'remi@gmail.com', password:'123456', password_confirmation: '123456')
 4.times{user1.earn_point}
 
-user2 = User.create(first_name: 'Evan', last_name: 'Thomas', email: 'evan@gmail.com', password:'123456', password_confirmation: '123456')
+user2 = User.create!(first_name: 'Evan', last_name: 'Thomas', email: 'evan@gmail.com', password:'123456', password_confirmation: '123456')
 3.times{user2.earn_point}
 
-user3 = User.create(first_name: 'Ugo', last_name: 'Marrr', email: 'ugo@gmail.com', password:'123456', password_confirmation: '123456')
+user3 = User.create!(first_name: 'Ugo', last_name: 'Marrr', email: 'ugo@gmail.com', password:'123456', password_confirmation: '123456')
 3.times{user3.earn_point}
 
-user4 = User.create(first_name: 'Allison', last_name: 'Greks', email: 'allison@gmail.com', password:'123456', password_confirmation: '123456')
+user4 = User.create!(first_name: 'Allison', last_name: 'Greks', email: 'allison@gmail.com', password:'123456', password_confirmation: '123456')
 2.times{user4.earn_point}
 
-user5 = User.create(first_name: 'Antonini', last_name: 'Limatino', email: 'antonini@gmail.com', password:'123456', password_confirmation: '123456')
-2.times{user5.earn_point}
+user5 = User.create!(first_name: 'Antonini', last_name: 'Limatino', email: 'antonini@gmail.com', password:'123456', password_confirmation: '123456')
 
-user6 = User.create(first_name: 'Joy', last_name: 'Angry', email: 'joy@gmail.com', password:'123456', password_confirmation: '123456')
+user6 = User.create!(first_name: 'Joy', last_name: 'Angry', email: 'joy@gmail.com', password:'123456', password_confirmation: '123456')
 2.times{user6.earn_point}
 
-user7 = User.create(first_name: 'Archae', last_name: 'Gilbear', email: 'archae@gmail.com', password:'123456', password_confirmation: '123456')
+user7 = User.create!(first_name: 'Archae', last_name: 'Gilbear', email: 'archae@gmail.com', password:'123456', password_confirmation: '123456')
 4.times{user7.earn_point}
 
-user8 = User.create(first_name: 'Teddae', last_name: 'Bear', email: 'teddae@gmail.com', password:'123456', password_confirmation: '123456')
+user8 = User.create!(first_name: 'Teddae', last_name: 'Bear', email: 'teddae@gmail.com', password:'123456', password_confirmation: '123456')
 3.times{user8.earn_point}
 
-User.create(first_name: 'Cat', last_name: 'Cat', email: 'cat@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Katie', last_name: 'Katie', email: 'katie@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Josh', last_name: 'Josh', email: 'josh@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Ed', last_name: 'Ed', email: 'ed@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Kit', last_name: 'Kit', email: 'kit@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Ralph', last_name: 'Ralph', email: 'ralph@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Harry', last_name: 'Harry', email: 'harry@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Fahad', last_name: 'Fahad', email: 'fahad@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Arthur', last_name: 'Arthur', email: 'arthur@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Romain', last_name: 'Romain', email: 'romain@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Boris', last_name: 'Boris', email: 'boris@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Sandrine', last_name: 'Sandrine', email: 'sandrine@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Elissa', last_name: 'Elissa', email: 'elissa@gmail.com', password:'123456', password_confirmation: '123456')
-User.create(first_name: 'Nikolei', last_name: 'Nikolei', email: 'nikolei@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Cat', last_name: 'Aat', email: 'cat@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Katie', last_name: 'Batie', email: 'katie@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Josh', last_name: 'Cosh', email: 'josh@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Ed', last_name: 'Dd', email: 'ed@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Kit', last_name: 'Fit', email: 'kit@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Ralph', last_name: 'Ealph', email: 'ralph@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Harry', last_name: 'Karry', email: 'harry@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Fahad', last_name: 'Eahad', email: 'fahad@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Arthur', last_name: 'Arthur', email: 'arthur@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Romain', last_name: 'Pomain', email: 'romain@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Boris', last_name: 'Doris', email: 'boris@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Sandrine', last_name: 'Fandrine', email: 'sandrine@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Elissa', last_name: 'Qlissa', email: 'elissa@gmail.com', password:'123456', password_confirmation: '123456')
+User.create!(first_name: 'Nikolei', last_name: 'Kikolei', email: 'nikolei@gmail.com', password:'123456', password_confirmation: '123456')
+
+Review.create!(venue: venue9, user: user1, hotness_level: 5, description: "Zebra prints, ponies, black leather and white fluffy fur sofas. What more can you ask? I don't want my mates to find out about this amazing venue ;)")
+Review.create!(venue: venue9, user: user2, hotness_level: 5, description: "Hands down my favorite date spot in London. I can’t believe I found out about this just now. Words don’t do justice...")
+Review.create!(venue: venue9, user: user3, hotness_level: 5, description: "VUYBE amplifer! Whatever you’re feeling, come here and it will set you on the right path. ")
+Review.create!(venue: venue9, user: user4, hotness_level: 5, description: "Thursday night ended up at ninety eight. Saturday night came back again. Today? I’m going back there.")
+Review.create!(venue: venue9, user: user5, hotness_level: 5, description: "Hidden doors and secret rooms. Nuff said!")
+Review.create!(venue: venue9, user: user6, hotness_level: 5, description: "Adventurous atmosphere out of control :)")
+Review.create!(venue: venue9, user: user7, hotness_level: 5, description: "Why have I just found this amazing spot?!")
+
+
 
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/couchbodega.png')), name: "Comfy Couch - Available for Drinks and/or Dinner", venue: venue1)
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/fireplace.png')), name: "Comfy Spot by the fireplace", venue: venue1)
 
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/bills_spot.png')), name: "Cozy leather sofa in the secluded corner", venue: venue7)
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/nightjar_spot.png')), name: "Intimate spot with comfy leather sofa", venue: venue8)
+
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/furry_spot.png')), name: "Furry sofas with furry pillows", venue: venue9)
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/piano_spot.png')), name: "Piano spot with jungle vibes", venue: venue9)
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/unicorn_spot.png')), name: "Cozy sofa by a cheeky pony", venue: venue9)
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/white_room.png')), name: "Intimate white room", venue: venue9)
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/zebra_spot.png')), name: "Adventurous zebra leathery spot", venue: venue9)
 
 
-
-
-
-# # user = User.create!(id: "1", first_name: 'Allison', last_name: 'Grekin', email: 'allison_grekin@hotmail.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/allison.jpg')))
-# # user2 = User.create!(id: "2", first_name: 'Stephen', last_name: 'Choi', email: 'stephen.choi@msn.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/stephen.jpeg')))
-# # user3 = User.create!(id: "3", first_name: 'Archie', last_name: 'San', email: 'archie.hero@msn.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/archie.jpg')))
-# # user4 = User.create!(id: "4", first_name: 'Evan', last_name: 'San', email: 'evan.san@msn.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/evan.png')))
-# # user5 = User.create!(id: "5", first_name: 'Remi', last_name: 'San', email: 'remi.san@msn.com', password:'123456', password_confirmation: '123456', photo: File.open(Rails.root.join('app/assets/images/remi.jpg')))
 
 # # d = DateTime.new(2017, 3 , 30, 5, 40, 46, "-06:00")
 # # lesson = Lesson.create!(user_id: "1", category: "Cardio", price: "30", start_date_time: d.strftime, duration: "30min", neighborhood:"Chelsea", description: "Cardio exercise is any exercise that raises your heart rate. Face it our bodies were made to move. And we all know that to keep our muscles in shape we need move them.")
 # # lesson2 = Lesson.create!(user_id: "2", category: "Yoga", price: "35", start_date_time: d.strftime, duration: "40min", neighborhood:"Knightsbridge", description: "A Hindu spiritual and ascetic discipline, a part of which, including breath control, simple meditation, and the adoption of specific bodily postures, is widely practised for health and relaxation.")
-# # lesson3 = Lesson.create!(user_id: "3", category: "Weights", price: "35", start_date_time: d.strftime, duration: "50min", neighborhood:"Shoreditch", description: "The sport or activity of lifting barbells or other heavy weights.")
-# # lesson4 = Lesson.create!(user_id: "4", category: "Pilates", price: "25", start_date_time: d.strftime, duration: "30min", neighborhood:"Mayfair", description: "A system of exercises using special apparatus, designed to improve physical strength, flexibility, and posture, and enhance mental awareness.")
-# # lesson5 = Lesson.create!(user_id: "5", category: "Boxing", price: "20", start_date_time: d.strftime, duration: "30min", neighborhood:"Chelsea", description: "The sport or practice of fighting with the fists, especially with padded gloves in a roped square ring according to prescribed rules.")
 
-# #     t.string   "address"
-# #     t.string   "name"
-# #     t.string   "area"
-# #     t.string   "category"
-# #     t.string   "mood"
-# #     t.text     "description"
-# #     t.integer  "price"
-# #     t.integer  "light_level"
-# #     t.integer  "noise_level"
-# #     t.integer  "couch_comfort"
-# #     t.integer  "staff_level"
-# #     t.integer  "unicorn_score"
-# #     t.integer  "distance_from_bed"
+
 
