@@ -39,6 +39,7 @@ VenueCategory.create!(venue: venue10, category: category2)
 VenueCategory.create!(venue: venue11, category: category1)
 VenueCategory.create!(venue: venue11, category: category2)
 VenueCategory.create!(venue: venue11, category: category3)
+VenueCategory.create!(venue: venue12, category: category3)
 
 Unicorn.create!(name: 'Baby Unicorn', levelup_point: 1, photo: File.open(Rails.root.join('app/assets/images/babyunicorn.png')))
 Unicorn.create!(name: 'Cool Unicorn', levelup_point: 1, photo: File.open(Rails.root.join('app/assets/images/coolunicorn.png')))
