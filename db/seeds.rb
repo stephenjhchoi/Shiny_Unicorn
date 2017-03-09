@@ -30,7 +30,7 @@ category3 = Category.create!(title: "cafe")
 # 20.times { VenueCategory.create(venue: Venue.all.sample, category: Category.all.sample) }
 
 VenueCategory.create(venue: venue1, category: category1)
-VenueCategory.create(venue: venue1, category: category3)
+VenueCategory.create(venue: venue1, category: category2)
 VenueCategory.create(venue: venue2, category: category2)
 VenueCategory.create(venue: venue3, category: category1)
 VenueCategory.create(venue: venue3, category: category2)
