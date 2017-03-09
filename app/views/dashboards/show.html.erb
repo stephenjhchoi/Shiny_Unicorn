@@ -17,6 +17,7 @@
 
   <div class="row-unlocked-badges">
     <h3 class="dashboard-title text-center">Unicorn Badges</h3>
+    <br>
 
 
 
@@ -62,6 +63,7 @@
 
   <div class="row-favorite-spots">
     <h3 class="dashboard-title text-center">Favorite Spots</h3>
+    <br>
     <div class="row">
 
         <% current_user.venues.first(3).each do |venue| %>
@@ -75,7 +77,8 @@
 
   <div class="row-bookings">
     <h3 class="dashboard-title text-center">Bookings</h3>
-    <div class="col-xs-12 col-md-6">
+    <br>
+    <div class="row">
     <% current_user.bookings.each do |booking| %>
       <%= render 'dashboards/bookingcard', booking: booking %>
     <% end %>

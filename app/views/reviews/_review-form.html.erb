@@ -6,6 +6,7 @@
   <div class="title-spots" style=" padding-bottom: 20px; border-radius: 5px;" >
     <h4 class="gold-title">Add a Review</h4>
     <%= simple_form_for [@venue, @review] do |f| %>
+
       <p class="clasificacion text-left">
          <input id="radio1" type="radio" name="review[hotness_level]" value="5"><!--
       --><label for="radio1">&#9733;</label><!--
@@ -18,11 +19,12 @@
       --><input id="radio5" type="radio" name="review[hotness_level]" value="1"><!--
       --><label for="radio5">&#9733;</label>
       </p>
+
       <%= f.input :description, as: :text %>
       <%= f.submit "Add a review", class: "shiny-btn" %>
     <% end %>
   </div>
-</div>
+
 <% content_for :after_js do %>
   <script>
     $('#review_hotness_level').bootstrapSlider();
