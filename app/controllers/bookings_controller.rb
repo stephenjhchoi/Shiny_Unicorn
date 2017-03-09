@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     if @booking.save
       current_user.earn_point
-      flash[:notice] = "🦄 You have earned 1 point 🦄"
+      flash[:notice] = "🦄 Spot booked! You have earned 1 point 🦄"
       redirect_to dashboard_path
     else
       flash[:notice] = "💖 Something went wrong, please try again 💖"
