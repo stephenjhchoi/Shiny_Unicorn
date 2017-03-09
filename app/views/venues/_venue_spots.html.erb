@@ -16,8 +16,13 @@
   <% end %>
   <br>
 
-  <button type="" value="Add a Spot to this Venue" class="btn shiny-btn2" id="create-spot">Create Spot</button>
+  <% if user_signed_in? %>
+  <button type="" value="Add a Spot to this Venue" class="btn shiny-btn2" id="create-spot">
+  Create Spot</button>
   <%= render 'spots/spot-form' if user_signed_in? %>
+  <% else %>
+  <%= link_to "Create Spot", new_user_session_path, class: "btn shiny-btn2" %>
+  <% end %>
 </div>
 
 
