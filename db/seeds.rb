@@ -14,6 +14,8 @@ venue8 = Venue.create!(name: 'Nightjar', address: '129 City Rd, London EC1V 1JB'
 venue9 = Venue.create!(name: 'Ninetyeight Bar and Lounge', address: 'Morrell House, 98 Curtain Rd, Shoreditch, London EC2A 3AF', area: 'Shoreditch', mood: 'adventurous', description: 'Zebra prints, lavish colorful fittings and Victoriana lend this cocktail bar a fairy tale vibe.', price: '2', light_level: '3', noise_level: '4', couch_comfort: '7', staff_level: '8', unicorn_score: '8', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/ninetyeight.png')))
 venue10 = Venue.create!(name: 'Brewdog Shoreditch', address: '51-55 Bethnal Green Rd, London E1 6LA', area: 'Shoreditch', mood: 'fun', description: "Fun bar specializing in Scottish brewery's craft beers, with regular guest brews.", price: '2', light_level: '7', noise_level: '6', couch_comfort: '3', staff_level: '6', unicorn_score: '8', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/brewdog.png')))
 venue11 = Venue.create!(name: 'Ace Hotel London Shoreditch', address: '100 Shoreditch High St, London E1 6JQ', area: 'Shoreditch', mood: 'fun', description: "Sleek bar, cafe, and restaurant all packed into one fun hotel.", price: '2', light_level: '3', noise_level: '7', couch_comfort: '5', staff_level: '7', unicorn_score: '7', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/acehotel.png')))
+venue12 = Venue.create!(name: 'WeWork Moorgate', address: '1 Fore St, London EC2Y 9DT', area: 'Shoreditch', mood: 'fun', description: "Cool & Techy co-working space.", price: '2', light_level: '4', noise_level: '5', couch_comfort: '10', staff_level: '7', unicorn_score: '9', distance_from_bed: '', photo: File.open(Rails.root.join('app/assets/images/wework.png')))
+
 
 category1 = Category.create!(title: "restaurant")
 category2 = Category.create!(title: "bar")
@@ -105,5 +107,7 @@ Spot.create!(photo: File.open(Rails.root.join('app/assets/images/piano_spot.png'
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/unicorn_spot.png')), name: "Cozy sofa by a cheeky pony", venue: venue9)
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/white_room.png')), name: "Intimate white room", venue: venue9)
 Spot.create!(photo: File.open(Rails.root.join('app/assets/images/zebra_spot.png')), name: "Adventurous zebra leathery spot", venue: venue9)
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/weworkcouch.png')), name: "Squishy leather sofa with edgy pillows", venue: venue12)
+Spot.create!(photo: File.open(Rails.root.join('app/assets/images/weworkcouch2.png')), name: "Sensory illusionary wall with comfy sofa", venue: venue12)
 
 
