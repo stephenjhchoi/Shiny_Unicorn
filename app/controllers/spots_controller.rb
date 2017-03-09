@@ -8,7 +8,7 @@ class SpotsController < ApplicationController
     @spot.save
     authorize @spot
     current_user.earn_point
-    flash[:notice] = "💖 You have earned 1 point 💖"
+    flash[:notice] = "🦄 You have earned 1 point 🦄"
     redirect_to venue_path(@venue)
   end
 
