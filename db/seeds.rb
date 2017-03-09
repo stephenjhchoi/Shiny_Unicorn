@@ -70,12 +70,26 @@ user5 = User.create(first_name: 'Antonini', last_name: 'Limatino', email: 'anton
 user6 = User.create(first_name: 'Joy', last_name: 'Angry', email: 'joy@gmail.com', password:'123456', password_confirmation: '123456')
 2.times{user6.earn_point}
 
-
 user7 = User.create(first_name: 'Archae', last_name: 'Gilbear', email: 'archae@gmail.com', password:'123456', password_confirmation: '123456')
 4.times{user7.earn_point}
 
 user8 = User.create(first_name: 'Teddae', last_name: 'Bear', email: 'teddae@gmail.com', password:'123456', password_confirmation: '123456')
 3.times{user8.earn_point}
+
+User.create(first_name: 'Cat', last_name: 'Cat', email: 'cat@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Katie', last_name: 'Katie', email: 'katie@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Josh', last_name: 'Josh', email: 'josh@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Ed', last_name: 'Ed', email: 'ed@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Kit', last_name: 'Kit', email: 'kit@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Ralph', last_name: 'Ralph', email: 'ralph@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Harry', last_name: 'Harry', email: 'harry@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Fahad', last_name: 'Fahad', email: 'fahad@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Arthur', last_name: 'Arthur', email: 'arthur@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Romain', last_name: 'Romain', email: 'romain@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Boris', last_name: 'Boris', email: 'boris@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Sandrine', last_name: 'Sandrine', email: 'sandrine@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Elissa', last_name: 'Elissa', email: 'elissa@gmail.com', password:'123456', password_confirmation: '123456')
+User.create(first_name: 'Nikolei', last_name: 'Nikolei', email: 'nikolei@gmail.com', password:'123456', password_confirmation: '123456')
 
 
 
